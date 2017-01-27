@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Zer0d0y(段公子)&#39;s Blog</title>
+    <link>http://www.zer0d0y.info/post/feed/index.xml</link>
+    <description>Recent content in Posts on Zer0d0y(段公子)&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright (c) 2017. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 15 Jun 2015 21:36:26 +0800</lastBuildDate>
+    <atom:link href="http://www.zer0d0y.info/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>人生十年</title>
+      <link>http://www.zer0d0y.info/post/ten-years/</link>
+      <pubDate>Mon, 15 Jun 2015 21:36:26 +0800</pubDate>
+      
+      <guid>http://www.zer0d0y.info/post/ten-years/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;images/Ten_year1.jpg&#34; alt=&#34;github2016&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

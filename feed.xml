@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zer0d0y(段公子)&#39;s Blog</title>
+    <link>http://www.zer0d0y.info/feed/index.xml</link>
+    <description>Recent content on Zer0d0y(段公子)&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright (c) 2017. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 15 Jun 2015 21:36:26 +0800</lastBuildDate>
+    <atom:link href="http://www.zer0d0y.info/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>人生十年</title>
+      <link>http://www.zer0d0y.info/post/ten-years/</link>
+      <pubDate>Mon, 15 Jun 2015 21:36:26 +0800</pubDate>
+      
+      <guid>http://www.zer0d0y.info/post/ten-years/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;images/Ten_year1.jpg&#34; alt=&#34;github2016&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>http://www.zer0d0y.info/about/</link>
+      <pubDate>Thu, 01 Jan 2015 08:55:31 +0800</pubDate>
+      
+      <guid>http://www.zer0d0y.info/about/</guid>
+      <description>&lt;p class=&#34;message&#34;&gt;
+&lt;a href=&#34;http://www.zer0d0y.info/post/ten-years/&#34; rel=&#34;bookmark&#34; title=&#34;人生十年&#34;&gt;人生十年&lt;/a&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
