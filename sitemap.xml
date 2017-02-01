@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.zer0d0y.info/post/keywords-of-this-year/</loc>
+    <lastmod>2017-02-01T15:34:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zer0d0y.info/post/4-marathon-of-30d/</loc>
+    <lastmod>2017-01-06T14:09:48+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zer0d0y.info/post/outdoor_of_FW/</loc>
     <lastmod>2015-12-23T10:48:47+08:00</lastmod>
   </url>
@@ -29,19 +39,25 @@
   
   <url>
     <loc>https://www.zer0d0y.info/post/</loc>
-    <lastmod>2015-12-23T10:48:47+08:00</lastmod>
+    <lastmod>2017-02-01T15:34:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.zer0d0y.info/</loc>
-    <lastmod>2015-12-23T10:48:47+08:00</lastmod>
+    <lastmod>2017-02-01T15:34:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.zer0d0y.info/categories/%E6%AE%B5%E5%85%AC%E5%AD%90/</loc>
-    <lastmod>2015-06-15T21:36:26+08:00</lastmod>
+    <lastmod>2017-02-01T15:34:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.zer0d0y.info/categories/%E9%A9%AC%E6%8B%89%E6%9D%BE/</loc>
+    <lastmod>2017-01-06T14:09:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
