@@ -1,1 +1,1125 @@
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('I 1b={e7:"1B://1l.1M.Z",6L:"1B://l.1M.Z",3J:"1B://s.1M.Z",dL:28,2b:"",dr:1c,1J:6v,6u:"dl",6t:"6s",3P:"",3g:[],3U:{\'cU\':\'微信,cQ,2e,2e.1Y.Z\',\'cr\':\'微博,cq,ck.Z\',\'c6\':\'2A好友,c3,c0,5R.1Y.Z\',\'bB\':\'2A空间,bx,5M.2x.1Y.Z\',\'bo\':\'复制网址,bl\',\'be\':\'收藏夹,bb\',\'ba\':\'打印,dy\',\'b7\':\'邮件,b0\',\'aZ\':\'人人网,aY,1l.2H.Z\',\'aW\':\'开心网,aV,1l.35.Z\',\'aT\':\'印象笔记,5r\',\'9U\':\'领英,59\',\'9P\':\'飞信,9M,9L.9J.9I.cn\',\'9H\':\'豆瓣,db,1l.4G.Z\',\'9z\':\'9y,55,t.co\',\'9w\':\'9v,54,1l.54.Z\',\'9g\':\'一键分享,9f\',\'9e\':\'猜你喜欢,9c\',\'9b\':\'易信,9a,1l.99.98\',\'94\':\'花瓣网,8U,8T.Z\',\'8P\':\'腾讯微博,8O,t.1Y.Z\',\'8N\':\'8I+,8H,8F.15.4O.Z\',\'8B\':\'阿里巴巴,8y,1l.8w.Z\',\'8s\':\'朋友网,8r,30.8l.Z\',\'8j\':\'麦库记事,8h\',\'8g\':\'百度搜藏,8f,8e.32.Z\',\'8d\':\'8c邮箱,8b,5d.4O.Z\',\'88\':\'有道云笔记,80,7Z.5f.Z\',\'7X\':\'天涯社区,7O,5j.7L.cn\',\'7K\':\'百度贴吧,7I,5s.32.Z\',\'7C\':\'轻笔记,7B\',\'7z\':\'凤凰微博,7x,t.7v.Z\',\'7u\':\'饭否,7t,7p.Z\',\'7m\':\'明道,7k,1l.7j.Z\',\'7h\':\'豆瓣9点,7g,9.4G.Z\',\'7f\':\'谷歌,7e\',\'7d\':\'谷歌7c,7a\',\'77\':\'有道书签,eB,5F.5f.Z\',\'ep\':\'2A书签,en,5F.1Y.Z\',\'e8\':\'3b,5O\',\'dS\':\'dR,dP\',\'dM\':\'堆糖,dt,1l.dI.Z\',\'dE\':\'摇篮微博,dB\',\'dz\':\'百度空间,dp,dn.5V.32.Z\',\'dk\':\'df邮箱,da\',\'d9\':\'雪球,d7,cZ.Z\',\'cS\':\'和讯,cN,cH.62.Z\',\'cF\':\'cE邮箱,cC\',\'cB\':\'65邮箱,cj\',\'c5\':\'翼友圈,c4,bV.65.cn\',\'bR\':\'人民微博,bN,t.bA.Z.cn\',\'bz\':\'新华微博,bw\',\'bv\':\'谷歌翻译,br\',\'bq\':\'推他,bp,1l.bm.Z\',\'bk\':\'猫扑推客,bc,b9.b8.Z\',\'b5\':\'美丽说,aS\',\'aB\':\'蘑菇街,az,ap.cn\',\'ak\':\'赶牛网,aj,1l.ai.Z\',\'ag\':\'af网,ac,5j.a9.cn\',\'a8\':\'雷猴网,a7,a5.Z\',\'a4\':\'和讯微博,a3,t.62.Z\',\'a2\':\'游戏江湖,a1,5V.a0.Z\',\'9R\':\'法律微博,9Q\',\'cD\':\'c9,75,1l.75.Z\',\'8W\':\'78,7q\',\'7y\':\'8u,5k,1l.5k.Z\',\'aa\':\'al,aq,aU.Z\',\'aX\':\'财迷,cm,t.b2.Z\',\'bg\':\'bC+分享,bL,bM,i.ch.Z.cn\',\'cl\':\'挖客网,ct\',\'cx\':\'创业邦,cA,u.cG.cn\',\'d4\':\'救救地球,d5\',\'d6\':\'抽屉网,dc\',\'dm\':\'递客网,dN,1l.dQ.cn\',\'dT\':\'易集网,dU,1l.dX.Z\',\'dY\':\'e6在线转换,e9\',\'ea\':\'友好打印,eg\',\'ei\':\'eq验证,ev\',\'ey\':\'eA.6Z,79,7b.6Z\',\'7i\':\'7o,6R,6R.Z\',\'7r\':\'7s.6M,5d.6M\',\'7A\':\'7D,7E\',\'7H\':\'7J,7M\',\'7N\':\'7P,7Q\',\'7S\':\'7V,7Y\',\'81\':\'86,87\',\'89\':\'8a,8k\',\'8m\':\'8n,8o\',\'8q\':\'8t.6I,8x.6I\',\'8z\':\'8C,8D\',\'8E\':\'8G,6H,1l.6H.Z\',\'8L\':\'8X 92,95\',\'97\':\'9m,9n\',\'9q\':\'9r,9s\',\'9t\':\'9u,9x\',\'9A\':\'9B,9E\'}};(N(){I z=19.2C(\'1V\');1g(I i=0,ci;ci=z[i++];){L(/1M.Z/.1Q(ci.1q)){1b.2b=ci.1q.6G(0,ci.1q.ab("/"));ci.1q.2w(/(1J)=([^&]+)/g,N(a,p,v){1b[p]=v})}}I d=19,3L=d.am=="ao",dd=d.6E,db=d.3l,m=21.6B,3O=!!d.6q,3Q=2p.2c.3h(),24=d.2C("24")[0]||dd,6o=1r.1N.3d,1h=(2t(2E)==\'25\')?{}:2E,26=1b.6u,1P=1b.3U,6n=d.bF,3T=1c,6m=N(){14{h:(3L?dd:db).bT,w:(3L?dd:db).bZ}},33=N(){14{t:m(dd.2S,db.2S),l:m(dd.3V,db.3V)}},6l=N(a){I r={t:0,l:0},6k=/cs/.1Q(3Q),2v=N(t,l){r.l+=l,r.t+=t},p=a,3Z=33();L(a&&a!=db){L(a.64){I b=a.64();L(b.1u==b.63){I g=a.11.1e;a.11.1e="2k";b.1u=b.1u-a.20;a.11.1e=g}2v(b.1u+3Z.t-dd.cJ,b.1R+3Z.l-dd.cR)}13{I c=d.d3;43(p){2v(p.5Y,p.5W);I e=c.d8(p,28);L(6k){I f=1p(e.46("29-1R-1n"),10)||0,bt=1p(e.46("29-1u-1n"),10)||0;2v(bt,f);L(p!=a&&e.46("2F")!="ds"){2v(bt,f)}}p=p.dx}p=a.3n;43(p&&p!=db){2v(-p.2S,-p.3V);p=p.3n}}}14 r},1A=N(o,t,a){I b=d.2D(t||"17");1g(I p 1L o){p=="11"?(b[p].5U=o[p]):(b[p]=o[p])}14(a||db).dO(b,(a||db).2I)},5T=N(a,b){I c={};1g(I i=0;i<a.1t;i++){c[a[i]]=1}1g(I i=0;i<b.1t;i++){L(!c[b[i]]){a.5S(b[i]);c[b[i]]=1}}14 a},5Q=N(a,b,c){I d=2L 4d();d.e1(d.4e()+c*3a);19.5J=a+"="+5I(b)+(c?";ee="+d.ef():"")+";4h=/"},5H=N(a){I b=19.5J;I c=b.1w(a+"=");L(c!=-1){c+=a.1t+1;I d=b.1w(";",c);L(d==-1){d=b.1t}14 eo(b.6G(c,d))}14""},39=N(w,d,a){w/=d;w=21.4j(w*10)/10;L((w+"").1t>=4){w=21.4j(w)}14 w+a},5G=N(a){I d=(""+a).1j(".").36().1t;L(76(a)){14\'0\'}13{L(d<4){14 21.4j(a)}13{L(d<7){14 39(a,3a,"K")}13{L(d<10){14 39(a,5E,"M")}13{14 39(a,4n,"B")}}}}},4o=N(X){I A={},D=(2L 4d()).4e(),E,F,G,H,V=2h(X);L(V!==25&&V.1w("|")>-1){E=V.1j(\'|\');F=E[0];G=E[1];H=21.7l((D-G)/3a);A.1x=1p(F);A.7n=G;A.5D=H;14 A}14 1c},3w=N(){I A=5H("5v"),B={};L(A){B=4q("("+A+")")}14 B},5u=N(U,S,T){I A=3w();L(A[U]){7w A[U]}$1d.1x=1p(S);A[U]=\'"\'+1p(S)+\'|\'+T+\'"\';5Q("5v",5t(A),0)},5t=N(o){I A=\'\',B=\'\';1g(I k 1L o){A+=B+\'"\'+k+\'":\'+o[k];B=!B?\',\':B}14"{"+A+"}"},4s=N(a,b){1g(I k 1L a){I c=d.2l(a[k]);L(c){c.1a=\'累计分享\'+b+\'次\';c.1v=5G(b)}}},5n=N(){I u=1h.7F;L(u){L(!(u 7G 5l)){u=[u]}1g(I a=0;a<u.1t;a++){I c=u[a];L(c.2g&&c.4v&&c.15){c.2j=c.15=c.15.2w(/ /g,"");c.2j=c.2j.1j("//").2Z().1j("?").36().1j("/").36().3h();1b.3g[c.2j]=c;1b.3U[26+c.2j]=c.2g+\',\'+c.2j+\',\'+c.2j}}}},4w=N(a,b,c){I d="";do{d=a[b++]}43(b<a.1t&&(!1P[26+d]||c[d]));L(c[d]||!1P[26+d]){d=\'\';1g(I k 1L 1P){k=k.2O(3);L(!c[k]&&1P[26+k]){d=k;5h}}}14 d},4z=N(){5n();I e=1h.7R||{},4A=1h.7T||1c;e.7U&&1A({1q:1b.2b+"/5g.7W.2z",2o:"2d-8"},"1V",24);I f="2x,4C,82,2e,2H,35,5r,59,4G,83,84,5O,85,55,5s,32,4O",5e=1b.3P||f,4D=5T(5e.1j(","),f.1j(",")),2N={},27={},h=d.2C("a"),5c=2h(1h.15||d.1N),37=28,18,1E,1D,1I,bt,22;1g(I i=0,ci,1k;ci=h[i++];){L(/\\8i\\b/.1Q(ci.1m)){L(57()){ci.2m=56()}13{ci.53=$1d.4J;ci.8p=$1d.51;!4A&&(ci.2u=$1d.3u);ci.4Y=$1d.4V;ci.8v=1y}4U}L(ci.1m&&(1k=ci.1m.1Z(/^4Q(\\w+)(?:\\8A|$)(.*)$/))&&1k[1]){L(2t($1d.2G)=="4N"){L(!37){37=1A({2m:1b.2b+"/2s/4M.2s",3p:"5Z",1U:"1T/2s"},"4R")}L(ci.2I&&ci.2I.8K==3){ci.4S(ci.2I)}L(!ci.2I){I B=1k[1]==\'11\'?\'8M\':1k[1],C=1k[2]?1k[2]:\'\',K="4Q"+i,E=d.2D("1H");E.1m=\'8Q 4M 8R\'+B+\'8S\';!4A&&(E.2u=N(){$1d.3u()});E.1G=K;E.2i(d.8V("0"));L(C){E.11.5U=C}ci.2i(E)}$1d.2G.5S(K)}4U}18=\'\',1E=\'\',1D=1c,1I=1c,bt=1c,22=1c;L(ci.1m&&(1k=ci.1m.1Z(/^eD([\\w\\.]+)(?:\\s|$)/))&&1k[1]){L(1k[1].1w("4T")>-1||1k[1].1w("8Y")>-1){L(1k[1].1w("4T")>-1){1D=1y;I s=ci.1m.1Z(/8Z([0-9]+)(?:\\s|$)/)}13{I s=ci.1m.1Z(/90([0-9]+)(?:\\s|$)/)}I g=((s&&s.1t)?21.91(16,21.6B(1,1p(s[1]))):1)-1;18=4w(4D,g,2N);22=1y}13{18=1k[1]}bt=1y}L(ci.1m&&(1k=ci.1m.1Z(/^93(\\w+)$/))&&1k[1]){18=1k[1];1I=1y}L(18&&1P[26+18]){bt&&(2N[18]=1);I j=N(a,b){1g(I c 1L b){I o=b[c];L(o.22&&o.18==a){14 c}}14 1c},t=j(18,27);L(t!==1c){I T=27[t]||{};L(T.18&&T.ci){4L=4w(4D,0,2N);T.bt&&(2N[4L]=1);27[t]={"ci":T.ci,"18":4L,"bt":T.bt,"1I":T.1I,"1D":T.1D,"22":T.22}}}27[i]={"ci":ci,"18":18,"bt":bt,"1I":1I,"1D":1D,"22":22}}13 L(bt||1I){ci.1v=""}L(ci.1m&&(1k=ci.1m.1Z(/^96(\\w+)$/))&&1k[1]){1E=1k[1];I o=4W(ci,\'2K\'),2n=\'\',2a=5c,2q=\'\';L(1E==\'2x\'){I l=1S(o.1Y,1c);L(l){2a="1B://9d.2x.1Y.Z/"+l;2n=\'1B://2r.2x.1Y.Z/23?15=\'+1o(2a)+\'&1U=\'+1S(o.1U,\'9h\')}13{2n=\'1B://5M.2x.1Y.Z/9i-9j/9k/9l?15=\'+1o(2a)+\'&4X=\'+1S(o.4X,1)+\'&11=\'+1S(o.11,2)}}13 L(1E==\'2H\'){I n=1S(o.9o,1c);2a=n?("1B://9p.2H.Z/"+n):2a;2n=\'1B://1l.5R.2H.Z/23?15=\'+1o(2a)+\'&4Z=\'+1S(o.4Z,\'1c\')}13 L(1E==\'35\'){2n=\'1B://1l.35.Z/23/23.4K?15=\'+1o(2a)+\'&52=\'+1S(o.52,\'1c\')}13 L(1E==\'4C\'||1E==\'4I\'){I p=3A(),1f=\'\',1a=1h.1a||19.1a,p=1h.1C==25?p:1h.1C,1f=1h.1f==25?3x():1h.1f,15=1h.15==25?19.1N:1h.15}L(2n){ci.1v=\'<1H 1K="2J 3s 4H"><1F 1q="\'+2n+\'" 9C="1y" 9D="58" 29="0" 9F="0" 11="1n:\'+1S(o.1n,9G)+\'1z;1i:\'+1S(o.1i,38)+\'1z;\'+2q+\'"></1F></1H>\'}13{L(1E==\'4I\'||1E==\'4C\'){L(1E==\'4I\'){ci.1v=\'<1H 1K="2J 3s 4H"><2T:23 1U="1T"></2T:23></1H>\'}13{ci.1v=\'<1H 1K="2J 3s 4H"><2T:23 1U="9K"></2T:23></1H>\'}I q=[\'2U:1U=9N\',\'2U:15=\'+1o(15)+\'\',\'2U:1a=\'+1o(1a)+\'\',\'2U:9O=\'+1o(1f)+\'\',\'2U:2V=\'+1o(p)+\'\'];1g(m=0;m<q.1t;m++){3f=19.2D(\'5a\');I r=q[m].1j(\'=\');I t=r[0];I u=r[1];3f.9S(\'9T\',t);3f.2W=9V(u);24.2i(3f)}1A({1q:"1B://9W.9X.9Y.cn/2r/9Z/2z/2T.2z",2o:"2d-8",1U:"1T/5b"},"1V")}13{ci.1v=\'\'}}}}L(27){1g(I k 1L 27){I o=27[k],ci=o.ci,bt=o.bt,1I=o.1I,1D=o.1D,18=o.18;L(2t(ci)=="4N"&&ci.1v.1w(\'4F 4E\')==-1){I v=1P[26+18].1j(\',\');I w=ci.1v.2w(/^\\s+|\\s+$/g,"");I x=1b.3g[18]||{};I y=(x.4v)?\' 11="4B:15(\'+x.4v+\') 58-a6 1R;"\':\'\';L(1D||w){w=w?w:v[0];ci.1v=\'<1H 1K="2J 3s 4F 4E\'+18+\'"\'+y+\'>\'+w+\'</1H>\'}13{ci.1v=\'<1H 1K="2J 4F 4E\'+18+\'"\'+y+\'></1H>\'}L(1I){ci.2u=N(a){14 N(){L(a.1m.1Z(/2e$/)){4y(a.3p)}13{1r.2r(a.3p,\'\')}}}(ci);ci.1a=ci.1a?ci.1a:"在"+v[0]+"关注我们"}13{ci.2u=N(a){14 N(){5i(a)}}(18);L(!ci.1a){L(18==\'4x\'||18==\'3D\'){ci.1a=v[0]}13 L(18==\'4u\'){ci.1a="加入"+v[0]}13{ci.1a="分享到"+v[0]}}}}}}L(37){$1d.5m()}},1S=N(v,a){L(v===25){14 a}14 v},4W=N(a,b){I p=[],c=a.ad[b];L(c){o=c.ae.1j(\'&\')||\'\';1g(I i=o.1t;i--;){I j=o[i].1j(\'=\');p[j[0]]=j[1]}}14 p},4t=N(e){L(!3T){L(!!e.5o&&e.5o.2O(-12)==".1M.Z"){L(e.2K&&e.2K!="ah"){1b.3P=e.2K}}4z();5p();3T=1y}},5p=N(){I a,s,E=1o,o=5q(6n),T=19.1a||"",Y=1r.1N.2m||"",an=Y?Y.1w(1b.6t):-1,d1=4r(o.3d),d2=4r(Y),q=28,f=(d1&&d2&&d1==d2)?1c:1y;L(an>-1){a=Y.5w(an);q=a.1j("#").2Z().1j("-").2Z().1j("=").2Z();q=1P[26+q]?q:\'\'}q=(!q&&o.18)?o.18:q;L(q&&f){s=\'ar=\'+q+\'&as=\'+1p(1b.1J)+\'&at=\'+E(o.3d)+\'&au=\'+E(o.4h)+\'&av=\'+E(Y)+\'&aw=\'+5I(T);(2L ax).1q=1b.6L+"/l.ay?"+s}},4r=N(o){I d=28;L(o){d=o.1j(".").2O(-2).5x(".");d=(d=="Z.cn")?o.1j(".").2O(-3).5x("."):d;d=d.1j("/").36()}14 d},5q=N(r){I h="",p="",q="",m;L(r.1Z(/(?:[a-z]\\:\\/\\/)([^\\/\\?]+)(.*)/aA)){h=5y.$1;p=5y.$2;h=h?h:"";p=p?p:"";L(h){1g(I k 1L 1P){m=1P[k].1j(\',\');L(m[2]&&m[2]==h){q=k.2O(3);5h}}}}14{3d:h,4h:p,18:q}},57=N(){I a=2p.2c.3h().1Z(/aC|aD|aE|aF|aG|aH|aI|aJ|aK|aL|aM|aN aO|aP ce|aQ:1.2.3.4|aR/i);I b=1p(1r.5z.1n);I c=1p(1r.5z.1i);I d=1c;L(a){L(b<c){d=1y}}14 d},56=N(){I a=3A(),1f=3x(),G=\'?15=\'+1o(2h(1h.15||19.1N)),T=\'&1a=\'+1o(2h(1h.1a||19.1a)),S=1h.1C?\'&1C=\'+1o(1h.1C):(a?\'&1C=\'+1o(a):\'\'),F=1b.1J?\'&1J=\'+1p(1b.1J):\'&1J=6v\',P=1h.1f?\'&1f=\'+1o(1h.1f):(1f?\'&1f=\'+1o(1f):\'\');14\'1B://1l.1M.Z/30\'+G+T+S+F+P},"1F"):28,17=1A({1m:"5A",11:"2f:31;z-5B:4n;1e:1X;2F:5C;"}),1s=1A({1m:"5A",11:"2f:31;z-5B:4n;1e:1X;1u:50%;1R:50%;2F:5C;"}),1F=1A({11:"2f:"+(/b1/.1Q(3Q)?"4p":"31")+";1e:1X;b3:b4(4m=0);4m:0",b6:0},"1F"),3v,4l,2P,4k,h,2R={},1W,4i;1A({2m:1b.2b+"/2s/bd.2s",3p:"5Z",1U:"1T/2s"},"4R");$1d={3q:"",2Z:17,bf:1s,1x:0,2G:[],4g:N(a){I b=1r.bi||a,t=b.bj||b.4f,3o=t.5K?t.5K.bn():"",c=17.3m?17.3m(t):!!(17.5L(t)&16),c1=1s.3m?1s.3m(t):!!(1s.5L(t)&16),c2=1y;L(3o=="bs"){c2=t.3n.1m.1w("1M")=="-1"}13 L(3o=="A"){c2=t.1m.1w("1M")=="-1"}13 L(3o=="bu"){c2=t.1m.1w("4M")=="-1"}L(!c&&!c1&&c2){1F.11.1e=1s.11.1e=\'1X\'}},4V:N(){I s,T=5N,4c,3j=N(){4c=by(N(){L(17.1v){I p=6l(T),5P=6m(),1D=33();4b(17.11){1e="2k";I a=T.11.1e;T.11.1e="2k";1u=(p.t+T.20+17.20>5P.h+1D.t?p.t-17.20:p.t+T.20)+"1z";1R=p.l+"1z";T.11.1e=a}4b(1F.11){1u=17.5Y+"1z";1R=17.5W+"1z";1n=17.3i+"1z";1i=17.20+"1z";1O="";1e="2k"}bD(4c)}},50)};L(!1W){1W=1A({1q:1b.2b+"/bE.2z",2o:"2d-8"},"1V",24);1W.4a=0;1W.bG=N(){1W.4a=1;!3O&&3j()};1W.bH=N(){/bI|bJ/.1Q(1W.bK)&&!1W.4a&&3j()}}13{3j()}14 1c},4J:N(){3v=49(N(){17.11.1e="1X";1s.11.1e!="2k"&&(1F.11.1e="1X")},48)},51:N(){47(3v)},3u:N(){17.11.1e=1F.11.1e="1X";L(!4i){4i=1A({1q:1b.2b+"/bO.2z",2o:"2d-8"},"1V",24);db.11.2f="bP"}13{I a=33();1s.11.1e="2k";1s.11.1O=(-1s.20/2+a.t)+"1z "+(-1s.3i/2+a.l)+"1z";2P=d.2l("bQ"),4k=2P.45(1y),h=4k.2C("bS");1g(I i=0,ci;ci=h[i++];){2R[ci.5X]=ci.3n}4b(1F.11){1R=1u="50%";1n=1s.3i+"1z";1i=1s.20+"1z";1O=1s.11.1O;1e="2k"}}14 1c},bU:N(o){47(4l);4l=49(N(){I s=o.5X.2w(/^\\s+|\\s+$/,""),44=d.bW();1g(I p 1L 2R){4q("I f = /"+(s||".")+"/bX.1Q(p)");!!2R[p].45&&(f&&44.2i(2R[p].45(1y)))}2P.1v="";2P.2i(44)},48)},bY:N(){1F.11.1e=1s.11.1e="1X"},4P:N(o){L(o.1x!==25){I A=$1d.2G,B=1p(o.1x),C=2h(1h.15||d.1N),D=3w(),J=4o(D[C]),T=(2L 4d()).4e(),S=B;L(J&&J.1x>B){S=J.1x}5u(C,S,T);4s(A,S)}},5m:N(){I A=$1d.2G,B=3w(),C=2h(1h.15||d.1N),J=4o(B[C]),R=1y;L(J&&J.5D<=60){$1d.1x=J.1x;4s(A,J.1x);R=1c}L(R){1A({1q:"//i.1M.Z/15/1x.4K?15="+1o(C),2o:"2d-8"},"1V",24)}},2r:N(A){1A({1q:A,2o:"2d-8"},"1V",24)},61:N(F,O){L(F){F=2t(F)=="N"?F:4q(F);F(O)}}};L(!!1r.3C){!!1r.3C&&1r.3C("c7",4t,1c)}13{L(!!1r.c8){(!!1r.42&&1r.42("ca",4t))}13{4z()}}17.4Y=N(){47(3v)};17.53=N(){$1d.4J()};3O?d.42("2u",$1d.4g):d.3C("cb",$1d.4g,1c);L(!1h.cc&&6o&&2t(cd)!=\'4N\'){d.cf(\'<1V 1U="1T/5b" 1q="\'+1b.2b+\'/5g.cg.2z" 2o="2d-8"></1V>\')}})();N 5i(a){I b=3A(),1f=3x();41{I c=2E||{}}40(e){I c={}};I d=1o,cu=1b.3g[a]||{},U=2h(c.15||19.1N),W="?18="+a,G="&15="+d(U),T="&1a="+d(c.1a||19.1a),S=c.1C?"&1C="+d(c.1C):(b?"&1C="+d(b):""),F=1b.1J?"&1J="+1p(1b.1J):"",E=c.cp?"&6s=1":"",K=(c.3z&&c.3z[a])?"&3z="+c.3z[a]:"",P=c.1f?"&1f="+d(c.1f):(1f?"&1f="+d(1f):\'\'),C=$1d.3q?"&3q="+$1d.3q:"",R=(c.3y&&c.3y[a])?"&3y="+c.3y[a]:"",Q=(c.3Y&&c.3Y[\'30\'])?c.3Y[\'30\']:28,A=\'1B://s.1M.Z/\',X=(cu.2g&&cu.15)?"&cv="+d(cu.2g)+"&cw="+d(cu.15):"",66=c.cy==1c?\'\':\'&cz=1\';B=A+W+G+T+F+E+K+P+R+S+X+C+66;L(a==\'4x\'||a==\'4u\'||a==\'3D\'||a==\'2e\'){$1d.2r(B);L(a==\'4x\'){67()}13 L(a==\'4u\'){68()}13 L(a==\'2e\'){69=c.1a||19.1a;6a=c.1C?c.1C:(b?b:"");6b=G.2w(\'&15=\',\'\');6c=69+6a;6d=6e(6c,cI);6f(d(6d+\'...\'),6b)}13{1r.3D()}}13{1r.2r(B,\'\')}$1d.4P({1x:($1d.1x+1)});$1d.61(Q,{1U:\'30\',2K:{cK:a,15:U}});14 1c}N 68(){41{I d=2E||{}}40(e){I d={}};I a=d.1a||19.1a;I b=d.15||cL.1N.2m;I c=1r.cM;L(c&&!!c.6g){c.6g(a,b,"")}13 L(19.6q){1r.cO.cP(b,a)}13{3r(\'请按 6h + D 为你的浏览器添加书签！\')}}N 67(){41{I d=2E||{}}40(e){I d={}};I a=d.15||5N.1N.2m;I b=d.1a||19.1a;I c=b+" "+a;I f=2p.2c.3h();I g=f.1w(\'6i\')!=-1&&6i.cT();I h=(f.1w(\'2Y\')!=-1&&!g)&&f.5w(f.1w(\'2Y\')+5,3);L(h){cV.cW(\'cX\',c);3r("复制成功,请粘贴到你的2A/3b上推荐给你的好友！")}13 L(cY(\'你使用的是非6j核心浏览器，请按下 6h+C 复制代码到剪贴板\',c)){3r(\'复制成功,请粘贴到你的2A/3b上推荐给你的好友！\')}13{3r(\'目前只支持6j，请复制地址栏d0,推荐给你的2A/3b好友！\')}}N 3x(){I a=19.2C(\'3X\'),1f=\'\',3W=\'\',3k=2L 5l();1g(i=0;i<a.1t;i++){I b=1p(a.3S(i).3i),3R=1p(a.3S(i).20),6p=3e,6r=3c,1n=(3e/3R)*3c,1i=(3c/b)*3e;L(b>=6p&&3R>=6r){L((1n-1i)<=3c){1f+=3W+a.3S(i).1q;3W=\',\'}}}3k=1f.1j(\',\');I c=1p(21.de()*3k.1t);14 3k[c]}N 3A(){I a=\'\';I b=19.2C("5a");I c=b.1t;L(/2Y/i.1Q(2p.2c)){1g(i=0;i<c;i++){L(b[i].2g==\'2V\'){a=b[i].2W}}L(a==\'\'){1g(k 1L b){L(k==\'2V\'){a=b[k].2W}}}L(/2Y 6/i.1Q(2p.2c)){a=\'\'}}13{1g(k 1L b){L(/dg/i.1Q(2p.2c)){L(2t(b[k].2g)!=\'25\'){L(b[k].2g==\'2V\'){a=b[k].2W}}}13{L(k==\'2V\'){a=b[k].2W}}}}a=a.2w(/\\s/g,\'\');14 a}N 6e(a,b){I c=0;I s="";1g(I i=0;i<a.1t;i++){L(a.dh(i)>di){c+=2}13{c++}s+=a.dj(i);L(c>=b){14 s}}14 s}N 6f(a,b){4y(\'\',b,a);14 1c}N 4y(c,d,e){I f,34,3B,3t,2q,1n,1i,bh,2q,6w=/2Y|dq 6/.1Q(2p.2c);L(g=19.2l(\'2X\')){g=19.2l(\'2X\')}13{I g=19.2D("17");L(6w){g.11.2f="31";g.11.6x="5E";g.11.1R=\'du\';I h=19.3l.2S||19.6E.2S;g.11.1u=1p(h)+3e+\'1z\'}13{g.11.2f="4p";g.11.6x="dv"}g.1G=\'2X\'}L(c){f=c;34=\'在微信上关注我们\';3B=\'打开微信，点击底部的“发现”，使用 “扫一扫” 即可关注我们。\';3t=\'<3X 1q="\'+f+\'" 11="1O-1u:dw;" 1n="6y" 6z="二维码加载失败" 1i="6y" 1G="dA">\';1n=\'1n:6A;\';1i=\'1i:6A;\';bh=\'1i:dC;\';2q=\'1O: -dD 0 0 -3N;\'}13{f=1b.3J+\'?18=2e&15=\'+d+\'&1a=\'+e+\'&dF=1c\';34=\'分享到微信朋友圈\';3B=\'打开微信，点击底部的“发现”，使用 “扫一扫” 即可将网页分享到我的朋友圈。 <a 2m="\'+f+\'" 4f="dG">如何使用？</a>\';3t=dH=\'二维码加载中....\';1n=\'1n:6C;\';1i=\'1i:6C;\';bh=\'1i:dJ;\';2q=\'1O: -3N 0 0 -3N;\'}g.1v=\'<17 1G="6D" 11="4B-dK: 2M-3M;4B-6F: #3K;29: 2Q 3I 6J(0, 0, 0, 0.3);  29-6K: 2y 2y 2y 2y;  3M-3H: 0 dV dW 6J(0, 0, 0, 0.3); 1R: 50%; \'+2q+\'2F: 6N; 2f: 4p; 1u: 50%; \'+1n+1i+\' 2F:6N;" 1K="6D"><17 1K="6O" 1G="6O" 11="29-63: 2Q 3I #dZ; 2M: e0 6P;"><a 11="1T-e2:1X;  1O-1u: e3; 6F: #e4; e5: 6Q;  2B-3G: 6S;  2B-6T: eb; ec:ed;6U-1i: 6S; 4m: 0.2; 1T-3H: 0 2Q 0 #3K;"1K="6V" 1G="6V" 2u="6W()"4f="eh">×</a><6X 1G="ej"11=" 6U-1i: ek; 1O: 0; 2B-6T:el; 2B-em:"微软雅黑";">\'+34+\'</6X></17><17 1K="6Y"1G="6Y"11="1T-3F:3u;\'+bh+\'"><p 1G="70">\'+3t+\'</p></17><17 1K="71" 1G="71"11="29-6K: 0 0 2y 2y; 29-1u: 2Q 3I #er; 3M-3H: 0 2Q 0 #3K es; 1i:48%;2M:0 et;2M-1u:eu;1T-3F: 6Q; 2B-3G:72;"><17 1G="ew"11="1T-3F:1R;1O:0; 2M:0;2B-3G:72;">\'+3B+\'</17>  </17></17>\';19.3l.2i(g);L(!c){49(N(){I a=19.2D(\'3X\');I b=19.2l(\'70\');a.1q=1b.3J+\'/ex.4K?15=\'+d;a.1n=\'73\';a.1i=\'73\';a.11.ez=\'6P\';b.1v=\'\';a.6z=\'二维码加载失败...\';b.2i(a)},3a)}74=19.2l("2X")}N 6W(){3E=19.2l(\'2X\');19.3l.4S(3E);3E=eC=74=8J=28}',62,908,'||||||||||||||||||||||||||||||||||||||||||||var|||if||function||||||||||||com||style||else|return|url||div|webid|document|title|JIATHIS_CONFIGS|false|CKE|display|pic|for|conf|height|split|tmp|www|className|width|encodeURIComponent|parseInt|src|window|div1|length|top|innerHTML|indexOf|shares|true|px|creElm|http|summary|tl|likeid|iframe|id|span|fl|uid|class|in|jiathis|location|margin|_lists|test|left|_gv|text|type|script|clickpopjs|none|qq|match|offsetHeight|Math|preferred|like|head|undefined|_ckpre|_WR|null|border|likeurl|codehost|userAgent|utf|weixin|position|name|String|appendChild|code|block|getElementById|href|ifsrc|charset|navigator|mt|open|css|typeof|onclick|add|replace|qzone|6px|js|QQ|font|getElementsByTagName|createElement|jiathis_config|overflow|containers|renren|firstChild|jiathis_txt|data|new|padding|parentServices|slice|list|1px|texts|scrollTop|wb|og|description|content|jiathis_weixin_share|msie|pop|share|absolute|baidu|getS|wt|kaixin001|shift|_CF||_MR|1000|MSN|150|host|300|met|custom|toLowerCase|offsetWidth|fn|picArr|body|contains|parentNode|tn|rel|jid|alert|jiathis_separator|innerhtml|center|timer|_gck|jiathis_get_pic|ralateuid|appkey|jiathis_get_des|ft|addEventListener|print|_oDlgEl|align|size|shadow|solid|shost|FFFFFF|isStrict|box|200px|ie|jtck|ua|imgH|item|_reced|servicelist|scrollLeft|con|img|evt|sTL|catch|try|attachEvent|while|frag|cloneNode|getPropertyValue|clearTimeout|100|setTimeout|onloaded|with|timerCont|Date|getTime|target|disappear|path|ckcpjs|round|clist|inputTimer|opacity|1000000000|_rck|fixed|eval|_gd|_renderCounter|_rec|fav|icon|_gw|copy|jiathis_popup|_renderToolbox|hidemore|background|tsina|jck|jtico_|jtico|douban|jialike|tsinat|out|php|TWID|jiathis_counter|object|google|rdc|jiathis_counter_|link|removeChild|tools|continue|over|_gp|showcount|onmouseover|showfaces||move|show_faces|onmouseout|facebook|twitter|jiathis_more_href|jiathis_is_mobile|no|linkedin|meta|javascript|_url|mail|_jck|youdao|plugin|break|jiathis_sendto|my|instapaper|Array|counter|_custom|origin|_req|_grf|evernote|tieba|_otc|_sck|jiathis_rdc|substr|join|RegExp|screen|jiathis_style|index|auto|timedeff|1000000|shuqian|_FN|_gc|escape|cookie|tagName|compareDocumentPosition|sns|this|msn|wh|_sc|connect|push|_uniqueConcat|cssText|hi|offsetLeft|value|offsetTop|stylesheet||fireEvent|hexun|bottom|getBoundingClientRect|189|SU|jiathis_copyUrl|jiathis_addBookmark|WT|WS|WU|AT|AS|jiathis_SetString|jiathis_sharewx|addPanel|Ctrl|opera|IE|isGecko|getP|getWH|_ref|wlh|minW|all|minH|jtss|jtcbk|ckprefix|1626433|isIe6|zIndex|129|alt|300px|max|360px|jiathis_weixin_modal|documentElement|color|substring|delicious|fm|rgba|radius|lhost|ru|hidden|jiathis_modal_header|15px|right|digg|20px|weight|line|jiathis_weixin_close|jiathis_cancel|h3|jiathis_modal_body|ly|jiathis_webchat|jiathis_modal_footer|12px|220|_oMaskEl|tumblr|isNaN|jt_youdao|Reddit|bitly|ggbuzz|bit|Buzz|jt_buzz|gg|jt_google|db9d|jt_douban9dian|jt_digg|mingdao|md|floor|jt_mingdao|lifetime|Digg|fanfou|reddit|jt_mailru|Mail|ff|jt_fanfou|ifeng|delete|fhwb|jt_instapaper|jt_tifeng|jt_diigo|qbj|jt_qingbiji|Diigo|diigo|services_custom|instanceof|jt_friendfeed|bdtb|FriendFeed|jt_tieba|tianya|friendfeed|jt_myspace|tysq|Myspace|myspace|shareImg|jt_mixx|hideMore|showType|Mixx|shareimg|jt_tianya|mixx|note|ydybj|jt_netlog|tqq|ydnote|xiaoyou|fb|NetLog|netlog|jt_ydnote|jt_netvibes|Netvibes|gmailyx|Gmail|jt_gmail|cang|bdsc|jt_baidu|mkjs|bjiathis|jt_sdonote|netvibes|pengyou|jt_phonefavs|Phonefavs|phonefavs|onmousemove|jt_pingfm|pyw|jt_xiaoyou|Ping|Instapaper|hideFocus|1688|ping|albb|jt_plaxo|_|jt_alibaba|Plaxo|plaxo|jt_delicious|plus|Delicious|googlej|Google|_oErweimaMaskEl|nodeType|jt_wong|bubble|jt_googleplus|txwb|jt_tqq|jiathis_button_expanded|jiathis_|_style|huaban|hbw|createTextNode|jt_reddit|Mister|icons|jiathis_button_tools_|jiathis_button_icons_|min|Wong|jiathis_follow_|jt_huaban|misterwong|jiathis_like_|jt_stumbleupon|im|yixin|yx|jt_yixin|cnxh|user|jt_ujian|yjfx|jt_ishare|button_num|cgi|bin|qzshare|cgi_qzshare_likeurl|Stumbleupon|stumbleupon|pageid|page|jt_plurk|Plurk|plurk|jt_funp|Funp|Facebook|jt_fb|funp|Twitter|jt_twitter|jt_myshare|Myshare|allowTransparency|scrolling|myshare|frameborder|200|jt_douban|10086|feixin|number|space|fx|webpage|image|jt_feixin|flwb|jt_jcrb|setAttribute|property|jt_linkedin|decodeURIComponent|tjs|sjs|sinajs|api|163|yxjh|jt_dream163|hxwb|jt_thexun|leihou|repeat|lhw|jt_leihou|poco|jt_pocket|lastIndexOf|pocow|attributes|nodeValue|Poco|jt_poco|FALSE|ganniu|gnw|jt_ganniu|Pocket|compatMode||CSS1Compat|mogujie|pocket|rsc|rnm|rfh|rfp|pre|tit|Image|gif|mgj|gi|jt_mogujie|ucweb|ios|mobile|ipad|ipod|blackberry|motorola|YahooSeeker|symbian|nokia|android|iphone|os|windows|rv|midp|mls|jt_evernote|getpocket|kxw|jt_kaixin001|jt_caimi|rrw|jt_renren|yj|firefox|eastmoney|filter|alpha|jt_meilishuo|frameBorder|jt_email|mop|tk|jt_print|scj|mptk|jiathis_share|jt_fav|centerpop|jt_iwo||event|srcElement|jt_mop|fzwz|tuita|toUpperCase|jt_copy|tt|jt_tuita|ggfy|IMG||SPAN|jt_translate|xhwb|qqkj|setInterval|jt_txinhua|people|jt_qzone|WO|clearInterval|ckepop|referrer|onload|onreadystatechange|complete|loaded|readyState|iwo|wfx|rmwb|ckecenterpop|static|jiathis_sharelist|jt_tpeople|input|clientHeight|choose|club|createDocumentFragment|ig|centerClose|clientWidth|qqhl|||cqq|yyq|jt_189cn|jt_cqq|message|postMessage|Tumblr|onmessage|click|do_not_track|_gnayTrack||write|client|wo||189yx|weibo|jt_waakee||||data_track_clickback|xlwb|jt_tsina|gecko|wkw||acn|acu|jt_cyzone|shortUrl|su|cyb|jt_189mail|139yx|jt_tumblr|139|jt_139mail|cyzone|bookmark|110|clientTop|service|parent|sidebar|hx|external|AddFavorite|wx|clientLeft|jt_hexun|version|jt_weixin|clipboardData|setData|Text|prompt|xueqi|URL|||defaultView|jt_99earth|jjdq|jt_chouti|xqw|getComputedStyle|jt_xqw|hotmailyx||ctw||random|Hotmail|chrome|charCodeAt|128|charAt|jt_hotmail|jt_|jt_dig24|apps||bdkj|MSIE|sc|visible||650px|10000000001|25px|offsetParent||jt_hi|jiathis_follow_img|ylwb|181px|100px|jt_tyaolan|isexit|_blank|innerhtmlw|duitang|251px|clip|_s|jt_duitang|dkw|insertBefore|pinterest|dig24|Pinterest|jt_pinterest|jt_yijee|yjw|3px|7px|yijee|jt_pdfonline|EEEEEE|9px|setTime|decoration|2px|000000|float|Pdf|webhost|jt_msn|pdfzxzh|jt_printfriendly|bold|cursor|pointer|expires|toGMTString|yhdy|_self|jt_w3c|jiathis_weixin_h3|30px|normal|family|qqsq|unescape|jt_qq|W3c|DDDDDD|inset|10px|11px|w3cyz|jiathis_weixin_tip|qrcode|jt_bitly|marginTop|Bit|ydsq|_oDivEl|jiathis_button_'.split('|'),0,{}))
+var JIATHIS_CONFIGS = {
+	webhost: "http://www.jiathis.com",
+	lhost: "http://l.jiathis.com",
+	shost: "http://s.jiathis.com",
+	_s: null,
+	codehost: "",
+	sc: false,
+	uid: 1626433,
+	ckprefix: "jt_",
+	jtcbk: "jtss",
+	jtck: "",
+	custom: [],
+	servicelist: {
+		'jt_weixin': '微信,wx,weixin,weixin.qq.com',
+		'jt_tsina': '微博,xlwb,weibo.com',
+		'jt_cqq': 'QQ好友,cqq,qqhl,connect.qq.com',
+		'jt_qzone': 'QQ空间,qqkj,sns.qzone.qq.com',
+		'jt_copy': '复制网址,fzwz',
+		'jt_fav': '收藏夹,scj',
+		'jt_print': '打印,dy',
+		'jt_email': '邮件,yj',
+		'jt_renren': '人人网,rrw,www.renren.com',
+		'jt_kaixin001': '开心网,kxw,www.kaixin001.com',
+		'jt_evernote': '印象笔记,evernote',
+		'jt_linkedin': '领英,linkedin',
+		'jt_feixin': '飞信,fx,space.feixin.10086.cn',
+		'jt_douban': '豆瓣,db,www.douban.com',
+		'jt_twitter': 'Twitter,twitter,t.co',
+		'jt_fb': 'Facebook,facebook,www.facebook.com',
+		'jt_ishare': '一键分享,yjfx',
+		'jt_ujian': '猜你喜欢,cnxh',
+		'jt_yixin': '易信,yx,www.yixin.im',
+		'jt_huaban': '花瓣网,hbw,huaban.com',
+		'jt_tqq': '腾讯微博,txwb,t.qq.com',
+		'jt_googleplus': 'Google+,googlej,plus.url.google.com',
+		'jt_alibaba': '阿里巴巴,albb,www.1688.com',
+		'jt_xiaoyou': '朋友网,pyw,share.pengyou.com',
+		'jt_sdonote': '麦库记事,mkjs',
+		'jt_baidu': '百度搜藏,bdsc,cang.baidu.com',
+		'jt_gmail': 'Gmail邮箱,gmailyx,mail.google.com',
+		'jt_ydnote': '有道云笔记,ydybj,note.youdao.com',
+		'jt_tianya': '天涯社区,tysq,my.tianya.cn',
+		'jt_tieba': '百度贴吧,bdtb,tieba.baidu.com',
+		'jt_qingbiji': '轻笔记,qbj',
+		'jt_tifeng': '凤凰微博,fhwb,t.ifeng.com',
+		'jt_fanfou': '饭否,ff,fanfou.com',
+		'jt_mingdao': '明道,md,www.mingdao.com',
+		'jt_douban9dian': '豆瓣9点,db9d,9.douban.com',
+		'jt_google': '谷歌,gg',
+		'jt_buzz': '谷歌Buzz,ggbuzz',
+		'jt_youdao': '有道书签,ydsq,shuqian.youdao.com',
+		'jt_qq': 'QQ书签,qqsq,shuqian.qq.com',
+		'jt_msn': 'MSN,msn',
+		'jt_pinterest': 'Pinterest,pinterest',
+		'jt_duitang': '堆糖,dt,www.duitang.com',
+		'jt_tyaolan': '摇篮微博,ylwb',
+		'jt_hi': '百度空间,bdkj,apps.hi.baidu.com',
+		'jt_hotmail': 'Hotmail邮箱,hotmailyx',
+		'jt_xqw': '雪球,xqw,xueqi.com',
+		'jt_hexun': '和讯,hx,bookmark.hexun.com',
+		'jt_139mail': '139邮箱,139yx',
+		'jt_189mail': '189邮箱,189yx',
+		'jt_189cn': '翼友圈,yyq,club.189.cn',
+		'jt_tpeople': '人民微博,rmwb,t.people.com.cn',
+		'jt_txinhua': '新华微博,xhwb',
+		'jt_translate': '谷歌翻译,ggfy',
+		'jt_tuita': '推他,tt,www.tuita.com',
+		'jt_mop': '猫扑推客,mptk,tk.mop.com',
+		'jt_meilishuo': '美丽说,mls',
+		'jt_mogujie': '蘑菇街,mgj,mogujie.cn',
+		'jt_ganniu': '赶牛网,gnw,www.ganniu.com',
+		'jt_poco': 'Poco网,pocow,my.poco.cn',
+		'jt_leihou': '雷猴网,lhw,leihou.com',
+		'jt_thexun': '和讯微博,hxwb,t.hexun.com',
+		'jt_dream163': '游戏江湖,yxjh,hi.163.com',
+		'jt_jcrb': '法律微博,flwb',
+		'jt_tumblr': 'Tumblr,tumblr,www.tumblr.com',
+		'jt_reddit': 'Reddit,reddit',
+		'jt_instapaper': 'Instapaper,instapaper,www.instapaper.com',
+		'jt_pocket': 'Pocket,pocket,getpocket.com',
+		'jt_caimi': '财迷,cm,t.eastmoney.com',
+		'jt_iwo': 'WO+分享,iwo,wfx,i.wo.com.cn',
+		'jt_waakee': '挖客网,wkw',
+		'jt_cyzone': '创业邦,cyb,u.cyzone.cn',
+		'jt_99earth': '救救地球,jjdq',
+		'jt_chouti': '抽屉网,ctw',
+		'jt_dig24': '递客网,dkw,www.dig24.cn',
+		'jt_yijee': '易集网,yjw,www.yijee.com',
+		'jt_pdfonline': 'Pdf在线转换,pdfzxzh',
+		'jt_printfriendly': '友好打印,yhdy',
+		'jt_w3c': 'W3c验证,w3cyz',
+		'jt_bitly': 'Bit.ly,bitly,bit.ly',
+		'jt_digg': 'Digg,digg,digg.com',
+		'jt_mailru': 'Mail.ru,mail.ru',
+		'jt_diigo': 'Diigo,diigo',
+		'jt_friendfeed': 'FriendFeed,friendfeed',
+		'jt_myspace': 'Myspace,myspace',
+		'jt_mixx': 'Mixx,mixx',
+		'jt_netlog': 'NetLog,netlog',
+		'jt_netvibes': 'Netvibes,netvibes',
+		'jt_phonefavs': 'Phonefavs,phonefavs',
+		'jt_pingfm': 'Ping.fm,ping.fm',
+		'jt_plaxo': 'Plaxo,plaxo',
+		'jt_delicious': 'Delicious,delicious,www.delicious.com',
+		'jt_wong': 'Mister Wong,misterwong',
+		'jt_stumbleupon': 'Stumbleupon,stumbleupon',
+		'jt_plurk': 'Plurk,plurk',
+		'jt_funp': 'Funp,funp',
+		'jt_myshare': 'Myshare,myshare'
+	}
+};
+(function() {
+	var z = document.getElementsByTagName('script');
+	for (var i = 0, ci; ci = z[i++];) {
+		if (/jiathis.com/.test(ci.src)) {
+			JIATHIS_CONFIGS.codehost = ci.src.substring(0, ci.src.lastIndexOf("/"));
+			ci.src.replace(/(uid)=([^&]+)/g, function(a, p, v) {
+				JIATHIS_CONFIGS[p] = v
+			})
+		}
+	}
+	var d = document,
+		isStrict = d.compatMode == "CSS1Compat",
+		dd = d.documentElement,
+		db = d.body,
+		m = Math.max,
+		ie = !! d.all,
+		ua = navigator.userAgent.toLowerCase(),
+		head = d.getElementsByTagName("head")[0] || dd,
+		wlh = window.location.host,
+		conf = (typeof(jiathis_config) == 'undefined') ? {} : jiathis_config,
+		_ckpre = JIATHIS_CONFIGS.ckprefix,
+		_lists = JIATHIS_CONFIGS.servicelist,
+		_ref = d.referrer,
+		_reced = false,
+		getWH = function() {
+			return {
+				h: (isStrict ? dd : db).clientHeight,
+				w: (isStrict ? dd : db).clientWidth
+			}
+		},
+		getS = function() {
+			return {
+				t: m(dd.scrollTop, db.scrollTop),
+				l: m(dd.scrollLeft, db.scrollLeft)
+			}
+		},
+		getP = function(a) {
+			var r = {
+				t: 0,
+				l: 0
+			},
+				isGecko = /gecko/.test(ua),
+				add = function(t, l) {
+					r.l += l, r.t += t
+				},
+				p = a,
+				sTL = getS();
+			if (a && a != db) {
+				if (a.getBoundingClientRect) {
+					var b = a.getBoundingClientRect();
+					if (b.top == b.bottom) {
+						var g = a.style.display;
+						a.style.display = "block";
+						b.top = b.top - a.offsetHeight;
+						a.style.display = g
+					}
+					add(b.top + sTL.t - dd.clientTop, b.left + sTL.l - dd.clientLeft)
+				} else {
+					var c = d.defaultView;
+					while (p) {
+						add(p.offsetTop, p.offsetLeft);
+						var e = c.getComputedStyle(p, null);
+						if (isGecko) {
+							var f = parseInt(e.getPropertyValue("border-left-width"), 10) || 0,
+								bt = parseInt(e.getPropertyValue("border-top-width"), 10) || 0;
+							add(bt, f);
+							if (p != a && e.getPropertyValue("overflow") != "visible") {
+								add(bt, f)
+							}
+						}
+						p = p.offsetParent
+					}
+					p = a.parentNode;
+					while (p && p != db) {
+						add(-p.scrollTop, -p.scrollLeft);
+						p = p.parentNode
+					}
+				}
+			}
+			return r
+		},
+		creElm = function(o, t, a) {
+			var b = d.createElement(t || "div");
+			for (var p in o) {
+				p == "style" ? (b[p].cssText = o[p]) : (b[p] = o[p])
+			}
+			return (a || db).insertBefore(b, (a || db).firstChild)
+		},
+		_uniqueConcat = function(a, b) {
+			var c = {};
+			for (var i = 0; i < a.length; i++) {
+				c[a[i]] = 1
+			}
+			for (var i = 0; i < b.length; i++) {
+				if (!c[b[i]]) {
+					a.push(b[i]);
+					c[b[i]] = 1
+				}
+			}
+			return a
+		},
+		_sc = function(a, b, c) {
+			var d = new Date();
+			d.setTime(d.getTime() + c * 1000);
+			document.cookie = a + "=" + escape(b) + (c ? ";expires=" + d.toGMTString() : "") + ";path=/"
+		},
+		_gc = function(a) {
+			var b = document.cookie;
+			var c = b.indexOf(a + "=");
+			if (c != -1) {
+				c += a.length + 1;
+				var d = b.indexOf(";", c);
+				if (d == -1) {
+					d = b.length
+				}
+				return unescape(b.substring(c, d))
+			}
+			return ""
+		},
+		_MR = function(w, d, a) {
+			w /= d;
+			w = Math.round(w * 10) / 10;
+			if ((w + "").length >= 4) {
+				w = Math.round(w)
+			}
+			return w + a
+		},
+		_FN = function(a) {
+			var d = ("" + a).split(".").shift().length;
+			if (isNaN(a)) {
+				return '0'
+			} else {
+				if (d < 4) {
+					return Math.round(a)
+				} else {
+					if (d < 7) {
+						return _MR(a, 1000, "K")
+					} else {
+						if (d < 10) {
+							return _MR(a, 1000000, "M")
+						} else {
+							return _MR(a, 1000000000, "B")
+						}
+					}
+				}
+			}
+		},
+		_rck = function(X) {
+			var A = {},
+				D = (new Date()).getTime(),
+				E, F, G, H, V = String(X);
+			if (V !== undefined && V.indexOf("|") > -1) {
+				E = V.split('|');
+				F = E[0];
+				G = E[1];
+				H = Math.floor((D - G) / 1000);
+				A.shares = parseInt(F);
+				A.lifetime = G;
+				A.timedeff = H;
+				return A
+			}
+			return false
+		},
+		_gck = function() {
+			var A = _gc("jiathis_rdc"),
+				B = {};
+			if (A) {
+				B = eval("(" + A + ")")
+			}
+			return B
+		},
+		_sck = function(U, S, T) {
+			var A = _gck();
+			if (A[U]) {
+				delete A[U]
+			}
+			$CKE.shares = parseInt(S);
+			A[U] = '"' + parseInt(S) + '|' + T + '"';
+			_sc("jiathis_rdc", _otc(A), 0)
+		},
+		_otc = function(o) {
+			var A = '',
+				B = '';
+			for (var k in o) {
+				A += B + '"' + k + '":' + o[k];
+				B = !B ? ',' : B
+			}
+			return "{" + A + "}"
+		},
+		_renderCounter = function(a, b) {
+			for (var k in a) {
+				var c = d.getElementById(a[k]);
+				if (c) {
+					c.title = '累计分享' + b + '次';
+					c.innerHTML = _FN(b)
+				}
+			}
+		},
+		_custom = function() {
+			var u = conf.services_custom;
+			if (u) {
+				if (!(u instanceof Array)) {
+					u = [u]
+				}
+				for (var a = 0; a < u.length; a++) {
+					var c = u[a];
+					if (c.name && c.icon && c.url) {
+						c.code = c.url = c.url.replace(/ /g, "");
+						c.code = c.code.split("//").pop().split("?").shift().split("/").shift().toLowerCase();
+						JIATHIS_CONFIGS.custom[c.code] = c;
+						JIATHIS_CONFIGS.servicelist[_ckpre + c.code] = c.name + ',' + c.code + ',' + c.code
+					}
+				}
+			}
+		},
+		_gw = function(a, b, c) {
+			var d = "";
+			do {
+				d = a[b++]
+			} while (b < a.length && (!_lists[_ckpre + d] || c[d]));
+			if (c[d] || !_lists[_ckpre + d]) {
+				d = '';
+				for (var k in _lists) {
+					k = k.slice(3);
+					if (!c[k] && _lists[_ckpre + k]) {
+						d = k;
+						break
+					}
+				}
+			}
+			return d
+		},
+		_renderToolbox = function() {
+			_custom();
+			var e = conf.shareImg || {},
+				hidemore = conf.hideMore || false;
+			e.showType && creElm({
+				src: JIATHIS_CONFIGS.codehost + "/plugin.shareimg.js",
+				charset: "utf-8"
+			}, "script", head);
+			var f = "qzone,tsina,tqq,weixin,renren,kaixin001,evernote,linkedin,douban,ydnote,xiaoyou,msn,fb,twitter,tieba,baidu,google",
+				_jck = JIATHIS_CONFIGS.jtck || f,
+				jck = _uniqueConcat(_jck.split(","), f.split(",")),
+				parentServices = {},
+				_WR = {},
+				h = d.getElementsByTagName("a"),
+				_url = String(conf.url || d.location),
+				_CF = null,
+				webid, likeid, tl, fl, bt, preferred;
+			for (var i = 0, ci, tmp; ci = h[i++];) {
+				if (/\bjiathis\b/.test(ci.className)) {
+					if (jiathis_is_mobile()) {
+						ci.href = jiathis_more_href()
+					} else {
+						ci.onmouseout = $CKE.out;
+						ci.onmousemove = $CKE.move;
+						!hidemore && (ci.onclick = $CKE.center);
+						ci.onmouseover = $CKE.over;
+						ci.hideFocus = true
+					}
+					continue
+				}
+				if (ci.className && (tmp = ci.className.match(/^jiathis_counter_(\w+)(?:\_|$)(.*)$/)) && tmp[1]) {
+					if (typeof($CKE.containers) == "object") {
+						if (!_CF) {
+							_CF = creElm({
+								href: JIATHIS_CONFIGS.codehost + "/css/jiathis_counter.css",
+								rel: "stylesheet",
+								type: "text/css"
+							}, "link")
+						}
+						if (ci.firstChild && ci.firstChild.nodeType == 3) {
+							ci.removeChild(ci.firstChild)
+						}
+						if (!ci.firstChild) {
+							var B = tmp[1] == 'style' ? 'bubble' : tmp[1],
+								C = tmp[2] ? tmp[2] : '',
+								K = "jiathis_counter_" + i,
+								E = d.createElement("span");
+							E.className = 'jiathis_button_expanded jiathis_counter jiathis_' + B + '_style';
+							!hidemore && (E.onclick = function() {
+								$CKE.center()
+							});
+							E.id = K;
+							E.appendChild(d.createTextNode("0"));
+							if (C) {
+								E.style.cssText = C
+							}
+							ci.appendChild(E)
+						}
+						$CKE.containers.push(K)
+					}
+					continue
+				}
+				webid = '', likeid = '', tl = false, fl = false, bt = false, preferred = false;
+				if (ci.className && (tmp = ci.className.match(/^jiathis_button_([\w\.]+)(?:\s|$)/)) && tmp[1]) {
+					if (tmp[1].indexOf("tools") > -1 || tmp[1].indexOf("icons") > -1) {
+						if (tmp[1].indexOf("tools") > -1) {
+							tl = true;
+							var s = ci.className.match(/jiathis_button_tools_([0-9]+)(?:\s|$)/)
+						} else {
+							var s = ci.className.match(/jiathis_button_icons_([0-9]+)(?:\s|$)/)
+						}
+						var g = ((s && s.length) ? Math.min(16, Math.max(1, parseInt(s[1]))) : 1) - 1;
+						webid = _gw(jck, g, parentServices);
+						preferred = true
+					} else {
+						webid = tmp[1]
+					}
+					bt = true
+				}
+				if (ci.className && (tmp = ci.className.match(/^jiathis_follow_(\w+)$/)) && tmp[1]) {
+					webid = tmp[1];
+					fl = true
+				}
+				if (webid && _lists[_ckpre + webid]) {
+					bt && (parentServices[webid] = 1);
+					var j = function(a, b) {
+							for (var c in b) {
+								var o = b[c];
+								if (o.preferred && o.webid == a) {
+									return c
+								}
+							}
+							return false
+						},
+						t = j(webid, _WR);
+					if (t !== false) {
+						var T = _WR[t] || {};
+						if (T.webid && T.ci) {
+							TWID = _gw(jck, 0, parentServices);
+							T.bt && (parentServices[TWID] = 1);
+							_WR[t] = {
+								"ci": T.ci,
+								"webid": TWID,
+								"bt": T.bt,
+								"fl": T.fl,
+								"tl": T.tl,
+								"preferred": T.preferred
+							}
+						}
+					}
+					_WR[i] = {
+						"ci": ci,
+						"webid": webid,
+						"bt": bt,
+						"fl": fl,
+						"tl": tl,
+						"preferred": preferred
+					}
+				} else if (bt || fl) {
+					ci.innerHTML = ""
+				}
+				if (ci.className && (tmp = ci.className.match(/^jiathis_like_(\w+)$/)) && tmp[1]) {
+					likeid = tmp[1];
+					var o = _gp(ci, 'data'),
+						ifsrc = '',
+						likeurl = _url,
+						mt = '';
+					if (likeid == 'qzone') {
+						var l = _gv(o.qq, false);
+						if (l) {
+							likeurl = "http://user.qzone.qq.com/" + l;
+							ifsrc = 'http://open.qzone.qq.com/like?url=' + encodeURIComponent(likeurl) + '&type=' + _gv(o.type, 'button_num')
+						} else {
+							ifsrc = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_likeurl?url=' + encodeURIComponent(likeurl) + '&showcount=' + _gv(o.showcount, 1) + '&style=' + _gv(o.style, 2)
+						}
+					} else if (likeid == 'renren') {
+						var n = _gv(o.pageid, false);
+						likeurl = n ? ("http://page.renren.com/" + n) : likeurl;
+						ifsrc = 'http://www.connect.renren.com/like?url=' + encodeURIComponent(likeurl) + '&showfaces=' + _gv(o.showfaces, 'false')
+					} else if (likeid == 'kaixin001') {
+						ifsrc = 'http://www.kaixin001.com/like/like.php?url=' + encodeURIComponent(likeurl) + '&show_faces=' + _gv(o.show_faces, 'false')
+					} else if (likeid == 'tsina' || likeid == 'tsinat') {
+						var p = jiathis_get_des(),
+							pic = '',
+							title = conf.title || document.title,
+							p = conf.summary == undefined ? p : conf.summary,
+							pic = conf.pic == undefined ? jiathis_get_pic() : conf.pic,
+							url = conf.url == undefined ? document.location : conf.url
+					}
+					if (ifsrc) {
+						ci.innerHTML = '<span class="jiathis_txt jiathis_separator jialike"><iframe src="' + ifsrc + '" allowTransparency="true" scrolling="no" border="0" frameborder="0" style="width:' + _gv(o.width, 200) + 'px;height:' + _gv(o.height, 38) + 'px;' + mt + '"></iframe></span>'
+					} else {
+						if (likeid == 'tsinat' || likeid == 'tsina') {
+							if (likeid == 'tsinat') {
+								ci.innerHTML = '<span class="jiathis_txt jiathis_separator jialike"><wb:like type="text"></wb:like></span>'
+							} else {
+								ci.innerHTML = '<span class="jiathis_txt jiathis_separator jialike"><wb:like type="number"></wb:like></span>'
+							}
+							var q = ['og:type=webpage', 'og:url=' + encodeURIComponent(url) + '', 'og:title=' + encodeURIComponent(title) + '', 'og:image=' + encodeURIComponent(pic) + '', 'og:description=' + encodeURIComponent(p) + ''];
+							for (m = 0; m < q.length; m++) {
+								met = document.createElement('meta');
+								var r = q[m].split('=');
+								var t = r[0];
+								var u = r[1];
+								met.setAttribute('property', t);
+								met.content = decodeURIComponent(u);
+								head.appendChild(met)
+							}
+							creElm({
+								src: "http://tjs.sjs.sinajs.cn/open/api/js/wb.js",
+								charset: "utf-8",
+								type: "text/javascript"
+							}, "script")
+						} else {
+							ci.innerHTML = ''
+						}
+					}
+				}
+			}
+			if (_WR) {
+				for (var k in _WR) {
+					var o = _WR[k],
+						ci = o.ci,
+						bt = o.bt,
+						fl = o.fl,
+						tl = o.tl,
+						webid = o.webid;
+					if (typeof(ci) == "object" && ci.innerHTML.indexOf('jtico jtico_') == -1) {
+						var v = _lists[_ckpre + webid].split(',');
+						var w = ci.innerHTML.replace(/^\s+|\s+$/g, "");
+						var x = JIATHIS_CONFIGS.custom[webid] || {};
+						var y = (x.icon) ? ' style="background:url(' + x.icon + ') no-repeat left;"' : '';
+						if (tl || w) {
+							w = w ? w : v[0];
+							ci.innerHTML = '<span class="jiathis_txt jiathis_separator jtico jtico_' + webid + '"' + y + '>' + w + '</span>'
+						} else {
+							ci.innerHTML = '<span class="jiathis_txt jtico jtico_' + webid + '"' + y + '></span>'
+						}
+						if (fl) {
+							ci.onclick = function(a) {
+								return function() {
+									if (a.className.match(/weixin$/)) {
+										jiathis_popup(a.rel)
+									} else {
+										window.open(a.rel, '')
+									}
+								}
+							}(ci);
+							ci.title = ci.title ? ci.title : "在" + v[0] + "关注我们"
+						} else {
+							ci.onclick = function(a) {
+								return function() {
+									jiathis_sendto(a)
+								}
+							}(webid);
+							if (!ci.title) {
+								if (webid == 'copy' || webid == 'print') {
+									ci.title = v[0]
+								} else if (webid == 'fav') {
+									ci.title = "加入" + v[0]
+								} else {
+									ci.title = "分享到" + v[0]
+								}
+							}
+						}
+					}
+				}
+			}
+			if (_CF) {
+				$CKE.counter()
+			}
+		},
+		_gv = function(v, a) {
+			if (v === undefined) {
+				return a
+			}
+			return v
+		},
+		_gp = function(a, b) {
+			var p = [],
+				c = a.attributes[b];
+			if (c) {
+				o = c.nodeValue.split('&') || '';
+				for (var i = o.length; i--;) {
+					var j = o[i].split('=');
+					p[j[0]] = j[1]
+				}
+			}
+			return p
+		},
+		_rec = function(e) {
+			if (!_reced) {
+				if ( !! e.origin && e.origin.slice(-12) == ".jiathis.com") {
+					if (e.data && e.data != "FALSE") {
+						JIATHIS_CONFIGS.jtck = e.data
+					}
+				}
+				_renderToolbox();
+				_req();
+				_reced = true
+			}
+		},
+		_req = function() {
+			var a, s, E = encodeURIComponent,
+				o = _grf(_ref),
+				T = document.title || "",
+				Y = window.location.href || "",
+				an = Y ? Y.indexOf(JIATHIS_CONFIGS.jtcbk) : -1,
+				d1 = _gd(o.host),
+				d2 = _gd(Y),
+				q = null,
+				f = (d1 && d2 && d1 == d2) ? false : true;
+			if (an > -1) {
+				a = Y.substr(an);
+				q = a.split("#").pop().split("-").pop().split("=").pop();
+				q = _lists[_ckpre + q] ? q : ''
+			}
+			q = (!q && o.webid) ? o.webid : q;
+			if (q && f) {
+				s = 'rsc=' + q + '&rnm=' + parseInt(JIATHIS_CONFIGS.uid) + '&rfh=' + E(o.host) + '&rfp=' + E(o.path) + '&pre=' + E(Y) + '&tit=' + escape(T);
+				(new Image).src = JIATHIS_CONFIGS.lhost + "/l.gif?" + s
+			}
+		},
+		_gd = function(o) {
+			var d = null;
+			if (o) {
+				d = o.split(".").slice(-2).join(".");
+				d = (d == "com.cn") ? o.split(".").slice(-3).join(".") : d;
+				d = d.split("/").shift()
+			}
+			return d
+		},
+		_grf = function(r) {
+			var h = "",
+				p = "",
+				q = "",
+				m;
+			if (r.match(/(?:[a-z]\:\/\/)([^\/\?]+)(.*)/gi)) {
+				h = RegExp.$1;
+				p = RegExp.$2;
+				h = h ? h : "";
+				p = p ? p : "";
+				if (h) {
+					for (var k in _lists) {
+						m = _lists[k].split(',');
+						if (m[2] && m[2] == h) {
+							q = k.slice(3);
+							break
+						}
+					}
+				}
+			}
+			return {
+				host: h,
+				path: p,
+				webid: q
+			}
+		},
+		jiathis_is_mobile = function() {
+			var a = navigator.userAgent.toLowerCase().match(/ucweb|ios|mobile|ipad|ipod|blackberry|motorola|YahooSeeker|symbian|nokia|android|iphone os|windows ce|rv:1.2.3.4|midp/i);
+			var b = parseInt(window.screen.width);
+			var c = parseInt(window.screen.height);
+			var d = false;
+			if (a) {
+				if (b < c) {
+					d = true
+				}
+			}
+			return d
+		},
+		jiathis_more_href = function() {
+			var a = jiathis_get_des(),
+				pic = jiathis_get_pic(),
+				G = '?url=' + encodeURIComponent(String(conf.url || document.location)),
+				T = '&title=' + encodeURIComponent(String(conf.title || document.title)),
+				S = conf.summary ? '&summary=' + encodeURIComponent(conf.summary) : (a ? '&summary=' + encodeURIComponent(a) : ''),
+				F = JIATHIS_CONFIGS.uid ? '&uid=' + parseInt(JIATHIS_CONFIGS.uid) : '&uid=1626433',
+				P = conf.pic ? '&pic=' + encodeURIComponent(conf.pic) : (pic ? '&pic=' + encodeURIComponent(pic) : '');
+			return 'http://www.jiathis.com/share' + G + T + S + F + P
+		},
+
+		div = creElm({
+			className: "jiathis_style",
+			style: "position:absolute;z-index:1000000000;display:none;overflow:auto;"
+		}),
+		div1 = creElm({
+			className: "jiathis_style",
+			style: "position:absolute;z-index:1000000000;display:none;top:50%;left:50%;overflow:auto;"
+		}),
+		iframe = creElm({
+			style: "position:" + (/firefox/.test(ua) ? "fixed" : "absolute") + ";display:none;filter:alpha(opacity=0);opacity:0",
+			frameBorder: 0
+		}, "iframe"),
+		timer, inputTimer, list, clist, h, texts = {},
+		clickpopjs, ckcpjs;
+	creElm({
+		href: JIATHIS_CONFIGS.codehost + "/css/jiathis_share.css",
+		rel: "stylesheet",
+		type: "text/css"
+	}, "link");
+	$CKE = {
+		jid: "",
+		pop: div,
+		centerpop: div1,
+		shares: 0,
+		containers: [],
+		disappear: function(a) {
+			var b = window.event || a,
+				t = b.srcElement || b.target,
+				tn = t.tagName ? t.tagName.toUpperCase() : "",
+				c = div.contains ? div.contains(t) : !! (div.compareDocumentPosition(t) & 16),
+				c1 = div1.contains ? div1.contains(t) : !! (div1.compareDocumentPosition(t) & 16),
+				c2 = true;
+			if (tn == "IMG") {
+				c2 = t.parentNode.className.indexOf("jiathis") == "-1"
+			} else if (tn == "A") {
+				c2 = t.className.indexOf("jiathis") == "-1"
+			} else if (tn == "SPAN") {
+				c2 = t.className.indexOf("jiathis_counter") == "-1"
+			}
+			if (!c && !c1 && c2) {
+				iframe.style.display = div1.style.display = 'none'
+			}
+		},
+		over: function() {
+			var s, T = this,
+				timerCont, fn = function() {
+					timerCont = setInterval(function() {
+						if (div.innerHTML) {
+							var p = getP(T),
+								wh = getWH(),
+								tl = getS();
+							with(div.style) {
+								display = "block";
+								var a = T.style.display;
+								T.style.display = "block";
+								top = (p.t + T.offsetHeight + div.offsetHeight > wh.h + tl.t ? p.t - div.offsetHeight : p.t + T.offsetHeight) + "px";
+								left = p.l + "px";
+								T.style.display = a
+							}
+							with(iframe.style) {
+								top = div.offsetTop + "px";
+								left = div.offsetLeft + "px";
+								width = div.offsetWidth + "px";
+								height = div.offsetHeight + "px";
+								margin = "";
+								display = "block"
+							}
+							clearInterval(timerCont)
+						}
+					}, 50)
+				};
+			if (!clickpopjs) {
+				clickpopjs = creElm({
+					src: JIATHIS_CONFIGS.codehost + "/ckepop.js",
+					charset: "utf-8"
+				}, "script", head);
+				clickpopjs.onloaded = 0;
+				clickpopjs.onload = function() {
+					clickpopjs.onloaded = 1;
+					!ie && fn()
+				};
+				clickpopjs.onreadystatechange = function() {
+					/complete|loaded/.test(clickpopjs.readyState) && !clickpopjs.onloaded && fn()
+				}
+			} else {
+				fn()
+			}
+			return false
+		},
+		out: function() {
+			timer = setTimeout(function() {
+				div.style.display = "none";
+				div1.style.display != "block" && (iframe.style.display = "none")
+			}, 100)
+		},
+		move: function() {
+			clearTimeout(timer)
+		},
+		center: function() {
+			div.style.display = iframe.style.display = "none";
+			if (!ckcpjs) {
+				ckcpjs = creElm({
+					src: JIATHIS_CONFIGS.codehost + "/ckecenterpop.js",
+					charset: "utf-8"
+				}, "script", head);
+				db.style.position = "static"
+			} else {
+				var a = getS();
+				div1.style.display = "block";
+				div1.style.margin = (-div1.offsetHeight / 2 + a.t) + "px " + (-div1.offsetWidth / 2 + a.l) + "px";
+				list = d.getElementById("jiathis_sharelist"), clist = list.cloneNode(true), h = clist.getElementsByTagName("input");
+				for (var i = 0, ci; ci = h[i++];) {
+					texts[ci.value] = ci.parentNode
+				}
+				with(iframe.style) {
+					left = top = "50%";
+					width = div1.offsetWidth + "px";
+					height = div1.offsetHeight + "px";
+					margin = div1.style.margin;
+					display = "block"
+				}
+			}
+			return false
+		},
+		choose: function(o) {
+			clearTimeout(inputTimer);
+			inputTimer = setTimeout(function() {
+				var s = o.value.replace(/^\s+|\s+$/, ""),
+					frag = d.createDocumentFragment();
+				for (var p in texts) {
+					eval("var f = /" + (s || ".") + "/ig.test(p)"); !! texts[p].cloneNode && (f && frag.appendChild(texts[p].cloneNode(true)))
+				}
+				list.innerHTML = "";
+				list.appendChild(frag)
+			}, 100)
+		},
+		centerClose: function() {
+			iframe.style.display = div1.style.display = "none"
+		},
+		rdc: function(o) {
+			if (o.shares !== undefined) {
+				var A = $CKE.containers,
+					B = parseInt(o.shares),
+					C = String(conf.url || d.location),
+					D = _gck(),
+					J = _rck(D[C]),
+					T = (new Date()).getTime(),
+					S = B;
+				if (J && J.shares > B) {
+					S = J.shares
+				}
+				_sck(C, S, T);
+				_renderCounter(A, S)
+			}
+		},
+		counter: function() {
+			var A = $CKE.containers,
+				B = _gck(),
+				C = String(conf.url || d.location),
+				J = _rck(B[C]),
+				R = true;
+			if (J && J.timedeff <= 60) {
+				$CKE.shares = J.shares;
+				_renderCounter(A, J.shares);
+				R = false
+			}
+			if (R) {
+				creElm({
+					src: "//i.jiathis.com/url/shares.php?url=" + encodeURIComponent(C),
+					charset: "utf-8"
+				}, "script", head)
+			}
+		},
+		open: function(A) {
+			creElm({
+				src: A,
+				charset: "utf-8"
+			}, "script", head)
+		},
+		fireEvent: function(F, O) {
+			if (F) {
+				F = typeof(F) == "function" ? F : eval(F);
+				F(O)
+			}
+		}
+	};
+	if ( !! window.addEventListener) { !! window.addEventListener && window.addEventListener("message", _rec, false)
+	} else {
+		if ( !! window.postMessage) {
+			( !! window.attachEvent && window.attachEvent("onmessage", _rec))
+		} else {
+			_renderToolbox()
+		}
+	}
+	div.onmouseover = function() {
+		clearTimeout(timer)
+	};
+	div.onmouseout = function() {
+		$CKE.out()
+	};
+	ie ? d.attachEvent("onclick", $CKE.disappear) : d.addEventListener("click", $CKE.disappear, false);
+	if (!conf.do_not_track && wlh && typeof(_gnayTrack) != 'object') {
+		d.write('<script type="text/javascript" src="' + JIATHIS_CONFIGS.codehost + '/plugin.client.js" charset="utf-8"></script>')
+	}
+})();
+
+function jiathis_sendto(a) {
+	var b = jiathis_get_des(),
+		pic = jiathis_get_pic();
+	try {
+		var c = jiathis_config || {}
+	} catch (e) {
+		var c = {}
+	};
+	var d = encodeURIComponent,
+		cu = JIATHIS_CONFIGS.custom[a] || {},
+		U = String(c.url || document.location),
+		W = "?webid=" + a,
+		G = "&url=" + d(U),
+		T = "&title=" + d(c.title || document.title),
+		S = c.summary ? "&summary=" + d(c.summary) : (b ? "&summary=" + d(b) : ""),
+		F = JIATHIS_CONFIGS.uid ? "&uid=" + parseInt(JIATHIS_CONFIGS.uid) : "",
+		E = c.data_track_clickback ? "&jtss=1" : "",
+		K = (c.appkey && c.appkey[a]) ? "&appkey=" + c.appkey[a] : "",
+		P = c.pic ? "&pic=" + d(c.pic) : (pic ? "&pic=" + d(pic) : ''),
+		C = $CKE.jid ? "&jid=" + $CKE.jid : "",
+		R = (c.ralateuid && c.ralateuid[a]) ? "&ralateuid=" + c.ralateuid[a] : "",
+		Q = (c.evt && c.evt['share']) ? c.evt['share'] : null,
+		A = 'http://s.jiathis.com/',
+		X = (cu.name && cu.url) ? "&acn=" + d(cu.name) + "&acu=" + d(cu.url) : "",
+		SU = c.shortUrl == false ? '' : '&su=1';
+	B = A + W + G + T + F + E + K + P + R + S + X + C + SU;
+	if (a == 'copy' || a == 'fav' || a == 'print' || a == 'weixin') {
+		$CKE.open(B);
+		if (a == 'copy') {
+			jiathis_copyUrl()
+		} else if (a == 'fav') {
+			jiathis_addBookmark()
+		} else if (a == 'weixin') {
+			WT = c.title || document.title;
+			WS = c.summary ? c.summary : (b ? b : "");
+			WU = G.replace('&url=', '');
+			AT = WT + WS;
+			AS = jiathis_SetString(AT, 110);
+			jiathis_sharewx(d(AS + '...'), WU)
+		} else {
+			window.print()
+		}
+	} else {
+		window.open(B, '')
+	}
+	$CKE.rdc({
+		shares: ($CKE.shares + 1)
+	});
+	$CKE.fireEvent(Q, {
+		type: 'share',
+		data: {
+			service: a,
+			url: U
+		}
+	});
+	return false
+}
+function jiathis_addBookmark() {
+	try {
+		var d = jiathis_config || {}
+	} catch (e) {
+		var d = {}
+	};
+	var a = d.title || document.title;
+	var b = d.url || parent.location.href;
+	var c = window.sidebar;
+	if (c && !! c.addPanel) {
+		c.addPanel(a, b, "")
+	} else if (document.all) {
+		window.external.AddFavorite(b, a)
+	} else {
+		alert('请按 Ctrl + D 为你的浏览器添加书签！')
+	}
+}
+function jiathis_copyUrl() {
+	try {
+		var d = jiathis_config || {}
+	} catch (e) {
+		var d = {}
+	};
+	var a = d.url || this.location.href;
+	var b = d.title || document.title;
+	var c = b + " " + a;
+	var f = navigator.userAgent.toLowerCase();
+	var g = f.indexOf('opera') != -1 && opera.version();
+	var h = (f.indexOf('msie') != -1 && !g) && f.substr(f.indexOf('msie') + 5, 3);
+	if (h) {
+		clipboardData.setData('Text', c);
+		alert("复制成功,请粘贴到你的QQ/MSN上推荐给你的好友！")
+	} else if (prompt('你使用的是非IE核心浏览器，请按下 Ctrl+C 复制代码到剪贴板', c)) {
+		alert('复制成功,请粘贴到你的QQ/MSN上推荐给你的好友！')
+	} else {
+		alert('目前只支持IE，请复制地址栏URL,推荐给你的QQ/MSN好友！')
+	}
+}
+function jiathis_get_pic() {
+	var a = document.getElementsByTagName('img'),
+		pic = '',
+		con = '',
+		picArr = new Array();
+	for (i = 0; i < a.length; i++) {
+		var b = parseInt(a.item(i).offsetWidth),
+			imgH = parseInt(a.item(i).offsetHeight),
+			minW = 300,
+			minH = 150,
+			width = (300 / imgH) * 150,
+			height = (150 / b) * 300;
+		if (b >= minW && imgH >= minH) {
+			if ((width - height) <= 150) {
+				pic += con + a.item(i).src;
+				con = ','
+			}
+		}
+	}
+	picArr = pic.split(',');
+	var c = parseInt(Math.random() * picArr.length);
+	return picArr[c]
+}
+function jiathis_get_des() {
+	var a = '';
+	var b = document.getElementsByTagName("meta");
+	var c = b.length;
+	if (/msie/i.test(navigator.userAgent)) {
+		for (i = 0; i < c; i++) {
+			if (b[i].name == 'description') {
+				a = b[i].content
+			}
+		}
+		if (a == '') {
+			for (k in b) {
+				if (k == 'description') {
+					a = b[k].content
+				}
+			}
+		}
+		if (/msie 6/i.test(navigator.userAgent)) {
+			a = ''
+		}
+	} else {
+		for (k in b) {
+			if (/chrome/i.test(navigator.userAgent)) {
+				if (typeof(b[k].name) != 'undefined') {
+					if (b[k].name == 'description') {
+						a = b[k].content
+					}
+				}
+			} else {
+				if (k == 'description') {
+					a = b[k].content
+				}
+			}
+		}
+	}
+	a = a.replace(/\s/g, '');
+	return a
+}
+function jiathis_SetString(a, b) {
+	var c = 0;
+	var s = "";
+	for (var i = 0; i < a.length; i++) {
+		if (a.charCodeAt(i) > 128) {
+			c += 2
+		} else {
+			c++
+		}
+		s += a.charAt(i);
+		if (c >= b) {
+			return s
+		}
+	}
+	return s
+}
+function jiathis_sharewx(a, b) {
+	jiathis_popup('', b, a);
+	return false
+}
+function jiathis_popup(c, d, e) {
+	var f, wt, ft, innerhtml, mt, width, height, bh, mt, isIe6 = /msie|MSIE 6/.test(navigator.userAgent);
+	if (g = document.getElementById('jiathis_weixin_share')) {
+		g = document.getElementById('jiathis_weixin_share')
+	} else {
+		var g = document.createElement("div");
+		if (isIe6) {
+			g.style.position = "absolute";
+			g.style.zIndex = "1000000";
+			g.style.left = '650px';
+			var h = document.body.scrollTop || document.documentElement.scrollTop;
+			g.style.top = parseInt(h) + 300 + 'px'
+		} else {
+			g.style.position = "fixed";
+			g.style.zIndex = "10000000001"
+		}
+		g.id = 'jiathis_weixin_share'
+	}
+	if (c) {
+		f = c;
+		wt = '在微信上关注我们';
+		ft = '打开微信，点击底部的“发现”，使用 “扫一扫” 即可关注我们。';
+		innerhtml = '<img src="' + f + '" style="margin-top:25px;" width="129" alt="二维码加载失败" height="129" id="jiathis_follow_img">';
+		width = 'width:300px;';
+		height = 'height:300px;';
+		bh = 'height:181px;';
+		mt = 'margin: -100px 0 0 -200px;'
+	} else {
+		f = JIATHIS_CONFIGS.shost + '?webid=weixin&url=' + d + '&title=' + e + '&isexit=false';
+		wt = '分享到微信朋友圈';
+		ft = '打开微信，点击底部的“发现”，使用 “扫一扫” 即可将网页分享到我的朋友圈。 <a href="' + f + '" target="_blank">如何使用？</a>';
+		innerhtml = innerhtmlw = '二维码加载中....';
+		width = 'width:360px;';
+		height = 'height:360px;';
+		bh = 'height:251px;';
+		mt = 'margin: -200px 0 0 -200px;'
+	}
+	g.innerHTML = '<div id="jiathis_weixin_modal" style="background-clip: padding-box;background-color: #FFFFFF;border: 1px solid rgba(0, 0, 0, 0.3);  border-radius: 6px 6px 6px 6px;  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); left: 50%; ' + mt + 'overflow: hidden; position: fixed; top: 50%; ' + width + height + ' overflow:hidden;" class="jiathis_weixin_modal"><div class="jiathis_modal_header" id="jiathis_modal_header" style="border-bottom: 1px solid #EEEEEE; padding: 9px 15px;"><a style="text-decoration:none;  margin-top: 2px; color: #000000; float: right;  font-size: 20px;  font-weight: bold; cursor:pointer;line-height: 20px; opacity: 0.2; text-shadow: 0 1px 0 #FFFFFF;"class="jiathis_weixin_close" id="jiathis_weixin_close" onclick="jiathis_cancel()"target="_self">×</a><h3 id="jiathis_weixin_h3"style=" line-height: 30px; margin: 0; font-weight:normal; font-family:"微软雅黑";">' + wt + '</h3></div><div class="jiathis_modal_body"id="jiathis_modal_body"style="text-align:center;' + bh + '"><p id="jiathis_webchat">' + innerhtml + '</p></div><div class="jiathis_modal_footer" id="jiathis_modal_footer"style="border-radius: 0 0 6px 6px; border-top: 1px solid #DDDDDD; box-shadow: 0 1px 0 #FFFFFF inset; height:100%;padding:0 10px;padding-top:11px;text-align: right; font-size:12px;"><div id="jiathis_weixin_tip"style="text-align:left;margin:0; padding:0;font-size:12px;">' + ft + '</div>  </div></div>';
+	document.body.appendChild(g);
+	if (!c) {
+		setTimeout(function() {
+			var a = document.createElement('img');
+			var b = document.getElementById('jiathis_webchat');
+			a.src = JIATHIS_CONFIGS.shost + '/qrcode.php?url=' + d;
+			a.width = '220';
+			a.height = '220';
+			a.style.marginTop = '15px';
+			b.innerHTML = '';
+			a.alt = '二维码加载失败...';
+			b.appendChild(a)
+		}, 1000)
+	}
+	_oMaskEl = document.getElementById("jiathis_weixin_share")
+}
+function jiathis_cancel() {
+	_oDlgEl = document.getElementById('jiathis_weixin_share');
+	document.body.removeChild(_oDlgEl);
+	_oDlgEl = _oDivEl = _oMaskEl = _oErweimaMaskEl = null
+}
