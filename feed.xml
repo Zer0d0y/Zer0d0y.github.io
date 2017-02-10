@@ -209,5 +209,67 @@ MongoDB 复制集、数据库每天每 6 小时自动备份并同步到另外一
 </description>
     </item>
     
+    <item>
+      <title>定制Wireshark profile，自动识别攻击类型</title>
+      <link>https://www.zer0d0y.info/post/Wireshark-profiles/</link>
+      <pubDate>Fri, 10 Aug 2012 21:10:12 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/Wireshark-profiles/</guid>
+      <description>
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/Wireshark01.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;江湖传言-vi-编辑器之神-emacs-神的编辑器-wireshark-协议分析神器&#34;&gt;&lt;strong&gt;江湖传言 ——&lt;/strong&gt; Vi - 编辑器之神，Emacs - 神的编辑器，Wireshark - 协议分析神器。&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;About Wireshark&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Wireshark is the world’s foremost and widely-used network protocol analyzer.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;About Wireshark Profile&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Configuration Profiles can be used to configure and use more than one set of preferences and configurations. —— &lt;strong&gt;定制配置（捕捉/显示过滤器、颜色规则等），在不同Profile之间快速切换，自动识别攻击类型。（基于定制的规则）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;定制Wireshark Profile：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;方法1：
+点Edit —— Configuration Profiles  —— New（快捷键Shift-Ctrl-A）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;方法2：
+在Wireshark主窗口下方状态栏右击Profile —— New（或者Manage Profiles）&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Wireshark Profiles配置文件目录：&lt;/strong&gt;&lt;br /&gt;
+Linux&lt;br /&gt;
+$HOME/.wireshark/profiles/&lt;br /&gt;
+Windows &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;8&lt;/sub&gt;&lt;br /&gt;
+C:\Users&amp;lt;用户名&amp;gt;\AppData\Roaming\Wireshark\profiles&lt;/p&gt;
+
+&lt;p&gt;效果图（右键放大查看）
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/DNS-Query-flood.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;参考：
+&lt;a href=&#34;https://www.wireshark.org/docs/wsug_html_chunked/ChCustConfigProfilesSection.html&#34;&gt;Configuration Profiles&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
