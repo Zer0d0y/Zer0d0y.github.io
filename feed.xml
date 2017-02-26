@@ -7,8 +7,146 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2017. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 01 Feb 2017 15:34:26 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Feb 2017 14:50:02 +0800</lastBuildDate>
     <atom:link href="https://www.zer0d0y.info/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite</title>
+      <link>https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/</link>
+      <pubDate>Sun, 19 Feb 2017 14:50:02 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/</guid>
+      <description>
+
+&lt;h4 id=&#34;tl-dr-深度探索ios-app流量分析方法&#34;&gt;&lt;strong&gt;TL;DR -&lt;/strong&gt; 深度探索iOS App流量分析方法&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;ENV（环境）：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;OS：Deiban 8.x&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;iOS：10.x&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Broswer：Chrome 56.x/Safari 10&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Burp Suite Pro：v1.7.x&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;App：咕咚运动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;!--- **Intercepting HTTP(S) Traffic：**
+
+&gt; - Burp 配置
+&gt; - ①.PC和iOS设备连接到同一局域网
+&gt; - ②.配置Burp监听0.0.0.0:8080，勾选Running复选框
+
+&gt; - iOS设备配置：
+&gt; - ③.设置 - Wi-Fi - &#34;SSID&#34; - 点击i - HTTP PROXY - Manual，填写运行Burp的PC的IP地址和端口
+&gt; - ④.浏览器里打开http://burp -- 点击CA Certificate -- 安装证书
+&gt; - ⑤.测试：浏览器里打开http://www.google.com，https://www.google.com
+--&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;Intercepting HTTP(S) Traffic：&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Burp 配置：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;①.PC和iOS设备连接到同一局域网，启动Burp：cd /Path/to/burpsuite_pro &amp;amp;&amp;amp; java -jar -Xmx2G burpsuite_pro.jar&lt;/p&gt;
+
+&lt;p&gt;②.配置Burp监听0.0.0.0:8080，勾选Running复选框&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;iOS设备配置：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;③.设置 - Wi-Fi - &amp;ldquo;SSID&amp;rdquo; - 点击i - HTTP PROXY - Manual，填写运行Burp的PC的IP地址和端口&lt;/p&gt;
+
+&lt;p&gt;④.浏览器里打开&lt;a href=&#34;http://burp&#34;&gt;http://burp&lt;/a&gt; &amp;mdash;&amp;gt; 点击CA Certificate &amp;mdash;&amp;gt; 安装证书（测试完成后删除证书）&lt;/p&gt;
+
+&lt;p&gt;⑤.测试：浏览器(Safari)里分别打开&lt;a href=&#34;http://z.cn&#34;&gt;http://z.cn&lt;/a&gt; 和 &lt;a href=&#34;https://www.google.com&#34;&gt;https://www.google.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/Pentesting-iOS-Applications/P1001.jpg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Bypassing SSL endpoint verification with stunnel：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;①.modifying a plist file containing the endpoint URL.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;②.配置Stunnel使用Client模式，Stunnel配置文件示例如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;; SSL client mode
+client = yes
+; service-level configuration   
+[https]   
+accept = 127.0.0.1:80   
+connect = TargetIP:443   
+TIMEOUTclose = 0   
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;③.配置Burp使用&lt;a href=&#34;https://portswigger.net/burp/help/proxy_options_invisible.html&#34;&gt;invisible proxying&lt;/a&gt;并将请求重定向到Stunnel&lt;br /&gt;
+Burp &amp;mdash;&amp;gt; Proxy &amp;mdash;&amp;gt; Options &amp;mdash;&amp;gt; Edit(0.0.0.0:8080) &amp;mdash;&amp;gt; Request Handling(IP:127.0.0.1 Port:80)，勾选Support invisible proxying&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/Pentesting-iOS-Applications/P1002.jpg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;strong&gt;iOS networking&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;iOS network API:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;①.the URL loading system(NSURLConnection or NSURLSession)&lt;br /&gt;
+②.the Foundation NSStream API&lt;br /&gt;
+③.the Core Foundation CFStream API.&lt;br /&gt;
+&lt;strong&gt;NSStream和CFStream(Lower-Level Networking)&lt;/strong&gt;用于处理非HTTP类型连接的数据，参考：&lt;a href=&#34;https://github.com/iSECPartners/tcpprox/&#34;&gt;https://github.com/iSECPartners/tcpprox/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;strong&gt;Spotting NSURLSession TLS Bypasses&lt;/strong&gt;&lt;br /&gt;
+NSURLSession has a way to avoid TLS checks as well. Apps can just use the didReceiveChallenge delegate and pass the proposedCredential of the challenge received back as a credential for the session,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NS
+   URLAuthenticationChallenge *)challenge completionHandler:(void (^)(NS
+   URLSessionAuthChallengeDisposition disposition, NSURLCredential * credential))
+   completionHandler {
+   completionHandler(NSURLSessionAuthChallengeUseCredential,
+    [challenge proposedCredential]);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;相关技术-中间人-攻击-和端口镜像-network-tap&#34;&gt;相关技术（中间人“攻击”和端口镜像/Network Tap）&lt;/h5&gt;
+
+&lt;p&gt;A.中间人“攻击”，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Linux 服务器（网关）配置：
+1.echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward
+2.iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+3.iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8080
+4.Burp Suite 监听 *:8080，勾选Invisible
+
+iOS设备配置：
+网关设置为Linux 服务器IP地址
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;B.端口镜像/Network Tap，&lt;br /&gt;
+参考：&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Port_mirroring&#34;&gt;端口镜像&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/Network_tap&#34;&gt;Network Tap&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>2017 价值</title>

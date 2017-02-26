@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/</loc>
+    <lastmod>2017-02-19T14:50:02+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zer0d0y.info/post/keywords-of-this-year/</loc>
     <lastmod>2017-02-01T15:34:26+08:00</lastmod>
   </url>
@@ -59,13 +64,19 @@
   
   <url>
     <loc>https://www.zer0d0y.info/post/</loc>
-    <lastmod>2017-02-01T15:34:26+08:00</lastmod>
+    <lastmod>2017-02-19T14:50:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.zer0d0y.info/</loc>
-    <lastmod>2017-02-01T15:34:26+08:00</lastmod>
+    <lastmod>2017-02-19T14:50:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.zer0d0y.info/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/</loc>
+    <lastmod>2017-02-19T14:50:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
