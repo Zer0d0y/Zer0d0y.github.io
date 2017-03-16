@@ -7,8 +7,224 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2017. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 19 Feb 2017 14:50:02 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Mar 2017 22:46:56 +0800</lastBuildDate>
     <atom:link href="https://www.zer0d0y.info/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH</title>
+      <link>https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/</link>
+      <pubDate>Thu, 16 Mar 2017 22:46:56 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/</guid>
+      <description>
+
+&lt;pre&gt;&lt;code&gt;TL;DR - Ubuntu Server 14.04 LTS  networking issue In One Place
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;no1-ubuntu-server-14-04-lts-network-bonding-and-restarting-network-through-ssh&#34;&gt;&lt;strong&gt;NO1：Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;1.配置Network Bonding&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ENV（环境）：
+OS：Ubuntu Server 14.04 LTS
+ifenslave：2.4ubuntu1.2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;1.）安装ifenslave（Attach and detach slave network devices to a bonding device）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# apt-get install ifenslave
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.）加载bonding模块，使用mode 6&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# modprobe bonding mode=6 miimon=100 
+
+\#（加载模块会加载/etc/network/interfaces配置）
+\#（如出现cant‘t find bond0，卸载再重新加载：modprobe -r bonding &amp;amp;&amp;amp; modprobe bonding）
+
+# lsmod | grep bonding
+
+\# 设置开机自动加载
+# echo &amp;quot;bonding mode=6 miimon=100&amp;quot; &amp;gt;&amp;gt; /etc/modules &amp;amp;&amp;amp; cat /etc/modules
+
+\#（设置内核模块参数）
+# modinfo -p bonding -- 列出模块支持的参数
+# modprobe bonding mode=6 miimon=100
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.）配置网卡 /etc/network/interfaces&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# cd /root
+# cp /etc/network/interfaces etc.network.interfaces
+# vi etc.network.interfaces_bond
+auto lo
+iface lo inet loopback
+
+auto bond0
+iface bond0 inet static
+address 192.168.190.129
+netmask 255.255.255.0
+gateway 192.168.190.250
+
+auto bond0:1
+iface bond0:1 inet static
+address 192.168.2.220
+netmask 255.255.255.0
+
+dns-nameserver 114.114.114.114 233.5.5.5
+pre-down ifenslave -d bond0 eth0 eth1
+post-up ifenslave bond0 eth0 eth1
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4.）SSH 远程重启网卡/网络&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;方法1：
+# screen 
+\# 注意命令必须在screen里执行，否则ifdown后面的命令无法执行。
+# cp etc.network.interfaces /etc/network/interfaces &amp;amp;&amp;amp; ifdown eth0 &amp;amp;&amp;amp; cp etc.network.interfaces_bond /etc/network/interfaces &amp;amp;&amp;amp; ifup bond0 
+
+\## 特别注意：执行以上命令前，必须先确认接口状态（ifconfig）根据状态使用不同的命令，也要注意管道&amp;amp;&amp;amp;，因为前面命令返回结果可能不为0，但是网卡已经down了。
+举例：
+接口当前是bond0，UP状态
+# bash -c &amp;quot;ifdown bond0 &amp;amp;&amp;amp; modprobe -r bonding &amp;amp;&amp;amp; modprobe bonding&amp;quot;    --- 不成功
+# bash -c &amp;quot;ifdown bond0 ;sleep 10  ; modprobe -r bonding &amp;amp;&amp;amp; modprobe bonding&amp;quot;    --- 成功（注意sleep和;的使用）
+
+方法2：
+# bash -c &amp;quot;ifdown eth0 &amp;amp;&amp;amp; ifup eth0&amp;quot;
+\# 注意bash -c（The solution is to run the command in a new shell）
+
+参考：
+http://serverfault.com/questions/278838/restarting-network-through-ssh
+http://askubuntu.com/questions/441619/how-to-successfully-restart-a-network-without-reboot-over-ssh
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5.）修改Bond接口配置（和模块参数），强制重新加载&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;方法1.
+# screen
+# ifdown -a  ;modprobe -r bonding &amp;amp;&amp;amp; modprobe bonding &amp;amp;&amp;amp; sleep 5 &amp;amp;&amp;amp; ifup -a --force ; ifconfig
+# ifdown -a  ;modprobe -r bonding &amp;amp;&amp;amp; modprobe bonding mode=6 &amp;amp;&amp;amp; sleep 5 &amp;amp;&amp;amp; ifup -a --force ; ifconfig  --- （模块参数）
+
+方法2.
+# bash -c &amp;quot;ifdown -a  ;modprobe -r bonding &amp;amp;&amp;amp; modprobe bonding &amp;amp;&amp;amp; sleep 5 &amp;amp;&amp;amp; ifup -a --force ; ifconfig&amp;quot;
+
+\## 特别注意：Ubuntu Server重启网络/网卡必须通过 ifdown eth0 &amp;amp;&amp;amp; ifup eth0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;6.）查看Bonding状态&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# cat /proc/net/bonding/bond0 
+
+Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
+
+Bonding Mode: adaptive load balancing
+Primary Slave: None
+Currently Active Slave: eth1
+MII Status: up
+MII Polling Interval (ms): 100
+Up Delay (ms): 0
+Down Delay (ms): 0
+
+Slave Interface: eth0
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: 6c:92:bf:42:05:72
+Slave queue ID: 0
+
+Slave Interface: eth1
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: 6c:92:bf:42:05:73
+Slave queue ID: 0
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;7.）其他配置方式&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Network bonding with mode 6
+
+# vi /etc/network/interfaces
+
+\# eth0 is manually configured, and slave to the &amp;quot;bond0&amp;quot; bonded NIC
+auto eth0
+iface eth0 inet manual
+bond-master bond0
+
+
+\# eth1 ditto, thus creating a 2-link bond.
+auto eth1
+iface eth1 inet manual
+bond-master bond0
+
+\# bond0 is the bonding NIC and can be used like any other normal NIC.
+\# bond0 is configured using static network information.
+auto bond0
+iface bond0 inet static
+address 192.168.190.129
+gateway 192.168.190.1
+netmask 255.255.255.0
+bond-mode 6 
+bond-miimon 100
+bond-slaves eth0 eth1
+
+dns-nameserver 114.114.114.114 233.5.5.5
+pre-down ifenslave -d bond0 eth0 eth1
+post-up ifenslave bond0 eth0 eth1
+
+\# 启动接口（注意启动方式）
+# ifup eth0 &amp;amp;&amp;amp; ifup eth1 &amp;amp;&amp;amp; ifup bond0 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;8.）关于Mode&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Mode 0
+balance-rr
+
+Mode 1
+active-backup
+
+Mode 2
+balance-xor
+
+Mode 3
+broadcast
+
+Mode 4
+802.3ad
+
+Mode 5
+balance-tlb
+
+Mode 6
+balance-alb
+
+1.The active-backup, balance-tlb and balance-alb modes do not require any specific configuration of the switch.
+
+2.Other bonding modes require configuring the switch to aggregate the links. 
+For example, a Cisco switch requires EtherChannel for Modes 0, 2, and 3, but for Mode 4 LACP and EtherChannel are required. 
+
+参考：
+https://www.kernel.org/doc/Documentation/networking/bonding.txt
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;9.）参考资料&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://help.ubuntu.com/community/UbuntuBonding
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Bonding.html
+http://backdrift.org/lacp-configure-network-bonding-linux
+https://www.cyberciti.biz/faq/ubuntu-setup-a-bonding-device-and-enslave-two-real-ethernet-devices/
+https://www.cyberciti.biz/faq/ubuntu-linux-bridging-and-bonding-setup/
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite</title>

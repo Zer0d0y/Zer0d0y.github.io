@@ -12,36 +12,36 @@
         }
     }
   </script>
-  <title>Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite - Zer0d0y(段公子)&#39;s Blog</title>
+  <title>Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH - Zer0d0y(段公子)&#39;s Blog</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="keywords" content="xxx,">
-<meta name="description" content="TL;DR - 深度探索iOS App流量分析方法 ENV（环境）： OS：Deiban 8.x iOS：10.x Broswer：Chrome 56.x/Safari 10 Burp Suite Pro：v1.7">
+<meta name="description" content="TL;DR - Ubuntu Server 14.04 LTS networking issue In One Place NO1：Ubuntu Server 14.04 LTS Network Bonding and Restarting Network through SSH 1.配置Network Bonding ENV（环境）： OS：Ubuntu Server 14.04 LTS ifensla">
 <meta name="author" content="Zer0d0y">
 <meta name="publisher" content="Zer0d0y">
 <meta name="generator" content="http://gohugo.io/"/>
 
-<meta itemprop="name" content="Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite - Zer0d0y(段公子)&#39;s Blog">
-<meta itemprop="description" content="TL;DR - 深度探索iOS App流量分析方法 ENV（环境）： OS：Deiban 8.x iOS：10.x Broswer：Chrome 56.x/Safari 10 Burp Suite Pro：v1.7">
+<meta itemprop="name" content="Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH - Zer0d0y(段公子)&#39;s Blog">
+<meta itemprop="description" content="TL;DR - Ubuntu Server 14.04 LTS networking issue In One Place NO1：Ubuntu Server 14.04 LTS Network Bonding and Restarting Network through SSH 1.配置Network Bonding ENV（环境）： OS：Ubuntu Server 14.04 LTS ifensla">
 <meta itemprop="image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
-<meta property="og:title" content="Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite - Zer0d0y(段公子)&#39;s Blog" />
+<meta property="og:title" content="Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH - Zer0d0y(段公子)&#39;s Blog" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/" />
+<meta property="og:url" content="https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/" />
 <meta property="og:image" content="https://www.zer0d0y.info/public/coderzh.jpg" />
-<meta property="og:description" content="TL;DR - 深度探索iOS App流量分析方法 ENV（环境）： OS：Deiban 8.x iOS：10.x Broswer：Chrome 56.x/Safari 10 Burp Suite Pro：v1.7">
+<meta property="og:description" content="TL;DR - Ubuntu Server 14.04 LTS networking issue In One Place NO1：Ubuntu Server 14.04 LTS Network Bonding and Restarting Network through SSH 1.配置Network Bonding ENV（环境）： OS：Ubuntu Server 14.04 LTS ifensla">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@Zer0d0y">
-<meta name="twitter:title" content="Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite - Zer0d0y(段公子)&#39;s Blog">
-<meta name="twitter:description" content="TL;DR - 深度探索iOS App流量分析方法 ENV（环境）： OS：Deiban 8.x iOS：10.x Broswer：Chrome 56.x/Safari 10 Burp Suite Pro：v1.7">
+<meta name="twitter:title" content="Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH - Zer0d0y(段公子)&#39;s Blog">
+<meta name="twitter:description" content="TL;DR - Ubuntu Server 14.04 LTS networking issue In One Place NO1：Ubuntu Server 14.04 LTS Network Bonding and Restarting Network through SSH 1.配置Network Bonding ENV（环境）： OS：Ubuntu Server 14.04 LTS ifensla">
 <meta name="twitter:creator" content="@Zer0d0y">
 <meta name="twitter:image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
   <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
-  <link rel="canonical" href="https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/">
-  <link rel='shortlink' href="https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/"/>
+  <link rel="canonical" href="https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/">
+  <link rel='shortlink' href="https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/"/>
   <link rel="shortcut icon" href="https://www.zer0d0y.info/public/favicon.ico"/>
   
 <link rel="stylesheet" id="human-style-css" href="https://www.Zer0d0y.info/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
@@ -171,7 +171,7 @@
               <ul class="meta-single group">
                 
                 <li class="category">
-                  <a href="https://www.Zer0d0y.info/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/" rel="category tag">安全研究</a>
+                  <a href="https://www.Zer0d0y.info/categories/misc/" rel="category tag">misc</a>
                 </li>
                 
               </ul>
@@ -183,12 +183,12 @@
                   class="post type-post status-publish format-standard has-post-thumbnail hentry category-australien tag-bondi-beach tag-city2surf tag-sydney">
                 <div class="post-inner group">
 
-                  <h1 class="post-title">Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite</h1>
+                  <h1 class="post-title">Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH</h1>
 
                   <p class="post-byline">
-                    by  · 2017年02月19日 · 998 Words ·
-                    ~2min reading time |
-                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/Pentesting-iOS-Applications-Part-1.md"
+                    by  · 2017年03月16日 · 1059 Words ·
+                    ~3min reading time |
+                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH.md"
                        target="_blank">Improve on <i class="fa fa-github"></i></a>
                   </p>
 
@@ -199,133 +199,211 @@
                       
                       
 
-<h4 id="tl-dr-深度探索ios-app流量分析方法"><strong>TL;DR -</strong> 深度探索iOS App流量分析方法</h4>
-
-<p><strong>ENV（环境）：</strong></p>
-
-<blockquote>
-<ul>
-<li>OS：Deiban 8.x<br /></li>
-<li>iOS：10.x<br /></li>
-<li>Broswer：Chrome 56.x/Safari 10<br /></li>
-<li>Burp Suite Pro：v1.7.x<br /></li>
-<li>App：咕咚运动</li>
-</ul>
-</blockquote>
-
-<!--- **Intercepting HTTP(S) Traffic：**
-
-> - Burp 配置
-> - ①.PC和iOS设备连接到同一局域网
-> - ②.配置Burp监听0.0.0.0:8080，勾选Running复选框
-
-> - iOS设备配置：
-> - ③.设置 - Wi-Fi - "SSID" - 点击i - HTTP PROXY - Manual，填写运行Burp的PC的IP地址和端口
-> - ④.浏览器里打开http://burp -- 点击CA Certificate -- 安装证书
-> - ⑤.测试：浏览器里打开http://www.google.com，https://www.google.com
--->
-
-<dl>
-<dt>Intercepting HTTP(S) Traffic：</dt>
-<dd><p>Burp 配置：</p>
-
-<blockquote>
-<p>①.PC和iOS设备连接到同一局域网，启动Burp：cd /Path/to/burpsuite_pro &amp;&amp; java -jar -Xmx2G burpsuite_pro.jar</p>
-
-<p>②.配置Burp监听0.0.0.0:8080，勾选Running复选框</p>
-</blockquote></dd>
-<dd><p>iOS设备配置：</p>
-
-<blockquote>
-<p>③.设置 - Wi-Fi - &ldquo;SSID&rdquo; - 点击i - HTTP PROXY - Manual，填写运行Burp的PC的IP地址和端口</p>
-
-<p>④.浏览器里打开<a href="http://burp">http://burp</a> &mdash;&gt; 点击CA Certificate &mdash;&gt; 安装证书（测试完成后删除证书）</p>
-
-<p>⑤.测试：浏览器(Safari)里分别打开<a href="http://z.cn">http://z.cn</a> 和 <a href="https://www.google.com">https://www.google.com</a></p>
-</blockquote></dd>
-</dl>
-
-
-<figure >
-    
-        <img src="images/Pentesting-iOS-Applications/P1001.jpg" />
-    
-    
-</figure>
-
-
-<p><strong>Bypassing SSL endpoint verification with stunnel：</strong></p>
-
-<blockquote>
-<ul>
-<li>①.modifying a plist file containing the endpoint URL.</li>
-
-<li><p>②.配置Stunnel使用Client模式，Stunnel配置文件示例如下：</p>
-
-<pre><code>; SSL client mode
-client = yes
-; service-level configuration   
-[https]   
-accept = 127.0.0.1:80   
-connect = TargetIP:443   
-TIMEOUTclose = 0   
-</code></pre></li>
-
-<li><p>③.配置Burp使用<a href="https://portswigger.net/burp/help/proxy_options_invisible.html">invisible proxying</a>并将请求重定向到Stunnel<br />
-Burp &mdash;&gt; Proxy &mdash;&gt; Options &mdash;&gt; Edit(0.0.0.0:8080) &mdash;&gt; Request Handling(IP:127.0.0.1 Port:80)，勾选Support invisible proxying</p></li>
-</ul>
-</blockquote>
-
-
-<figure >
-    
-        <img src="images/Pentesting-iOS-Applications/P1002.jpg" />
-    
-    
-</figure>
-
-
-<dl>
-<dt><strong>iOS networking</strong></dt>
-<dd><p>iOS network API:</p>
-
-<blockquote>
-<p>①.the URL loading system(NSURLConnection or NSURLSession)<br />
-②.the Foundation NSStream API<br />
-③.the Core Foundation CFStream API.<br />
-<strong>NSStream和CFStream(Lower-Level Networking)</strong>用于处理非HTTP类型连接的数据，参考：<a href="https://github.com/iSECPartners/tcpprox/">https://github.com/iSECPartners/tcpprox/</a></p>
-</blockquote></dd>
-</dl>
-
-<p><strong>Spotting NSURLSession TLS Bypasses</strong><br />
-NSURLSession has a way to avoid TLS checks as well. Apps can just use the didReceiveChallenge delegate and pass the proposedCredential of the challenge received back as a credential for the session,</p>
-
-<pre><code>- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NS
-   URLAuthenticationChallenge *)challenge completionHandler:(void (^)(NS
-   URLSessionAuthChallengeDisposition disposition, NSURLCredential * credential))
-   completionHandler {
-   completionHandler(NSURLSessionAuthChallengeUseCredential,
-    [challenge proposedCredential]);
-}
+<pre><code>TL;DR - Ubuntu Server 14.04 LTS  networking issue In One Place
 </code></pre>
 
-<h5 id="相关技术-中间人-攻击-和端口镜像-network-tap">相关技术（中间人“攻击”和端口镜像/Network Tap）</h5>
+<h5 id="no1-ubuntu-server-14-04-lts-network-bonding-and-restarting-network-through-ssh"><strong>NO1：Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH</strong></h5>
 
-<p>A.中间人“攻击”，</p>
+<p>1.配置Network Bonding</p>
 
-<pre><code>Linux 服务器（网关）配置：
-1.echo 1 &gt; /proc/sys/net/ipv4/ip_forward
-2.iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
-3.iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8080
-4.Burp Suite 监听 *:8080，勾选Invisible
-
-iOS设备配置：
-网关设置为Linux 服务器IP地址
+<pre><code>ENV（环境）：
+OS：Ubuntu Server 14.04 LTS
+ifenslave：2.4ubuntu1.2
 </code></pre>
 
-<p>B.端口镜像/Network Tap，<br />
-参考：<br />
-<a href="https://en.wikipedia.org/wiki/Port_mirroring">端口镜像</a>/<a href="https://en.wikipedia.org/wiki/Network_tap">Network Tap</a></p>
+<p>1.）安装ifenslave（Attach and detach slave network devices to a bonding device）</p>
+
+<pre><code># apt-get install ifenslave
+</code></pre>
+
+<p>2.）加载bonding模块，使用mode 6</p>
+
+<pre><code># modprobe bonding mode=6 miimon=100 
+
+\#（加载模块会加载/etc/network/interfaces配置）
+\#（如出现cant‘t find bond0，卸载再重新加载：modprobe -r bonding &amp;&amp; modprobe bonding）
+
+# lsmod | grep bonding
+
+\# 设置开机自动加载
+# echo &quot;bonding mode=6 miimon=100&quot; &gt;&gt; /etc/modules &amp;&amp; cat /etc/modules
+
+\#（设置内核模块参数）
+# modinfo -p bonding -- 列出模块支持的参数
+# modprobe bonding mode=6 miimon=100
+
+</code></pre>
+
+<p>3.）配置网卡 /etc/network/interfaces</p>
+
+<pre><code># cd /root
+# cp /etc/network/interfaces etc.network.interfaces
+# vi etc.network.interfaces_bond
+auto lo
+iface lo inet loopback
+
+auto bond0
+iface bond0 inet static
+address 192.168.190.129
+netmask 255.255.255.0
+gateway 192.168.190.250
+
+auto bond0:1
+iface bond0:1 inet static
+address 192.168.2.220
+netmask 255.255.255.0
+
+dns-nameserver 114.114.114.114 233.5.5.5
+pre-down ifenslave -d bond0 eth0 eth1
+post-up ifenslave bond0 eth0 eth1
+
+</code></pre>
+
+<p>4.）SSH 远程重启网卡/网络</p>
+
+<pre><code>方法1：
+# screen 
+\# 注意命令必须在screen里执行，否则ifdown后面的命令无法执行。
+# cp etc.network.interfaces /etc/network/interfaces &amp;&amp; ifdown eth0 &amp;&amp; cp etc.network.interfaces_bond /etc/network/interfaces &amp;&amp; ifup bond0 
+
+\## 特别注意：执行以上命令前，必须先确认接口状态（ifconfig）根据状态使用不同的命令，也要注意管道&amp;&amp;，因为前面命令返回结果可能不为0，但是网卡已经down了。
+举例：
+接口当前是bond0，UP状态
+# bash -c &quot;ifdown bond0 &amp;&amp; modprobe -r bonding &amp;&amp; modprobe bonding&quot;    --- 不成功
+# bash -c &quot;ifdown bond0 ;sleep 10  ; modprobe -r bonding &amp;&amp; modprobe bonding&quot;    --- 成功（注意sleep和;的使用）
+
+方法2：
+# bash -c &quot;ifdown eth0 &amp;&amp; ifup eth0&quot;
+\# 注意bash -c（The solution is to run the command in a new shell）
+
+参考：
+http://serverfault.com/questions/278838/restarting-network-through-ssh
+http://askubuntu.com/questions/441619/how-to-successfully-restart-a-network-without-reboot-over-ssh
+
+</code></pre>
+
+<p>5.）修改Bond接口配置（和模块参数），强制重新加载</p>
+
+<pre><code>方法1.
+# screen
+# ifdown -a  ;modprobe -r bonding &amp;&amp; modprobe bonding &amp;&amp; sleep 5 &amp;&amp; ifup -a --force ; ifconfig
+# ifdown -a  ;modprobe -r bonding &amp;&amp; modprobe bonding mode=6 &amp;&amp; sleep 5 &amp;&amp; ifup -a --force ; ifconfig  --- （模块参数）
+
+方法2.
+# bash -c &quot;ifdown -a  ;modprobe -r bonding &amp;&amp; modprobe bonding &amp;&amp; sleep 5 &amp;&amp; ifup -a --force ; ifconfig&quot;
+
+\## 特别注意：Ubuntu Server重启网络/网卡必须通过 ifdown eth0 &amp;&amp; ifup eth0
+</code></pre>
+
+<p>6.）查看Bonding状态</p>
+
+<pre><code># cat /proc/net/bonding/bond0 
+
+Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
+
+Bonding Mode: adaptive load balancing
+Primary Slave: None
+Currently Active Slave: eth1
+MII Status: up
+MII Polling Interval (ms): 100
+Up Delay (ms): 0
+Down Delay (ms): 0
+
+Slave Interface: eth0
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: 6c:92:bf:42:05:72
+Slave queue ID: 0
+
+Slave Interface: eth1
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: 6c:92:bf:42:05:73
+Slave queue ID: 0
+
+</code></pre>
+
+<p>7.）其他配置方式</p>
+
+<pre><code>Network bonding with mode 6
+
+# vi /etc/network/interfaces
+
+\# eth0 is manually configured, and slave to the &quot;bond0&quot; bonded NIC
+auto eth0
+iface eth0 inet manual
+bond-master bond0
+
+
+\# eth1 ditto, thus creating a 2-link bond.
+auto eth1
+iface eth1 inet manual
+bond-master bond0
+
+\# bond0 is the bonding NIC and can be used like any other normal NIC.
+\# bond0 is configured using static network information.
+auto bond0
+iface bond0 inet static
+address 192.168.190.129
+gateway 192.168.190.1
+netmask 255.255.255.0
+bond-mode 6 
+bond-miimon 100
+bond-slaves eth0 eth1
+
+dns-nameserver 114.114.114.114 233.5.5.5
+pre-down ifenslave -d bond0 eth0 eth1
+post-up ifenslave bond0 eth0 eth1
+
+\# 启动接口（注意启动方式）
+# ifup eth0 &amp;&amp; ifup eth1 &amp;&amp; ifup bond0 
+</code></pre>
+
+<p>8.）关于Mode</p>
+
+<pre><code>Mode 0
+balance-rr
+
+Mode 1
+active-backup
+
+Mode 2
+balance-xor
+
+Mode 3
+broadcast
+
+Mode 4
+802.3ad
+
+Mode 5
+balance-tlb
+
+Mode 6
+balance-alb
+
+1.The active-backup, balance-tlb and balance-alb modes do not require any specific configuration of the switch.
+
+2.Other bonding modes require configuring the switch to aggregate the links. 
+For example, a Cisco switch requires EtherChannel for Modes 0, 2, and 3, but for Mode 4 LACP and EtherChannel are required. 
+
+参考：
+https://www.kernel.org/doc/Documentation/networking/bonding.txt
+
+</code></pre>
+
+<p>9.）参考资料</p>
+
+<pre><code>https://help.ubuntu.com/community/UbuntuBonding
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Bonding.html
+http://backdrift.org/lacp-configure-network-bonding-linux
+https://www.cyberciti.biz/faq/ubuntu-setup-a-bonding-device-and-enslave-two-real-ethernet-devices/
+https://www.cyberciti.biz/faq/ubuntu-linux-bridging-and-bonding-setup/
+</code></pre>
 
                       
 <div id="ckepop">
@@ -365,7 +443,7 @@ iOS设备配置：
                         <div>
                             <p style="margin-top:0px;">作者：<a target="_blank" href="http://www.Zer0d0y.info/">Zer0d0y</a>
                             <br />微信关注：Zer0d0y
-                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/">https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/</a>
+                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/">https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/</a>
                             <br />
                             文章版权归本人所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
                         </div>
@@ -419,20 +497,14 @@ iOS设备配置：
     <ul class="post-nav group">
       <li class="next">
         
-        <a href="https://www.zer0d0y.info/post/keywords-of-this-year/" rel="next">
+        <a href="https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/" rel="next">
           <i class="fa fa-chevron-right"></i>
           <strong>Next post</strong>
-          <span>2017 价值</span>
+          <span>Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite</span>
         </a>
         
       </li>
       <li class="previous">
-        
-        <a href="https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/" rel="prev">
-          <i class="fa fa-chevron-left"></i>
-          <strong>Previous Post</strong>
-          <span>Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH</span>
-        </a>
         
       </li>
     </ul>
