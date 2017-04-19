@@ -12,36 +12,36 @@
         }
     }
   </script>
-  <title>Bro &#43; ELK - Zer0d0y(段公子)&#39;s Blog</title>
+  <title>Ubuntu Server 16.04 LTS Network Bonding - Zer0d0y(段公子)&#39;s Blog</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="keywords" content="xxx,">
-<meta name="description" content="&#34;The Bro Network Security Monitor & ELK Stack&#34; TL;DR - No Security without Visibility | 部署Bro进行网络安全监控、分析，入侵检测，使用ELK Stack分析Bro收集的日志。 关于Bro(The Bro Network Security">
+<meta name="description" content="TL;DR - Ubuntu 16.04 Bonding （802.3ad or 4，[balance-rr or 0]）配置 # 在继续阅读之前，确保已经阅读并理解以下文档： Linux Ethernet Bonding Driver HOWTO https://www.kernel.org/doc/Documentation/networking/bonding.txt Implementing EtherChannel in a Switched Network http://www.ciscopress.com/articles/article.asp?p=2348266&amp;seqNum=3 #">
 <meta name="author" content="Zer0d0y">
 <meta name="publisher" content="Zer0d0y">
 <meta name="generator" content="http://gohugo.io/"/>
 
-<meta itemprop="name" content="Bro &#43; ELK - Zer0d0y(段公子)&#39;s Blog">
-<meta itemprop="description" content="&#34;The Bro Network Security Monitor & ELK Stack&#34; TL;DR - No Security without Visibility | 部署Bro进行网络安全监控、分析，入侵检测，使用ELK Stack分析Bro收集的日志。 关于Bro(The Bro Network Security">
+<meta itemprop="name" content="Ubuntu Server 16.04 LTS Network Bonding - Zer0d0y(段公子)&#39;s Blog">
+<meta itemprop="description" content="TL;DR - Ubuntu 16.04 Bonding （802.3ad or 4，[balance-rr or 0]）配置 # 在继续阅读之前，确保已经阅读并理解以下文档： Linux Ethernet Bonding Driver HOWTO https://www.kernel.org/doc/Documentation/networking/bonding.txt Implementing EtherChannel in a Switched Network http://www.ciscopress.com/articles/article.asp?p=2348266&amp;seqNum=3 #">
 <meta itemprop="image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
-<meta property="og:title" content="Bro &#43; ELK - Zer0d0y(段公子)&#39;s Blog" />
+<meta property="og:title" content="Ubuntu Server 16.04 LTS Network Bonding - Zer0d0y(段公子)&#39;s Blog" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.zer0d0y.info/post/Bro-plus-ELK/" />
+<meta property="og:url" content="https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/" />
 <meta property="og:image" content="https://www.zer0d0y.info/public/coderzh.jpg" />
-<meta property="og:description" content="&#34;The Bro Network Security Monitor & ELK Stack&#34; TL;DR - No Security without Visibility | 部署Bro进行网络安全监控、分析，入侵检测，使用ELK Stack分析Bro收集的日志。 关于Bro(The Bro Network Security">
+<meta property="og:description" content="TL;DR - Ubuntu 16.04 Bonding （802.3ad or 4，[balance-rr or 0]）配置 # 在继续阅读之前，确保已经阅读并理解以下文档： Linux Ethernet Bonding Driver HOWTO https://www.kernel.org/doc/Documentation/networking/bonding.txt Implementing EtherChannel in a Switched Network http://www.ciscopress.com/articles/article.asp?p=2348266&amp;seqNum=3 #">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@Zer0d0y">
-<meta name="twitter:title" content="Bro &#43; ELK - Zer0d0y(段公子)&#39;s Blog">
-<meta name="twitter:description" content="&#34;The Bro Network Security Monitor & ELK Stack&#34; TL;DR - No Security without Visibility | 部署Bro进行网络安全监控、分析，入侵检测，使用ELK Stack分析Bro收集的日志。 关于Bro(The Bro Network Security">
+<meta name="twitter:title" content="Ubuntu Server 16.04 LTS Network Bonding - Zer0d0y(段公子)&#39;s Blog">
+<meta name="twitter:description" content="TL;DR - Ubuntu 16.04 Bonding （802.3ad or 4，[balance-rr or 0]）配置 # 在继续阅读之前，确保已经阅读并理解以下文档： Linux Ethernet Bonding Driver HOWTO https://www.kernel.org/doc/Documentation/networking/bonding.txt Implementing EtherChannel in a Switched Network http://www.ciscopress.com/articles/article.asp?p=2348266&amp;seqNum=3 #">
 <meta name="twitter:creator" content="@Zer0d0y">
 <meta name="twitter:image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
   <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
-  <link rel="canonical" href="https://www.zer0d0y.info/post/Bro-plus-ELK/">
-  <link rel='shortlink' href="https://www.zer0d0y.info/post/Bro-plus-ELK/"/>
+  <link rel="canonical" href="https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/">
+  <link rel='shortlink' href="https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/"/>
   <link rel="shortcut icon" href="https://www.zer0d0y.info/public/favicon.ico"/>
   
 <link rel="stylesheet" id="human-style-css" href="https://www.Zer0d0y.info/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
@@ -171,7 +171,7 @@
               <ul class="meta-single group">
                 
                 <li class="category">
-                  <a href="https://www.Zer0d0y.info/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/" rel="category tag">安全研究</a>
+                  <a href="https://www.Zer0d0y.info/categories/misc/" rel="category tag">misc</a>
                 </li>
                 
               </ul>
@@ -183,12 +183,12 @@
                   class="post type-post status-publish format-standard has-post-thumbnail hentry category-australien tag-bondi-beach tag-city2surf tag-sydney">
                 <div class="post-inner group">
 
-                  <h1 class="post-title">Bro &#43; ELK</h1>
+                  <h1 class="post-title">Ubuntu Server 16.04 LTS Network Bonding</h1>
 
                   <p class="post-byline">
-                    by  · 2015年08月13日 · 1321 Words ·
+                    by  · 2017年04月19日 · 1117 Words ·
                     ~3min reading time |
-                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/Bro-plus-ELK.md"
+                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/Ubuntu-Server-16.04-LTS-Network-Bonding.md"
                        target="_blank">Improve on <i class="fa fa-github"></i></a>
                   </p>
 
@@ -197,294 +197,268 @@
                   <div class="entry">
                     <div class="entry-inner">
                       
-                      
-
-
-<figure >
-    
-        <img src="images/Bro-ELK/Bro_ELK01.jpg" />
-    
-    
-</figure>
-
-
-<table class="image">
-<caption align="bottom"> "The Bro Network Security Monitor & ELK Stack" </caption>
-</table>
-
-<pre><code>TL;DR - No Security without Visibility | 部署Bro进行网络安全监控、分析，入侵检测，使用ELK Stack分析Bro收集的日志。
+                      <pre><code>TL;DR - Ubuntu 16.04 Bonding （802.3ad or 4，[balance-rr or 0]）配置
 </code></pre>
 
-<h4 id="关于-bro-https-www-bro-org-index-html-the-bro-network-security-monitor">关于<a href="https://www.bro.org/index.html">Bro</a>(The Bro Network Security Monitor)</h4>
+<p># 在继续阅读之前，确保已经阅读并理解以下文档：</p>
 
-<pre><code>Bro is an open-source network security platform that illuminates your network's activity in detail, with the stability and flexibility for production deployment at scale.
+<pre><code>Linux Ethernet Bonding Driver HOWTO
+https://www.kernel.org/doc/Documentation/networking/bonding.txt
+
+Implementing EtherChannel in a Switched Network
+http://www.ciscopress.com/articles/article.asp?p=2348266&amp;seqNum=3
 </code></pre>
 
-<h4 id="1-bro-安装-基本配置">1.（Bro）安装&amp;基本配置</h4>
+<p># 网卡bonding通常可以通过两种方式实现，</p>
 
-<dl>
-<dd><p>1.）网络环境及软件环境</p>
-
-<blockquote>
-<pre><code>网络环境：网络边界上部署Network Tap或使用交换机端口镜像功能（Port Mirroring）将In和Out双向流量copy到Bro Cluster --&gt; https://www.bro.org/sphinx/cluster/index.html。
+<pre><code>1.）网卡配置文件 + Ifenslave 
+2.）通过sysfs接口
 </code></pre>
 
-<pre><code>软件环境：OS：Ubuntu 14.04 LTS，Bro：2.4.x，ELK：Elasticsearch-1.7.x | Logstash-1.5.x | kibana-4.1.1
-</code></pre>
-</blockquote></dd>
-<dd><p>2.）添加签名Key</p>
+<p>1.配置Bonding 802.3ad (mode 4)模式 + Transmit Hash Policy: layer3+4</p>
 
-<blockquote>
-<pre><code>wget http://download.opensuse.org/repositories/network:bro/xUbuntu_14.04/Release.key
-apt-key add - &lt; Release.key
-</code></pre>
-</blockquote></dd>
-<dd><p>3.）添加Repository</p>
-
-<blockquote>
-<pre><code>echo 'deb http://download.opensuse.org/repositories/network:/bro/xUbuntu_14.04/ /' &gt;&gt; /etc/apt/sources.list.d/bro.list
-</code></pre>
-</blockquote></dd>
-<dd><p>4.）安装</p>
-
-<blockquote>
-<pre><code>apt-get update
-apt-get install bro
-echo &quot;export PATH=/opt/bro/bin:$PATH&quot; &gt;&gt; ~/.bashrc
-</code></pre>
-</blockquote></dd>
-<dd><p>5.）定制Bro配置文件，然后初始化</p>
-
-<blockquote>
-<pre><code>配置监听网络接口：/opt/bro/etc/node.cfg
-配置本地网络地址：/opt/bro/etc/networks.cfg
-主配置文件：/opt/bro/etc/broctl.cfg
-初始化：broctl deploy
-</code></pre>
-</blockquote></dd>
-<dd><p>6.）添加计划任务（监控Bro集群节点状态和日志轮询）</p>
-
-<blockquote>
-<pre><code>0-59/5 * * * * /opt/bro/bin/broctl cron
-</code></pre>
-</blockquote></dd>
-<dd><p>7.）修改默认监听端口</p>
-
-<blockquote>
-<pre><code>/opt/bro/etc/broctl.cfg
-BroPort =  10000 
-</code></pre>
-</blockquote></dd>
-<dd><p>8.）加载定制脚本</p>
-
-<blockquote>
-<p>下载：wget <a href="https://github.com/jonschipp/bro-scripts/blob/master/dns-audit.bro">https://github.com/jonschipp/bro-scripts/blob/master/dns-audit.bro</a></p>
-
-<p>编辑配置文件：vi /opt/bro/share/bro/site/local.bro</p>
-
-<pre><code>@load dns-audit.bro   
-cp dns-audit.bro /opt/bro/share/bro/site/   
+<pre><code>ENV（环境）说明：
+1.交换机：LB4M（呵呵！！！）
+2.OS：Ubuntu Server 16.04 LTS
+3.服务器4个网卡与交换机互联
 </code></pre>
 
-<p>执行：broctl deploy</p>
-</blockquote></dd>
-<dd><p>9.）电子邮件报警（ssmtp + TX exmail）</p>
+<p>1.）安装ifenslave和内核支持</p>
 
-<blockquote>
-<p>Bro主配置文件</p>
-
-<pre><code>vi /opt/bro/etc/broctl.cfg
-MailTo = Zer0d0y@Zer0d0y.info
-SendMail = /usr/sbin/sendmail 
-MailFrom = bro-nsm@Zer0d0y.info
+<pre><code># apt-get install ifenslave
+# echo bonding &gt;&gt; /etc/modules
 </code></pre>
 
-<p>ssmtp配置</p>
+<p>2.）配置网卡</p>
 
-<pre><code>vi /etc/ssmtp/ssmtp.conf
-root=bro-nsm@Zer0d0y.info
-mailhub=smtp.exmail.qq.com:465
-hostname=bro-nsm
-UseTLS=Yes
-AuthUser=bro-nsm@Zer0d0y.info
-AuthPass=[电子邮件密码]
-FromLineOverride=yes
+<pre><code># vi /etc/network/interfaces
+
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto bond0
+iface bond0 inet static
+address 8.8.8.86
+netmask 255.255.255.240
+gateway 8.8.8.81
+bond-mode 4
+bond-miimon 100
+bond-xmit_hash_policy layer3+4
+bond-lacp-rate 1
+bond-slaves eth0 eth1 eth2 eth3
+dns-nameservers 114.114.114.114 233.5.5.5
+
+auto bond0:1
+iface bond0:1 inet static
+address 192.168.2.251
+netmask 255.255.255.0
+
+
+auto eth0
+iface eth0 inet manual
+bond-master bond0
+
+auto eth1
+iface eth1 inet manual
+bond-master bond0
+
+auto eth2
+iface eth2 inet manual
+bond-master bond0
+
+auto eth3
+iface eth3 inet manual
+bond-master bond0
 </code></pre>
 
-<p>ssmtp别名</p>
+<p>3.）配置LB4M交换机（port-channel min-links 4）</p>
 
-<pre><code>vi /etc/ssmtp/revaliases 
-root:bro-nsm@Zer0d0y.info:smtp.exmail.qq.com:465
-mainuser:bro-nsm@Zer0d0y.info:smtp.exmail.qq.com:465
-</code></pre>
-</blockquote></dd>
-</dl>
+<pre><code>port-channel name 3/30 86
+interface 0/30
+addport 3/30
+exit
 
-<h4 id="2-elk-安装-基本配置">2.（ELK）安装&amp;基本配置</h4>
+interface 0/31
+addport 3/30
+exit
 
-<dl>
-<dd><p>1.）安装JAVA</p>
+interface 0/32
+addport 3/30
+exit
 
-<blockquote>
-<pre><code>add-apt-repository -y ppa:webupd8team/java
-apt-get update
-apt-get -y install oracle-java8-installer
-</code></pre>
-</blockquote></dd>
-<dd><p>2.）安装Elasticsearch</p>
+interface 0/33
+addport 3/30
+exit
 
-<blockquote>
-<pre><code>#添加Key：
-wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | apt-key add -
-#添加Repository：
-echo &quot;deb https://packages.elastic.co/elasticsearch/1.7/debian stable main&quot; |  tee -a /etc/apt/sources.list.d/elasticsearch-1.7.list
-#安装：
-apt-get update &amp;&amp;  apt-get -y install elasticsearch
-#配置：
-vi /etc/elasticsearch/elasticsearch.yml
-network.host: localhost
-#启动服务：
-service elasticsearch restart
-#设置默认启动：
-update-rc.d elasticsearch defaults 95 10
-#测试：
-curl -X GET http://localhost:9200/
-#参考：
-https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
-</code></pre>
-</blockquote></dd>
-<dd><p>3.）安装Logstash</p>
-
-<blockquote>
-<pre><code>#添加Repository：
-echo 'deb https://packages.elasticsearch.org/logstash/1.5/debian stable main' |  tee /etc/apt/sources.list.d/logstash.list
-#安装：
-apt-get update &amp;&amp;  apt-get -y install Logstash
-# Change logstash gem sources
-/opt/logstash/vendor/bundle/jruby/1.9/gems/gems-0.8.3/lib/gems/configuration.rb
-/opt/logstash/vendor/jruby/lib/ruby/shared/rubygems/defaults.rb
-/opt/logstash/Gemfile
-Replace rubygems.org ==&gt; ruby.taobao.org
-</code></pre>
-</blockquote></dd>
-<dd><p>4.）安装Kibana</p>
-
-<blockquote>
-<pre><code>#创建并进入临时目录
-mkdir ~/tmp ; cd ～/tmp
-#下载kibana并check sha1sum
-wget https://download.elastic.co/kibana/kibana/kibana-4.1.1-linux-x64.tar.gz
-wget https://download.elastic.co/kibana/kibana/kibana-4.1.1-linux-x64.tar.gz.sha1.txt
-#解压&amp;配置
-tar xf kibana-*.tar.gz
-vi ~/tmp/kibana-4*/config/kibana.yml
-host: &quot;localhost&quot;
-mkdir -p /opt/kibana
-cp -R ~/tmp/kibana-4*/* /opt/kibana/
-#启动配置脚本
-cd /etc/init.d &amp;&amp;  wget https://gist.githubusercontent.com/thisismitch/8b15ac909aed214ad04a/raw/bce61d85643c2dcdfbc2728c55a41dab444dca20/kibana4
-chmod +x /etc/init.d/kibana4
-update-rc.d kibana4 defaults 96 9
-service kibana4 start
-</code></pre>
-</blockquote></dd>
-<dd><p>5.）配置Kibana HTTP认证</p>
-
-<blockquote>
-<pre><code>#安装Nginx和apache2-utils
-apt-get install nginx apache2-utils
-#设置用户名（Zer0d0y）和密码
-htpasswd -c /etc/nginx/htpasswd.users Zer0d0y
-#修改Nginx配置文件
-vi /etc/nginx/conf.d/kibana.conf
-server {
-    listen 80;
-
-    server_name nsm.Zer0d0y.info;
-
-    auth_basic &quot;Restricted Access&quot;;
-    auth_basic_user_file /etc/nginx/htpasswd.users;
-
-    location / {
-        proxy_pass http://localhost:5601;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;        
-    }
-}
-#重启Nginx服务是配置生效
-service nginx restart
-</code></pre>
-</blockquote></dd>
-</dl>
-
-<h4 id="3-配置logstash处理bro日志文件">3.配置Logstash处理Bro日志文件</h4>
-
-<pre><code>#下载Logstash配置文件
-cd /etc/logstash/conf.d/
-wget https://github.com/Zer0d0y/Bro-ELK/tree/master/logstash
-#修改Bro 日志文件权限：
-chmod o+rx /opt/bro/logs
-chmod o+rx /opt/bro/spool
-#测试：
-sudo -u logstash /opt/logstash/bin/logstash agent -f /etc/logstash/conf.d --configtest
-curl &quot;http://localhost:9200/_search?size=5&amp;pretty=true&quot;
-curl &quot;http://localhost:9200/_search?q=type:logs&amp;pretty=true&quot;
-#重启Logstash：
-sudo /etc/init.d/logstash restart
+interface 3/30
+no port-channel static
+# port-channel load-balance 6
+port-channel min-links 4
+exit
 </code></pre>
 
-<p>效果图（右键放大图片）</p>
+<p>4.）验证</p>
 
+<pre><code># cat /proc/net/bonding/bond0
 
-<figure >
-    
-        <img src="images/Bro-ELK/Bro_ELK02.png" />
-    
-    
-</figure>
+Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
 
+Bonding Mode: IEEE 802.3ad Dynamic link aggregation
+Transmit Hash Policy: layer3+4 (1)
+MII Status: up
+MII Polling Interval (ms): 100
+Up Delay (ms): 0
+Down Delay (ms): 0
 
+802.3ad info
+LACP rate: fast
+Min links: 0
+Aggregator selection policy (ad_select): stable
+System priority: 65535
+System MAC address: b8:ca:3a:6f:4d:2c
+Active Aggregator Info:
+	Aggregator ID: 1
+	Number of ports: 4
+	Actor Key: 9
+	Partner Key: 83
+	Partner Mac Address: 60:eb:69:a9:26:9d
 
-<figure >
-    
-        <img src="images/Bro-ELK/Bro_ELK03.png" />
-    
-    
-</figure>
+Slave Interface: eth0
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: b8:ca:3a:6f:4d:2c
+Slave queue ID: 0
+Aggregator ID: 1
+Actor Churn State: none
+Partner Churn State: none
+Actor Churned Count: 0
+Partner Churned Count: 0
+details actor lacp pdu:
+    system priority: 65535
+    system mac address: b8:ca:3a:6f:4d:2c
+    port key: 9
+    port priority: 255
+    port number: 1
+    port state: 63
+details partner lacp pdu:
+    system priority: 32768
+    system mac address: 60:eb:69:a9:26:9d
+    oper key: 83
+    port priority: 128
+    port number: 30
+    port state: 61
 
+Slave Interface: eth1
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: b8:ca:3a:6f:4d:2d
+Slave queue ID: 0
+Aggregator ID: 1
+Actor Churn State: none
+Partner Churn State: none
+Actor Churned Count: 0
+Partner Churned Count: 0
+details actor lacp pdu:
+    system priority: 65535
+    system mac address: b8:ca:3a:6f:4d:2c
+    port key: 9
+    port priority: 255
+    port number: 2
+    port state: 63
+details partner lacp pdu:
+    system priority: 32768
+    system mac address: 60:eb:69:a9:26:9d
+    oper key: 83
+    port priority: 128
+    port number: 31
+    port state: 61
 
+Slave Interface: eth2
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: b8:ca:3a:6f:4d:2e
+Slave queue ID: 0
+Aggregator ID: 1
+Actor Churn State: none
+Partner Churn State: none
+Actor Churned Count: 0
+Partner Churned Count: 0
+details actor lacp pdu:
+    system priority: 65535
+    system mac address: b8:ca:3a:6f:4d:2c
+    port key: 9
+    port priority: 255
+    port number: 3
+    port state: 63
+details partner lacp pdu:
+    system priority: 32768
+    system mac address: 60:eb:69:a9:26:9d
+    oper key: 83
+    port priority: 128
+    port number: 33
+    port state: 61
 
-<figure >
-    
-        <img src="images/Bro-ELK/Bro_ELK04.png" />
-    
-    
-</figure>
+Slave Interface: eth3
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: b8:ca:3a:6f:4d:2f
+Slave queue ID: 0
+Aggregator ID: 1
+Actor Churn State: none
+Partner Churn State: none
+Actor Churned Count: 0
+Partner Churned Count: 0
+details actor lacp pdu:
+    system priority: 65535
+    system mac address: b8:ca:3a:6f:4d:2c
+    port key: 9
+    port priority: 255
+    port number: 4
+    port state: 63
+details partner lacp pdu:
+    system priority: 32768
+    system mac address: 60:eb:69:a9:26:9d
+    oper key: 83
+    port priority: 128
+    port number: 32
+    port state: 61
 
-
-<h4 id="4-配置文件下载地址">4.配置文件下载地址：</h4>
-
-<pre><code>https://github.com/Zer0d0y/Bro-ELK
+# 服务器上生成一个8GB文件并启动4个python进程，然后在客户端同时下载文件
+python -m SimpleHTTPServer 8000
+python -m SimpleHTTPServer 8001
+python -m SimpleHTTPServer 8002
+python -m SimpleHTTPServer 8003
 </code></pre>
 
-<h4 id="5-todo-ref">5.ToDO &amp; Ref</h4>
+<p>5.测试结果及说明</p>
 
-<p>1.）ToDO</p>
+<pre><code>1.Incoming（入站）/Outgoing（出战），链路速度3.5GBit/s左右
 
-<pre><code>高级主题
-Bro Scripts（https://www.bro.org/sphinx/scripting/index.html）
-Bro Intel Framework（https://intel.criticalstack.com/）
+2.出站流量会通过4个网卡发送出去，而且单个连接一次只会使用1个网卡发送流量，速度为1GBbit/s（xmit_hash_policy layer3+4，对分片和非分片的数据包处理方式不同，具体参考：https://www.kernel.org/doc/Documentation/networking/bonding.txt）
+
+3.入站流量会使用所有网卡（4个）
 </code></pre>
 
-<p>2.）Ref（参考）</p>
+<p>6.参考资料：</p>
 
-<pre><code>https://www.bro.org/why_choose_bro.pdf
-https://bro-tracker.atlassian.net/secure/Dashboard.jspa
-https://www.bro.org/documentation/index.html
-https://www.bro.org/sphinx/scripts/base/protocols/conn/main.bro.html
+<pre><code>https://www.cyberciti.biz/faq/ubuntu-setup-a-bonding-device-and-enslave-two-real-ethernet-devices/
+https://help.nceas.ucsb.edu/ubuntu_network_configuration
+https://access.redhat.com/documentation/zh-CN/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Bonding.html
+
+可选
+https://askubuntu.com/questions/858824/ubuntu-16-04-lts-network-does-not-start-on-boot-bonding
+http://blogs.candoerz.com/question/229990/8023ad-bonding-configuration-file-on-an-ubuntu-1604-lts-server.aspx
 </code></pre>
 
                       
@@ -525,7 +499,7 @@ https://www.bro.org/sphinx/scripts/base/protocols/conn/main.bro.html
                         <div>
                             <p style="margin-top:0px;">作者：<a target="_blank" href="http://www.Zer0d0y.info/">Zer0d0y</a>
                             <br />微信关注：Zer0d0y
-                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/Bro-plus-ELK/">https://www.zer0d0y.info/post/Bro-plus-ELK/</a>
+                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/">https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/</a>
                             <br />
                             文章版权归本人所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
                         </div>
@@ -579,20 +553,14 @@ https://www.bro.org/sphinx/scripts/base/protocols/conn/main.bro.html
     <ul class="post-nav group">
       <li class="next">
         
-        <a href="https://www.zer0d0y.info/post/ten-years/" rel="next">
+        <a href="https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/" rel="next">
           <i class="fa fa-chevron-right"></i>
           <strong>Next post</strong>
-          <span>人生十年</span>
+          <span>Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH</span>
         </a>
         
       </li>
       <li class="previous">
-        
-        <a href="https://www.zer0d0y.info/post/outdoor_of_FW/" rel="prev">
-          <i class="fa fa-chevron-left"></i>
-          <strong>Previous Post</strong>
-          <span>墙外的世界</span>
-        </a>
         
       </li>
     </ul>

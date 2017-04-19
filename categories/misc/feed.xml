@@ -10,6 +10,278 @@
     <atom:link href="https://www.zer0d0y.info/categories/misc/feed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Ubuntu Server 16.04 LTS Network Bonding</title>
+      <link>https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/</link>
+      <pubDate>Wed, 19 Apr 2017 23:10:58 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;TL;DR - Ubuntu 16.04 Bonding （802.3ad or 4，[balance-rr or 0]）配置
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;# 在继续阅读之前，确保已经阅读并理解以下文档：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Linux Ethernet Bonding Driver HOWTO
+https://www.kernel.org/doc/Documentation/networking/bonding.txt
+
+Implementing EtherChannel in a Switched Network
+http://www.ciscopress.com/articles/article.asp?p=2348266&amp;amp;seqNum=3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;# 网卡bonding通常可以通过两种方式实现，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.）网卡配置文件 + Ifenslave 
+2.）通过sysfs接口
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;1.配置Bonding 802.3ad (mode 4)模式 + Transmit Hash Policy: layer3+4&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ENV（环境）说明：
+1.交换机：LB4M（呵呵！！！）
+2.OS：Ubuntu Server 16.04 LTS
+3.服务器4个网卡与交换机互联
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;1.）安装ifenslave和内核支持&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# apt-get install ifenslave
+# echo bonding &amp;gt;&amp;gt; /etc/modules
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.）配置网卡&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# vi /etc/network/interfaces
+
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto bond0
+iface bond0 inet static
+address 8.8.8.86
+netmask 255.255.255.240
+gateway 8.8.8.81
+bond-mode 4
+bond-miimon 100
+bond-xmit_hash_policy layer3+4
+bond-lacp-rate 1
+bond-slaves eth0 eth1 eth2 eth3
+dns-nameservers 114.114.114.114 233.5.5.5
+
+auto bond0:1
+iface bond0:1 inet static
+address 192.168.2.251
+netmask 255.255.255.0
+
+
+auto eth0
+iface eth0 inet manual
+bond-master bond0
+
+auto eth1
+iface eth1 inet manual
+bond-master bond0
+
+auto eth2
+iface eth2 inet manual
+bond-master bond0
+
+auto eth3
+iface eth3 inet manual
+bond-master bond0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.）配置LB4M交换机（port-channel min-links 4）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;port-channel name 3/30 86
+interface 0/30
+addport 3/30
+exit
+
+interface 0/31
+addport 3/30
+exit
+
+interface 0/32
+addport 3/30
+exit
+
+interface 0/33
+addport 3/30
+exit
+
+interface 3/30
+no port-channel static
+# port-channel load-balance 6
+port-channel min-links 4
+exit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4.）验证&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# cat /proc/net/bonding/bond0
+
+Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
+
+Bonding Mode: IEEE 802.3ad Dynamic link aggregation
+Transmit Hash Policy: layer3+4 (1)
+MII Status: up
+MII Polling Interval (ms): 100
+Up Delay (ms): 0
+Down Delay (ms): 0
+
+802.3ad info
+LACP rate: fast
+Min links: 0
+Aggregator selection policy (ad_select): stable
+System priority: 65535
+System MAC address: b8:ca:3a:6f:4d:2c
+Active Aggregator Info:
+	Aggregator ID: 1
+	Number of ports: 4
+	Actor Key: 9
+	Partner Key: 83
+	Partner Mac Address: 60:eb:69:a9:26:9d
+
+Slave Interface: eth0
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: b8:ca:3a:6f:4d:2c
+Slave queue ID: 0
+Aggregator ID: 1
+Actor Churn State: none
+Partner Churn State: none
+Actor Churned Count: 0
+Partner Churned Count: 0
+details actor lacp pdu:
+    system priority: 65535
+    system mac address: b8:ca:3a:6f:4d:2c
+    port key: 9
+    port priority: 255
+    port number: 1
+    port state: 63
+details partner lacp pdu:
+    system priority: 32768
+    system mac address: 60:eb:69:a9:26:9d
+    oper key: 83
+    port priority: 128
+    port number: 30
+    port state: 61
+
+Slave Interface: eth1
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: b8:ca:3a:6f:4d:2d
+Slave queue ID: 0
+Aggregator ID: 1
+Actor Churn State: none
+Partner Churn State: none
+Actor Churned Count: 0
+Partner Churned Count: 0
+details actor lacp pdu:
+    system priority: 65535
+    system mac address: b8:ca:3a:6f:4d:2c
+    port key: 9
+    port priority: 255
+    port number: 2
+    port state: 63
+details partner lacp pdu:
+    system priority: 32768
+    system mac address: 60:eb:69:a9:26:9d
+    oper key: 83
+    port priority: 128
+    port number: 31
+    port state: 61
+
+Slave Interface: eth2
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: b8:ca:3a:6f:4d:2e
+Slave queue ID: 0
+Aggregator ID: 1
+Actor Churn State: none
+Partner Churn State: none
+Actor Churned Count: 0
+Partner Churned Count: 0
+details actor lacp pdu:
+    system priority: 65535
+    system mac address: b8:ca:3a:6f:4d:2c
+    port key: 9
+    port priority: 255
+    port number: 3
+    port state: 63
+details partner lacp pdu:
+    system priority: 32768
+    system mac address: 60:eb:69:a9:26:9d
+    oper key: 83
+    port priority: 128
+    port number: 33
+    port state: 61
+
+Slave Interface: eth3
+MII Status: up
+Speed: 1000 Mbps
+Duplex: full
+Link Failure Count: 0
+Permanent HW addr: b8:ca:3a:6f:4d:2f
+Slave queue ID: 0
+Aggregator ID: 1
+Actor Churn State: none
+Partner Churn State: none
+Actor Churned Count: 0
+Partner Churned Count: 0
+details actor lacp pdu:
+    system priority: 65535
+    system mac address: b8:ca:3a:6f:4d:2c
+    port key: 9
+    port priority: 255
+    port number: 4
+    port state: 63
+details partner lacp pdu:
+    system priority: 32768
+    system mac address: 60:eb:69:a9:26:9d
+    oper key: 83
+    port priority: 128
+    port number: 32
+    port state: 61
+
+# 服务器上生成一个8GB文件并启动4个python进程，然后在客户端同时下载文件
+python -m SimpleHTTPServer 8000
+python -m SimpleHTTPServer 8001
+python -m SimpleHTTPServer 8002
+python -m SimpleHTTPServer 8003
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5.测试结果及说明&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.Incoming（入站）/Outgoing（出战），链路速度3.5GBit/s左右
+
+2.出站流量会通过4个网卡发送出去，而且单个连接一次只会使用1个网卡发送流量，速度为1GBbit/s（xmit_hash_policy layer3+4，对分片和非分片的数据包处理方式不同，具体参考：https://www.kernel.org/doc/Documentation/networking/bonding.txt）
+
+3.入站流量会使用所有网卡（4个）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;6.参考资料：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://www.cyberciti.biz/faq/ubuntu-setup-a-bonding-device-and-enslave-two-real-ethernet-devices/
+https://help.nceas.ucsb.edu/ubuntu_network_configuration
+https://access.redhat.com/documentation/zh-CN/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/ch-Configure_Network_Bonding.html
+
+可选
+https://askubuntu.com/questions/858824/ubuntu-16-04-lts-network-does-not-start-on-boot-bonding
+http://blogs.candoerz.com/question/229990/8023ad-bonding-configuration-file-on-an-ubuntu-1604-lts-server.aspx
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH</title>
       <link>https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/</link>
       <pubDate>Thu, 16 Mar 2017 22:46:56 +0800</pubDate>
