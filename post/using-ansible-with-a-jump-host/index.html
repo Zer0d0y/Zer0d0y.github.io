@@ -12,36 +12,36 @@
         }
     }
   </script>
-  <title>关于我 - Zer0d0y(段公子)&#39;s Blog</title>
+  <title>Using ansible with a jump host - Zer0d0y(段公子)&#39;s Blog</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-<meta name="description" content="人生十年">
+<meta name="keywords" content="xxx,">
+<meta name="description" content="TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器 1.Ansible Playbook目录结构 jumphost_playbook/ ├── ansible.cfg ├── inventory └── ssh.config 2.Ansible配">
 <meta name="author" content="Zer0d0y">
 <meta name="publisher" content="Zer0d0y">
 <meta name="generator" content="http://gohugo.io/"/>
 
-<meta itemprop="name" content="关于我 - Zer0d0y(段公子)&#39;s Blog">
-<meta itemprop="description" content="人生十年">
+<meta itemprop="name" content="Using ansible with a jump host - Zer0d0y(段公子)&#39;s Blog">
+<meta itemprop="description" content="TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器 1.Ansible Playbook目录结构 jumphost_playbook/ ├── ansible.cfg ├── inventory └── ssh.config 2.Ansible配">
 <meta itemprop="image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
-<meta property="og:title" content="关于我 - Zer0d0y(段公子)&#39;s Blog" />
+<meta property="og:title" content="Using ansible with a jump host - Zer0d0y(段公子)&#39;s Blog" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.zer0d0y.info/about/" />
+<meta property="og:url" content="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/" />
 <meta property="og:image" content="https://www.zer0d0y.info/public/coderzh.jpg" />
-<meta property="og:description" content="人生十年">
+<meta property="og:description" content="TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器 1.Ansible Playbook目录结构 jumphost_playbook/ ├── ansible.cfg ├── inventory └── ssh.config 2.Ansible配">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@Zer0d0y">
-<meta name="twitter:title" content="关于我 - Zer0d0y(段公子)&#39;s Blog">
-<meta name="twitter:description" content="人生十年">
+<meta name="twitter:title" content="Using ansible with a jump host - Zer0d0y(段公子)&#39;s Blog">
+<meta name="twitter:description" content="TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器 1.Ansible Playbook目录结构 jumphost_playbook/ ├── ansible.cfg ├── inventory └── ssh.config 2.Ansible配">
 <meta name="twitter:creator" content="@Zer0d0y">
 <meta name="twitter:image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
   <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
-  <link rel="canonical" href="https://www.zer0d0y.info/about/">
-  <link rel='shortlink' href="https://www.zer0d0y.info/about/"/>
+  <link rel="canonical" href="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/">
+  <link rel='shortlink' href="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/"/>
   <link rel="shortcut icon" href="https://www.zer0d0y.info/public/favicon.ico"/>
   
 <link rel="stylesheet" id="human-style-css" href="https://www.Zer0d0y.info/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
@@ -170,6 +170,10 @@
             <div class="page-title pad group">
               <ul class="meta-single group">
                 
+                <li class="category">
+                  <a href="https://www.Zer0d0y.info/categories/misc/" rel="category tag">misc</a>
+                </li>
+                
               </ul>
             </div>
 
@@ -179,12 +183,12 @@
                   class="post type-post status-publish format-standard has-post-thumbnail hentry category-australien tag-bondi-beach tag-city2surf tag-sydney">
                 <div class="post-inner group">
 
-                  <h1 class="post-title">关于我</h1>
+                  <h1 class="post-title">Using ansible with a jump host</h1>
 
                   <p class="post-byline">
-                    by  · 2015年01月01日 · 4 Words ·
+                    by  · 2017年04月20日 · 462 Words ·
                     ~1min reading time |
-                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/about.md"
+                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/using-ansible-with-a-jump-host.md"
                        target="_blank">Improve on <i class="fa fa-github"></i></a>
                   </p>
 
@@ -193,9 +197,142 @@
                   <div class="entry">
                     <div class="entry-inner">
                       
-                      <p class="message">
-<a href="http://www.zer0d0y.info/post/ten-years/" rel="bookmark" title="人生十年">人生十年</a>
-</p>
+                      <pre><code>TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器
+</code></pre>
+
+<p>1.Ansible Playbook目录结构</p>
+
+<pre><code>jumphost_playbook/
+├── ansible.cfg
+├── inventory
+└── ssh.config
+</code></pre>
+
+<p>2.Ansible配置</p>
+
+<pre><code># vi ansible.cfg
+
+[ssh_connection]
+ssh_args = -F ssh.config # 指定ssh config（语法同~/.ssh/config）
+control_path = ~/.ssh/mux-%%r@%%h:%%p
+
+# 配置文件读取优先级
+* ANSIBLE_CONFIG (an environment variable)
+* ansible.cfg (in the current directory)
+* .ansible.cfg (in the home directory)
+* /etc/ansible/ansible.cfg
+</code></pre>
+
+<p>3.Ansible inventory配置</p>
+
+<pre><code># vi inventory
+
+### 跳板机01
+[jump01]
+8.8.8.8.236
+
+
+### 北京IDC
+[bj-cyqz-all:children]
+bj-cyqz-lvs
+bj-cyqz-web
+
+
+### 北京IDC-LVS
+[bj-cyqz-lvs]
+bj-cyqz-lvs[1:2]
+
+
+### 北京IDC-Web
+[bj-cyqz-web]
+bj-cyqz-web[1:3]
+
+# 参考：
+http://docs.ansible.com/ansible/intro_inventory.html
+</code></pre>
+
+<p>4.ssh config 配置</p>
+
+<pre><code># 跳板机和Real服务器均使用key登录
+# vi ssh.config
+
+# 定义跳板机
+Host jump
+        User Zer0d0y
+        Hostname 8.8.8.236
+        port 12345
+        IdentityFile /home/zer0d0y/.ssh/Zer0d0y.rsa
+
+# 定义Real服务器
+Host bj-cyqz-lvs1
+        User ring3
+        Hostname 4.4.4.162
+        Port 12345
+        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
+        ProxyCommand ssh -W %h:%p jump
+
+Host bj-cyqz-lvs2
+        User ring3
+        Hostname 4.4.4.174
+        Port 12345
+        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
+        ProxyCommand ssh -W %h:%p jump
+
+Host bj-cyqz-web1
+        User ring3
+        Hostname 4.4.4.170
+        Port 12345
+        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
+        ProxyCommand ssh -W %h:%p jump
+
+Host bj-cyqz-web2
+        User ring3
+        Hostname 4.4.4.171
+        Port 12345
+        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
+        ProxyCommand ssh -W %h:%p jump
+
+Host bj-cyqz-web3
+        User ring3
+        Hostname 4.4.4.172
+        Port 12345
+        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
+        ProxyCommand ssh -W %h:%p jump
+
+# 注意：以下两行必须加上，否则ansible.cfg配置中的-F参数不能正确处理此文件
+Host *
+    SendEnv LANG LC_*
+
+</code></pre>
+
+<p>5.验证</p>
+
+<pre><code># ssh-add /home/zer0d0y/.ssh/Zer0d0y.rsa
+# ssh-add /home/zer0d0y/.ssh/ring3_id_rsa.rsa
+
+# ssh -F ssh.config bj-cyqz-lvs1
+# ansible -i inventory bj-cyqz-all -m ping
+</code></pre>
+
+<p>6.安全问题</p>
+
+<pre><code>推荐使用ProxyCommand，切勿使用SSH Agent Forwarding方式
+# 参考：
+https://github.com/joushou/sshmuxd#but-agent-forwarding-is-dangerous
+https://heipei.github.io/2015/02/26/SSH-Agent-Forwarding-considered-harmful/
+</code></pre>
+
+<p>7.参考资料：</p>
+
+<pre><code>Ansible
+http://docs.ansible.com/ansible/faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to
+https://alexbilbie.com/2014/07/using-ansible-with-a-bastion-host/
+https://blog.laisky.com/p/ansible/
+
+SSH
+https://wiki.gentoo.org/wiki/SSH_jump_host
+https://ma.ttias.be/use-jumphost-ssh-client-configurations/
+</code></pre>
 
                       
 <div id="ckepop">
@@ -235,7 +372,7 @@
                         <div>
                             <p style="margin-top:0px;">作者：<a target="_blank" href="http://www.Zer0d0y.info/">Zer0d0y</a>
                             <br />微信关注：Zer0d0y
-                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/about/">https://www.zer0d0y.info/about/</a>
+                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/">https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/</a>
                             <br />
                             文章版权归本人所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
                         </div>
@@ -289,20 +426,14 @@
     <ul class="post-nav group">
       <li class="next">
         
-        <a href="https://www.zer0d0y.info/post/Wireshark-profiles/" rel="next">
+        <a href="https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/" rel="next">
           <i class="fa fa-chevron-right"></i>
           <strong>Next post</strong>
-          <span>定制Wireshark profile，自动识别攻击类型</span>
+          <span>Ubuntu Server 16.04 LTS Network Bonding</span>
         </a>
         
       </li>
       <li class="previous">
-        
-        <a href="https://www.zer0d0y.info/post/ten-years/" rel="prev">
-          <i class="fa fa-chevron-left"></i>
-          <strong>Previous Post</strong>
-          <span>人生十年</span>
-        </a>
         
       </li>
     </ul>
