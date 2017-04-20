@@ -10,6 +10,94 @@
     <atom:link href="https://www.zer0d0y.info/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/feed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Redis 安全规范</title>
+      <link>https://www.zer0d0y.info/post/Securing_Redis/</link>
+      <pubDate>Thu, 20 Apr 2017 16:56:10 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/Securing_Redis/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;TL;DR - Redis安全最佳实践
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;1.信任的内网运行，绑定Redis监听的网络接口。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bind 192.168.1.100 10.0.0.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.禁止root用户启动redis&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;useradd -M -s /sbin/nologin [username]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.限制redis文件目录访问权限&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;chmod 700 /var/lib/redis   #假设这是你redis目录
+chmod 600 /etc/redis/redis.conf  #假设这是你redis配置文件
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4.避免使用默认端口&lt;/p&gt;
+
+&lt;p&gt;5.开启Redis密码认证，并设置高复杂度密码（需要重启redis才能生效）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vim /etc/redis/redis.conf  
+requirepass ed4c39b015b0e46f079775474dbfd0a9a4ab278f63340a6d640999f25c68a932fef815
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;6.服务精细化授权&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 禁用或重命名危险命令（FLUSHDB, FLUSHALL, KEYS,PEXPIRE, DEL, CONFIG, SHUTDOWN, BGREWRITEAOF, BGSAVE, SAVE, SPOP, SREM, RENAME,DEBUG, EVAL等）
+rename-command CONFIG CONFIG_b9fc8327c4dee7
+rename-command SHUTDOWN SHUTDOWN_b9fc8327c4dee7
+rename-command FLUSHDB &amp;quot;&amp;quot;
+rename-command FLUSHALL &amp;quot;&amp;quot;
+# 重启生效
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;7.防火墙屏蔽Redis端口&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;iptables -A INPUT -p tcp --dport 6379 -j DROP
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;8.禁止在Redis中存储敏感的明文数据&lt;/p&gt;
+
+&lt;p&gt;9.数据加密传输&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;spiped
+参考：http://www.tarsnap.com/spiped.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;10.安全监控&lt;/p&gt;
+
+&lt;p&gt;11.Redis Cluster（同步）不支持密码问题 - 可忽略&lt;/p&gt;
+
+&lt;p&gt;12.Redis3.2.0的保护模式&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;如果Redis在启动时，未开启bind和密码设置功能，只能通过回环地址本地访问
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;13.定期更新&lt;/p&gt;
+
+&lt;p&gt;14.参考资料：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Redis Security
+https://redis.io/topics/security
+Redis CVE
+https://www.cvedetails.com/vulnerability-list/vendor_id-15183/product_id-31837/year-2016/Pivotal-Software-Redis.html
+
+Vulnerability Spotlight: Redis CONFIG SET client-output-buffer-limit Code Execution Vulnerability
+http://blog.talosintelligence.com/2016/09/redis-vulnerability.html
+Redis未授权访问漏洞
+https://help.aliyun.com/knowledge_detail/37447.html
+Redis CSRF 漏洞
+https://yq.aliyun.com/articles/69183?spm=5176.8246799.0.0.rjoQtW
+Redis CSRF 漏洞 POC
+https://github.com/dxa4481/Damn-Vulnerable-Redis-Container
+Redis EVAL Lua Sandbox Escape
+http://benmmurphy.github.io/blog/2015/06/04/redis-eval-lua-sandbox-escape/
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite</title>
       <link>https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/</link>
       <pubDate>Sun, 19 Feb 2017 14:50:02 +0800</pubDate>
