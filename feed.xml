@@ -91,6 +91,8 @@ bond-master bond0
 auto eth3
 iface eth3 inet manual
 bond-master bond0
+
+# systemctl restart networking
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;3.）配置LB4M交换机（port-channel min-links 4）&lt;/p&gt;
@@ -121,7 +123,10 @@ exit
 
 &lt;p&gt;4.）验证&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;# cat /proc/net/bonding/bond0
+&lt;pre&gt;&lt;code&gt;# ethtool bond0
+# ip add list or ifconfig
+
+# cat /proc/net/bonding/bond0
 
 Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
 
@@ -262,7 +267,7 @@ python -m SimpleHTTPServer 8003
 
 &lt;p&gt;5.测试结果及说明&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;1.Incoming（入站）/Outgoing（出战），链路速度3.5GBit/s左右
+&lt;pre&gt;&lt;code&gt;1.Incoming（入站）/Outgoing（出站），链路速度3.5GBit/s左右
 
 2.出站流量会通过4个网卡发送出去，而且单个连接一次只会使用1个网卡发送流量，速度为1GBbit/s（xmit_hash_policy layer3+4，对分片和非分片的数据包处理方式不同，具体参考：https://www.kernel.org/doc/Documentation/networking/bonding.txt）
 

@@ -186,7 +186,7 @@
                   <h1 class="post-title">Ubuntu Server 16.04 LTS Network Bonding</h1>
 
                   <p class="post-byline">
-                    by  · 2017年04月19日 · 1117 Words ·
+                    by  · 2017年04月19日 · 1130 Words ·
                     ~3min reading time |
                     <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/Ubuntu-Server-16.04-LTS-Network-Bonding.md"
                        target="_blank">Improve on <i class="fa fa-github"></i></a>
@@ -272,6 +272,8 @@ bond-master bond0
 auto eth3
 iface eth3 inet manual
 bond-master bond0
+
+# systemctl restart networking
 </code></pre>
 
 <p>3.）配置LB4M交换机（port-channel min-links 4）</p>
@@ -302,7 +304,10 @@ exit
 
 <p>4.）验证</p>
 
-<pre><code># cat /proc/net/bonding/bond0
+<pre><code># ethtool bond0
+# ip add list or ifconfig
+
+# cat /proc/net/bonding/bond0
 
 Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
 
@@ -443,7 +448,7 @@ python -m SimpleHTTPServer 8003
 
 <p>5.测试结果及说明</p>
 
-<pre><code>1.Incoming（入站）/Outgoing（出战），链路速度3.5GBit/s左右
+<pre><code>1.Incoming（入站）/Outgoing（出站），链路速度3.5GBit/s左右
 
 2.出站流量会通过4个网卡发送出去，而且单个连接一次只会使用1个网卡发送流量，速度为1GBbit/s（xmit_hash_policy layer3+4，对分片和非分片的数据包处理方式不同，具体参考：https://www.kernel.org/doc/Documentation/networking/bonding.txt）
 
