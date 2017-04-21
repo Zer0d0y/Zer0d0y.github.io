@@ -12,36 +12,36 @@
         }
     }
   </script>
-  <title>Using ansible with a jump host - Zer0d0y(段公子)&#39;s Blog</title>
+  <title>互联网企业安全指南（二）：系统安全加固指南 - Zer0d0y(段公子)&#39;s Blog</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="keywords" content="xxx,">
-<meta name="description" content="TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器 1.Ansible Playbook目录结构 jumphost_playbook/ ├── ansible.cfg ├── inventory └── ssh.config 2.Ansible配">
+<meta name="description" content="TL;DR - 系统安全加固指南，模块独立，可移植到其他平台。 Ubuntu 14.04 LTS Server Security hardening （系统安全加固） Revision History 修正历史 Current version: 0.1.10 draft (as of 2017-03-08) Platforms 适用平台 Ubuntu 14.04 LTS Server 需求级别定义： A.">
 <meta name="author" content="Zer0d0y">
 <meta name="publisher" content="Zer0d0y">
 <meta name="generator" content="http://gohugo.io/"/>
 
-<meta itemprop="name" content="Using ansible with a jump host - Zer0d0y(段公子)&#39;s Blog">
-<meta itemprop="description" content="TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器 1.Ansible Playbook目录结构 jumphost_playbook/ ├── ansible.cfg ├── inventory └── ssh.config 2.Ansible配">
+<meta itemprop="name" content="互联网企业安全指南（二）：系统安全加固指南 - Zer0d0y(段公子)&#39;s Blog">
+<meta itemprop="description" content="TL;DR - 系统安全加固指南，模块独立，可移植到其他平台。 Ubuntu 14.04 LTS Server Security hardening （系统安全加固） Revision History 修正历史 Current version: 0.1.10 draft (as of 2017-03-08) Platforms 适用平台 Ubuntu 14.04 LTS Server 需求级别定义： A.">
 <meta itemprop="image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
-<meta property="og:title" content="Using ansible with a jump host - Zer0d0y(段公子)&#39;s Blog" />
+<meta property="og:title" content="互联网企业安全指南（二）：系统安全加固指南 - Zer0d0y(段公子)&#39;s Blog" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/" />
+<meta property="og:url" content="https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/" />
 <meta property="og:image" content="https://www.zer0d0y.info/public/coderzh.jpg" />
-<meta property="og:description" content="TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器 1.Ansible Playbook目录结构 jumphost_playbook/ ├── ansible.cfg ├── inventory └── ssh.config 2.Ansible配">
+<meta property="og:description" content="TL;DR - 系统安全加固指南，模块独立，可移植到其他平台。 Ubuntu 14.04 LTS Server Security hardening （系统安全加固） Revision History 修正历史 Current version: 0.1.10 draft (as of 2017-03-08) Platforms 适用平台 Ubuntu 14.04 LTS Server 需求级别定义： A.">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@Zer0d0y">
-<meta name="twitter:title" content="Using ansible with a jump host - Zer0d0y(段公子)&#39;s Blog">
-<meta name="twitter:description" content="TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器 1.Ansible Playbook目录结构 jumphost_playbook/ ├── ansible.cfg ├── inventory └── ssh.config 2.Ansible配">
+<meta name="twitter:title" content="互联网企业安全指南（二）：系统安全加固指南 - Zer0d0y(段公子)&#39;s Blog">
+<meta name="twitter:description" content="TL;DR - 系统安全加固指南，模块独立，可移植到其他平台。 Ubuntu 14.04 LTS Server Security hardening （系统安全加固） Revision History 修正历史 Current version: 0.1.10 draft (as of 2017-03-08) Platforms 适用平台 Ubuntu 14.04 LTS Server 需求级别定义： A.">
 <meta name="twitter:creator" content="@Zer0d0y">
 <meta name="twitter:image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
   <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
-  <link rel="canonical" href="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/">
-  <link rel='shortlink' href="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/"/>
+  <link rel="canonical" href="https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/">
+  <link rel='shortlink' href="https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/"/>
   <link rel="shortcut icon" href="https://www.zer0d0y.info/public/favicon.ico"/>
   
 <link rel="stylesheet" id="human-style-css" href="https://www.Zer0d0y.info/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
@@ -171,7 +171,7 @@
               <ul class="meta-single group">
                 
                 <li class="category">
-                  <a href="https://www.Zer0d0y.info/categories/misc/" rel="category tag">misc</a>
+                  <a href="https://www.Zer0d0y.info/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/" rel="category tag">安全研究</a>
                 </li>
                 
               </ul>
@@ -183,12 +183,12 @@
                   class="post type-post status-publish format-standard has-post-thumbnail hentry category-australien tag-bondi-beach tag-city2surf tag-sydney">
                 <div class="post-inner group">
 
-                  <h1 class="post-title">Using ansible with a jump host</h1>
+                  <h1 class="post-title">互联网企业安全指南（二）：系统安全加固指南</h1>
 
                   <p class="post-byline">
-                    by  · 2017年04月20日 · 462 Words ·
-                    ~1min reading time |
-                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/using-ansible-with-a-jump-host.md"
+                    by  · 2017年04月21日 · 1355 Words ·
+                    ~3min reading time |
+                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/advanced-enterprise-security-guidelines-for-internet-companies-part2.md"
                        target="_blank">Improve on <i class="fa fa-github"></i></a>
                   </p>
 
@@ -198,9 +198,11 @@
                     <div class="entry-inner">
                       
                       
+
+
 <figure >
     
-        <img src="images/ansible-red-hat-blog-top.png" />
+        <img src="images/AES-sec02.jpg" />
     
     
 </figure>
@@ -210,141 +212,308 @@
 <caption align="bottom"> </caption>
 </table>
 
-<pre><code>TL;DR - 配置Ansible通过jump host/jump server（跳板机）管理服务器
+<pre><code>TL;DR - 系统安全加固指南，模块独立，可移植到其他平台。
 </code></pre>
 
-<p>1.Ansible Playbook目录结构</p>
+<h5 id="ubuntu-14-04-lts-server-security-hardening-系统安全加固">Ubuntu 14.04 LTS Server Security hardening （系统安全加固）</h5>
 
-<pre><code>jumphost_playbook/
-├── ansible.cfg
-├── inventory
-└── ssh.config
+<pre><code>Revision History 修正历史
+	Current version: 0.1.10
+	draft (as of 2017-03-08)
+
+Platforms 适用平台
+	Ubuntu 14.04 LTS Server
+
+需求级别定义：
+A.必须  # 必须执行
+B.可选  # 非必须，有多种方案选择
+C.需要评估 # 性能和是否可行评估
+D.后期执行  # 后期完善
+E.必须但需要评估  # 必须执行但是需要先评估，确保没问题再执行
 </code></pre>
 
-<p>2.Ansible配置</p>
+<pre><code>Table of Contents 目录
 
-<pre><code># vi ansible.cfg
+	1.Patching and Software Updates 软件更新
+	1.1）软件包更新	A
+	1.2）自动安装安全更新	C
 
-[ssh_connection]
-ssh_args = -F ssh.config # 指定ssh config（语法同~/.ssh/config）
-control_path = ~/.ssh/mux-%%r@%%h:%%p
+	2.Disk Partitioning 磁盘分区	A
 
-# 配置文件读取优先级
-* ANSIBLE_CONFIG (an environment variable)
-* ansible.cfg (in the current directory)
-* .ansible.cfg (in the home directory)
-* /etc/ansible/ansible.cfg
+	3.Software Integrity Checking 文件系统完整性检查
+	3.1）debsums	A
+	3.2）Audit	A
+	3.3）Lynis	A
+	3.4）AIDE	C
+	3.5）Monit	C
+
+	4.File Permissions and Masks 文件权限和权限masks，System jobs（Cron）	A
+
+	5.内核安全控制&amp;TCP/IP协议栈安全（Via sysctl）	A
+
+	6.Password policy 密码策略	A
+
+	7.Console Security 控制台安全	A
+
+	8.Disable IPv6 禁用IPv6	E
+
+	9.SSH Settings SSH配置	A
+
+	10.iptables 配置	A
+
+	11.高级主题	C/E
+
+	12.待完善
+
+	13.参考资料
 </code></pre>
 
-<p>3.Ansible inventory配置</p>
+<h5 id="1-patching-and-software-updates-软件更新">1.Patching and Software Updates 软件更新</h5>
 
-<pre><code># vi inventory
+<pre><code>1.1）软件包更新
+apt-get update &amp;&amp; apt-get -y upgrade
 
-### 跳板机01
-[jump01]
-8.8.8.8.236
+1.2）自动安装安全更新
+apt-get install unattended-upgrades
+vi /etc/apt/apt.conf.d/10periodic 
+vi /etc/apt/apt.conf.d/50unattended-upgrades
 
+ToDo：
+把不能和不需要的软件加入黑名单，避免被自动更新。
 
-### 北京IDC
-[bj-cyqz-all:children]
-bj-cyqz-lvs
-bj-cyqz-web
-
-
-### 北京IDC-LVS
-[bj-cyqz-lvs]
-bj-cyqz-lvs[1:2]
-
-
-### 北京IDC-Web
-[bj-cyqz-web]
-bj-cyqz-web[1:3]
-
-# 参考：
-http://docs.ansible.com/ansible/intro_inventory.html
+参考：
+https://help.ubuntu.com/14.04/serverguide/automatic-updates.html
 </code></pre>
 
-<p>4.ssh config 配置</p>
+<h5 id="2-disk-partitioning-磁盘分区">2.Disk Partitioning 磁盘分区</h5>
 
-<pre><code># 跳板机和Real服务器均使用key登录
-# vi ssh.config
+<pre><code>1.1）/tmp 使用独立分区
+解释：临时文件、全局可写
 
-# 定义跳板机
-Host jump
-        User Zer0d0y
-        Hostname 8.8.8.236
-        port 12345
-        IdentityFile /home/zer0d0y/.ssh/Zer0d0y.rsa
-
-# 定义Real服务器
-Host bj-cyqz-lvs1
-        User ring3
-        Hostname 4.4.4.162
-        Port 12345
-        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
-        ProxyCommand ssh -W %h:%p jump
-
-Host bj-cyqz-lvs2
-        User ring3
-        Hostname 4.4.4.174
-        Port 12345
-        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
-        ProxyCommand ssh -W %h:%p jump
-
-Host bj-cyqz-web1
-        User ring3
-        Hostname 4.4.4.170
-        Port 12345
-        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
-        ProxyCommand ssh -W %h:%p jump
-
-Host bj-cyqz-web2
-        User ring3
-        Hostname 4.4.4.171
-        Port 12345
-        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
-        ProxyCommand ssh -W %h:%p jump
-
-Host bj-cyqz-web3
-        User ring3
-        Hostname 4.4.4.172
-        Port 12345
-        IdentityFile /home/zer0d0y/.ssh/ring3_id_rsa.rsa
-        ProxyCommand ssh -W %h:%p jump
-
-# 注意：以下两行必须加上，否则ansible.cfg配置中的-F参数不能正确处理此文件
-Host *
-    SendEnv LANG LC_*
-
+1.2）/var/log 使用独立分区
+解释：日志文件，备份、取证等
 </code></pre>
 
-<p>5.验证</p>
+<h5 id="3-software-integrity-checking-文件系统完整性检查">3.Software Integrity Checking 文件系统完整性检查</h5>
 
-<pre><code># ssh-add /home/zer0d0y/.ssh/Zer0d0y.rsa
-# ssh-add /home/zer0d0y/.ssh/ring3_id_rsa.rsa
-
-# ssh -F ssh.config bj-cyqz-lvs1
-# ansible -i inventory bj-cyqz-all -m ping
+<pre><code>3.1）debsums 已安装软件包完整性检查
+apt-get install debsums
+使用示例：debsums openssh-client
 </code></pre>
 
-<p>6.安全问题</p>
-
-<pre><code>推荐使用ProxyCommand，切勿使用SSH Agent Forwarding方式
-# 参考：
-https://github.com/joushou/sshmuxd#but-agent-forwarding-is-dangerous
-https://heipei.github.io/2015/02/26/SSH-Agent-Forwarding-considered-harmful/
+<pre><code>3.2）Audit 安全审计
+详见配置文件：
+Cyqz_OS_Security_Checklist_auditd.md
 </code></pre>
 
-<p>7.参考资料：</p>
+<pre><code>3.3）Lynis Security auditing/Vulnerability detection and scanning/System hardening
+3.3.1）安装
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C80E383C3DE9F082E01391A0366C67DE91CA5D5F
+echo &quot;deb https://packages.cisofy.com/community/lynis/deb/ trusty main&quot; &gt; /etc/apt/sources.list.d/cisofy-lynis.list
+apt-get update &amp;&amp; apt-get install lynis
+3.3.2）使用
+lynis --checkall audit system
+lynis --pentest audit system
+</code></pre>
 
-<pre><code>Ansible
-http://docs.ansible.com/ansible/faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to
-https://alexbilbie.com/2014/07/using-ansible-with-a-bastion-host/
-https://blog.laisky.com/p/ansible/
+<pre><code>3.4）AIDE - 文件、目录完整性检查
+https://help.ubuntu.com/community/FileIntegrityAIDE
+</code></pre>
 
-SSH
-https://wiki.gentoo.org/wiki/SSH_jump_host
-https://ma.ttias.be/use-jumphost-ssh-client-configurations/
+<pre><code>3.5）Monit 关键文件监控
+详见配置文件：
+Cyqz_OS_Security_Checklist_monit.md
+</code></pre>
+
+<pre><code>参考：
+lynis
+https://cisofy.com/lynis/
+monit
+https://mmonit.com/monit/
+入侵检测Checklist
+https://www.sans.org/media/score/checklists/ID-Linux.pdf
+</code></pre>
+
+<h5 id="4-file-permissions-and-masks-文件权限和权限masks-system-jobs-cron">4.File Permissions and Masks 文件权限和权限masks，System jobs（Cron）</h5>
+
+<pre><code>详见配置文件：
+Cyqz_OS_Security_Checklist_files_Permissions.md
+
+权限检查命令：
+查找全局可写目录
+find /dir -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print
+文件权限检查
+http://people.redhat.com/sgrubb/files/stig-2011/stig-file-test.sh
+查找隐藏可执行文件
+http://people.redhat.com/sgrubb/security/find-hidden-exec
+</code></pre>
+
+<h5 id="5-内核安全控制-tcp-ip协议栈安全-via-sysctl">5.内核安全控制&amp;TCP/IP协议栈安全（Via sysctl）</h5>
+
+<pre><code>详见配置文件：
+Cyqz_OS_Security_Checklist_sysctl.md
+
+需要考虑LVS相关设置，
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Load_Balancer_Administration/s1-lvs-direct-VSA.html
+http://kb.linuxvirtualserver.org/wiki/Using_arp_announce/arp_ignore_to_disable_ARP
+
+参考：
+https://klaver.it/linux/sysctl.conf
+http://pastebin.com/YRz1qiKE
+</code></pre>
+
+<h5 id="6-password-policy-密码策略">6.Password policy 密码策略</h5>
+
+<pre><code>6.1）安装PAM模块pam_cracklib
+apt-get install libpam-cracklib
+</code></pre>
+
+<pre><code>6.2）配置（修改对应行为以下内容）
+vi /etc/pam.d/common-password
+# Prevent Reusing Old Passwords
+password	[success=1 default=ignore]	pam_unix.so obscure use_authtok try_first_pass sha512 remember=5
+# Set Password Complexity
+password     requisite     pam_cracklib.so retry=3 minlen=24 dcredit=-2 ucredit=-2 ocredit=-2 lcredit=-2
+
+# Set Password Expiration Period
+vi /etc/login.defs
+PASS_MAX_DAYS   90
+PASS_MIN_DAYS   0
+PASS_WARN_AGE   10
+</code></pre>
+
+<pre><code>参考：
+http://xmodulo.com/set-password-policy-linux.html
+</code></pre>
+
+<h5 id="7-console-security-控制台安全">7.Console Security 控制台安全</h5>
+
+<pre><code>Disable Ctrl+Alt+Delete # 禁用Ctrl+Alt+Delete
+vi /etc/init/control-alt-delete.conf
+#exec shutdown -r now &quot;Control-Alt-Delete pressed&quot;
+</code></pre>
+
+<h5 id="8-disable-ipv6-禁用ipv6">8.Disable IPv6 禁用IPv6</h5>
+
+<pre><code>vi /etc/sysctl.conf
+# IPv6 disabled
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+</code></pre>
+
+<h5 id="9-ssh-settings-ssh配置">9.SSH Settings SSH配置</h5>
+
+<pre><code># vi /etc/ssh/sshd_config
+
+# What ports, IPs and protocols we listen for
+Port 10022
+
+Protocol 2
+# HostKeys for protocol version 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+#Privilege Separation is turned on for security
+UsePrivilegeSeparation yes
+
+# Lifetime and size of ephemeral version 1 server key
+KeyRegenerationInterval 3600
+ServerKeyBits 1024
+
+# Logging
+SyslogFacility AUTH
+LogLevel INFO
+
+# Authentication:
+LoginGraceTime 120
+PermitRootLogin no
+StrictModes yes
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+RSAAuthentication yes
+PubkeyAuthentication yes
+MaxAuthTries 4
+PermitEmptyPasswords no
+PermitUserEnvironment no
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+
+# Don't read the user's ~/.rhosts and ~/.shosts files
+IgnoreRhosts yes
+
+# For this to work you will also need host keys in /etc/ssh_known_hosts
+RhostsRSAAuthentication no
+
+# similar for protocol version 2
+HostbasedAuthentication no
+
+# Disable X11 Forward
+X11Forwarding no
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+# File Transfer
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Idle Log Out Timeout Interval 
+ClientAliveInterval 600
+ClientAliveCountMax 0
+
+# Banner
+Banner /etc/issue
+
+# use PAM
+UsePAM yes
+</code></pre>
+
+<pre><code># chown root:root /etc/ssh/sshd_config
+# chmod 600 /etc/ssh/sshd_config
+
+# chmod 644 /etc/motd
+# chmod 644 /etc/issue
+# chmod 644 /etc/issue.net
+</code></pre>
+
+<pre><code>参考：
+https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html
+</code></pre>
+
+<h5 id="10-iptables-配置">10.iptables 配置</h5>
+
+<pre><code>详见配置文件：
+Cyqz_OS_Security_Checklist_iptables.md
+
+保存iptables规则
+apt-get install iptables-persistent
+</code></pre>
+
+<h5 id="11-高级主题">11.高级主题</h5>
+
+<pre><code>11.1）Kernel Grsecurity/PaX补丁，MAC（SELinux/AppArmor）
+11.2) Kernel Livepatch（OS内核安全Patch，无需重启）
+</code></pre>
+
+<h5 id="12-待完善">12.待完善</h5>
+
+<pre><code>PAM/sudo/mount
+</code></pre>
+
+<h5 id="13-参考资料">13.参考资料</h5>
+
+<pre><code>https://wiki.ubuntu.com/Security/Features
+https://wiki.ubuntu.com/Security/Features/Historical
+https://help.ubuntu.com/14.04/serverguide/security.html
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/index.html
+https://benchmarks.cisecurity.org/tools2/linux/CIS_Ubuntu_14.04_LTS_Server_Benchmark_v1.0.0.pdf
+https://github.com/GovReady/ubuntu-lts/blob/master/hardening.md
+</code></pre>
+
+<h5 id="14-本文提到的所有配置文件下载地址">14.本文提到的所有配置文件下载地址：</h5>
+
+<pre><code>https://github.com/Zer0d0y/advanced-enterprise-security
 </code></pre>
 
                       
@@ -385,7 +554,7 @@ https://ma.ttias.be/use-jumphost-ssh-client-configurations/
                         <div>
                             <p style="margin-top:0px;">作者：<a target="_blank" href="http://www.Zer0d0y.info/">Zer0d0y</a>
                             <br />微信关注：Zer0d0y
-                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/">https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/</a>
+                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/">https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/</a>
                             <br />
                             文章版权归本人所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
                         </div>
@@ -439,20 +608,14 @@ https://ma.ttias.be/use-jumphost-ssh-client-configurations/
     <ul class="post-nav group">
       <li class="next">
         
-        <a href="https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/" rel="next">
+        <a href="https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies/" rel="next">
           <i class="fa fa-chevron-right"></i>
           <strong>Next post</strong>
-          <span>Ubuntu Server 16.04 LTS Network Bonding</span>
+          <span>互联网企业安全指南（一）：基础架构安全</span>
         </a>
         
       </li>
       <li class="previous">
-        
-        <a href="https://www.zer0d0y.info/post/Securing_Redis/" rel="prev">
-          <i class="fa fa-chevron-left"></i>
-          <strong>Previous Post</strong>
-          <span>Redis 安全规范</span>
-        </a>
         
       </li>
     </ul>

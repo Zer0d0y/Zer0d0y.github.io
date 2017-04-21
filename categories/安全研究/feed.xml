@@ -10,12 +10,521 @@
     <atom:link href="https://www.zer0d0y.info/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/feed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>互联网企业安全指南（二）：系统安全加固指南</title>
+      <link>https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/</link>
+      <pubDate>Fri, 21 Apr 2017 11:23:21 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/</guid>
+      <description>
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/AES-sec02.jpg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;table class=&#34;image&#34;&gt;
+&lt;caption align=&#34;bottom&#34;&gt; &lt;/caption&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;TL;DR - 系统安全加固指南，模块独立，可移植到其他平台。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;ubuntu-14-04-lts-server-security-hardening-系统安全加固&#34;&gt;Ubuntu 14.04 LTS Server Security hardening （系统安全加固）&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;Revision History 修正历史
+	Current version: 0.1.10
+	draft (as of 2017-03-08)
+
+Platforms 适用平台
+	Ubuntu 14.04 LTS Server
+
+需求级别定义：
+A.必须  # 必须执行
+B.可选  # 非必须，有多种方案选择
+C.需要评估 # 性能和是否可行评估
+D.后期执行  # 后期完善
+E.必须但需要评估  # 必须执行但是需要先评估，确保没问题再执行
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Table of Contents 目录
+
+	1.Patching and Software Updates 软件更新
+	1.1）软件包更新	A
+	1.2）自动安装安全更新	C
+
+	2.Disk Partitioning 磁盘分区	A
+
+	3.Software Integrity Checking 文件系统完整性检查
+	3.1）debsums	A
+	3.2）Audit	A
+	3.3）Lynis	A
+	3.4）AIDE	C
+	3.5）Monit	C
+
+	4.File Permissions and Masks 文件权限和权限masks，System jobs（Cron）	A
+
+	5.内核安全控制&amp;amp;TCP/IP协议栈安全（Via sysctl）	A
+
+	6.Password policy 密码策略	A
+
+	7.Console Security 控制台安全	A
+
+	8.Disable IPv6 禁用IPv6	E
+
+	9.SSH Settings SSH配置	A
+
+	10.iptables 配置	A
+
+	11.高级主题	C/E
+
+	12.待完善
+
+	13.参考资料
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;1-patching-and-software-updates-软件更新&#34;&gt;1.Patching and Software Updates 软件更新&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.1）软件包更新
+apt-get update &amp;amp;&amp;amp; apt-get -y upgrade
+
+1.2）自动安装安全更新
+apt-get install unattended-upgrades
+vi /etc/apt/apt.conf.d/10periodic 
+vi /etc/apt/apt.conf.d/50unattended-upgrades
+
+ToDo：
+把不能和不需要的软件加入黑名单，避免被自动更新。
+
+参考：
+https://help.ubuntu.com/14.04/serverguide/automatic-updates.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;2-disk-partitioning-磁盘分区&#34;&gt;2.Disk Partitioning 磁盘分区&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.1）/tmp 使用独立分区
+解释：临时文件、全局可写
+
+1.2）/var/log 使用独立分区
+解释：日志文件，备份、取证等
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;3-software-integrity-checking-文件系统完整性检查&#34;&gt;3.Software Integrity Checking 文件系统完整性检查&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;3.1）debsums 已安装软件包完整性检查
+apt-get install debsums
+使用示例：debsums openssh-client
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;3.2）Audit 安全审计
+详见配置文件：
+Cyqz_OS_Security_Checklist_auditd.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;3.3）Lynis Security auditing/Vulnerability detection and scanning/System hardening
+3.3.1）安装
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C80E383C3DE9F082E01391A0366C67DE91CA5D5F
+echo &amp;quot;deb https://packages.cisofy.com/community/lynis/deb/ trusty main&amp;quot; &amp;gt; /etc/apt/sources.list.d/cisofy-lynis.list
+apt-get update &amp;amp;&amp;amp; apt-get install lynis
+3.3.2）使用
+lynis --checkall audit system
+lynis --pentest audit system
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;3.4）AIDE - 文件、目录完整性检查
+https://help.ubuntu.com/community/FileIntegrityAIDE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;3.5）Monit 关键文件监控
+详见配置文件：
+Cyqz_OS_Security_Checklist_monit.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;参考：
+lynis
+https://cisofy.com/lynis/
+monit
+https://mmonit.com/monit/
+入侵检测Checklist
+https://www.sans.org/media/score/checklists/ID-Linux.pdf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;4-file-permissions-and-masks-文件权限和权限masks-system-jobs-cron&#34;&gt;4.File Permissions and Masks 文件权限和权限masks，System jobs（Cron）&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;详见配置文件：
+Cyqz_OS_Security_Checklist_files_Permissions.md
+
+权限检查命令：
+查找全局可写目录
+find /dir -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print
+文件权限检查
+http://people.redhat.com/sgrubb/files/stig-2011/stig-file-test.sh
+查找隐藏可执行文件
+http://people.redhat.com/sgrubb/security/find-hidden-exec
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;5-内核安全控制-tcp-ip协议栈安全-via-sysctl&#34;&gt;5.内核安全控制&amp;amp;TCP/IP协议栈安全（Via sysctl）&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;详见配置文件：
+Cyqz_OS_Security_Checklist_sysctl.md
+
+需要考虑LVS相关设置，
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Load_Balancer_Administration/s1-lvs-direct-VSA.html
+http://kb.linuxvirtualserver.org/wiki/Using_arp_announce/arp_ignore_to_disable_ARP
+
+参考：
+https://klaver.it/linux/sysctl.conf
+http://pastebin.com/YRz1qiKE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;6-password-policy-密码策略&#34;&gt;6.Password policy 密码策略&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;6.1）安装PAM模块pam_cracklib
+apt-get install libpam-cracklib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;6.2）配置（修改对应行为以下内容）
+vi /etc/pam.d/common-password
+# Prevent Reusing Old Passwords
+password	[success=1 default=ignore]	pam_unix.so obscure use_authtok try_first_pass sha512 remember=5
+# Set Password Complexity
+password     requisite     pam_cracklib.so retry=3 minlen=24 dcredit=-2 ucredit=-2 ocredit=-2 lcredit=-2
+
+# Set Password Expiration Period
+vi /etc/login.defs
+PASS_MAX_DAYS   90
+PASS_MIN_DAYS   0
+PASS_WARN_AGE   10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;参考：
+http://xmodulo.com/set-password-policy-linux.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;7-console-security-控制台安全&#34;&gt;7.Console Security 控制台安全&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;Disable Ctrl+Alt+Delete # 禁用Ctrl+Alt+Delete
+vi /etc/init/control-alt-delete.conf
+#exec shutdown -r now &amp;quot;Control-Alt-Delete pressed&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;8-disable-ipv6-禁用ipv6&#34;&gt;8.Disable IPv6 禁用IPv6&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;vi /etc/sysctl.conf
+# IPv6 disabled
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;9-ssh-settings-ssh配置&#34;&gt;9.SSH Settings SSH配置&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;# vi /etc/ssh/sshd_config
+
+# What ports, IPs and protocols we listen for
+Port 10022
+
+Protocol 2
+# HostKeys for protocol version 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+#Privilege Separation is turned on for security
+UsePrivilegeSeparation yes
+
+# Lifetime and size of ephemeral version 1 server key
+KeyRegenerationInterval 3600
+ServerKeyBits 1024
+
+# Logging
+SyslogFacility AUTH
+LogLevel INFO
+
+# Authentication:
+LoginGraceTime 120
+PermitRootLogin no
+StrictModes yes
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+RSAAuthentication yes
+PubkeyAuthentication yes
+MaxAuthTries 4
+PermitEmptyPasswords no
+PermitUserEnvironment no
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+
+# Don&#39;t read the user&#39;s ~/.rhosts and ~/.shosts files
+IgnoreRhosts yes
+
+# For this to work you will also need host keys in /etc/ssh_known_hosts
+RhostsRSAAuthentication no
+
+# similar for protocol version 2
+HostbasedAuthentication no
+
+# Disable X11 Forward
+X11Forwarding no
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+# File Transfer
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Idle Log Out Timeout Interval 
+ClientAliveInterval 600
+ClientAliveCountMax 0
+
+# Banner
+Banner /etc/issue
+
+# use PAM
+UsePAM yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;# chown root:root /etc/ssh/sshd_config
+# chmod 600 /etc/ssh/sshd_config
+
+# chmod 644 /etc/motd
+# chmod 644 /etc/issue
+# chmod 644 /etc/issue.net
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;参考：
+https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;10-iptables-配置&#34;&gt;10.iptables 配置&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;详见配置文件：
+Cyqz_OS_Security_Checklist_iptables.md
+
+保存iptables规则
+apt-get install iptables-persistent
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;11-高级主题&#34;&gt;11.高级主题&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;11.1）Kernel Grsecurity/PaX补丁，MAC（SELinux/AppArmor）
+11.2) Kernel Livepatch（OS内核安全Patch，无需重启）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;12-待完善&#34;&gt;12.待完善&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;PAM/sudo/mount
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;13-参考资料&#34;&gt;13.参考资料&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;https://wiki.ubuntu.com/Security/Features
+https://wiki.ubuntu.com/Security/Features/Historical
+https://help.ubuntu.com/14.04/serverguide/security.html
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/index.html
+https://benchmarks.cisecurity.org/tools2/linux/CIS_Ubuntu_14.04_LTS_Server_Benchmark_v1.0.0.pdf
+https://github.com/GovReady/ubuntu-lts/blob/master/hardening.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;14-本文提到的所有配置文件下载地址&#34;&gt;14.本文提到的所有配置文件下载地址：&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;https://github.com/Zer0d0y/advanced-enterprise-security
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>互联网企业安全指南（一）：基础架构安全</title>
+      <link>https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies/</link>
+      <pubDate>Fri, 21 Apr 2017 10:54:28 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies/</guid>
+      <description>
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/AES-sec.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;table class=&#34;image&#34;&gt;
+&lt;caption align=&#34;bottom&#34;&gt; &lt;/caption&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;TL;DR - 互联网企业安全漫谈，本系列将持续更新
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;1-外部攻击&#34;&gt;1.外部攻击&lt;/h5&gt;
+
+&lt;p&gt;攻击方式及应对策略&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.) DDOS流量型（Syn、UDP等）
+a.）攻击域名（case.zer0d0y.com） ---&amp;gt; CDN服务提供商
+# 应对策略：
+①.依赖CDN服务提供商
+②.第三方服务或运营商核心节点数据中心
+
+b.）攻击IP ---&amp;gt; LVS或后端服务器IP
+# 应对策略：
+①.公开指定IP（防火墙、WAF设备）
+②.第三方服务或运营商核心节点数据中心
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;2.) Web HTTP相关Flood
+a.）攻击域名（后端域名：cyqzmain.zer0d0y.com，case.zer0d0y.com 有CDN服务可以不考虑）
+# 应对策略：
+①.WAF
+②.LVS + Nginx + lua
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;3.）DNS，查询Flood
+a.）Query Flood（故障现象：域名无法解析，网站打不开）
+# 应对策略：
+①.第三方服务（高防DNS）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;2-网络层-边界-安全&#34;&gt;2.网络层（边界）安全&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.) 访问控制
+a.）管理接口：只允许固定IP and/or 堡垒（跳板）机访问
+b.）接口及端口：服务器监听内网接口
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;3-网络层-内部lan-安全&#34;&gt;3.网络层（内部Lan）安全&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.) 设备安全
+a.）ARP攻击、L2攻击（如，VTP Hopping）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;2.）数据传输安全
+a.）避免明文传送（数据走内网也需要加密！！！）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;4-系统层-os-安全&#34;&gt;4.系统层（OS）安全&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.) 访问控制: 认证
+a.）跳板机/Red Hat IDM
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;2.）加固（Hardening）
+a.）Kernel Grsecurity/PaX补丁，MAC（SELinux/AppArmor）
+b.) Kernel Livepatch（OS内核安全Patch，无需重启）
+c.) 自动更新安全补丁
+d.) 组件最小化，只安装必要组件
+e.) 文件系统完整性监控（Audit、Monit）
+f.) 权限控制（禁用远程root登录、sudo）
+g.) 密码策略（密码强度、定期更新）
+h.) 主机层面访问控制（Iptables 限制（性能及安全问题（raw sockets、tracking helpers）），SSH可选安全（port knock，two factor authentication））
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;5-应用服务层-nginx-tomcat等&#34;&gt;5.应用服务层（Nginx/Tomcat等）&lt;/h5&gt;
+
+&lt;p&gt;基本原则：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;①.最新版（发行版自带、自编译）
+②.Patch
+③.监听Loopbook或内网接口
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;6-访问层-业务逻辑-数据库-web-接口等&#34;&gt;6.访问层（业务逻辑）（数据库、Web、接口等）&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.) 数据加密
+a.) 传输加密，如HTTPS
+b.) 数据加密，如密码加密
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;2.) 攻击方式
+a.) CC攻击（Http Get/Post等）
+# 应对策略：
+Waf/Nginx/程序请求比率限制
+
+b.) 注入攻击（Mysql、Redis、Web）
+# 应对策略：
+Mysql/Redis基本安全设置，CSP（内容安全策略）
+Todo（需要先进行渗透传输和代码设计）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;7-物理安全&#34;&gt;7.物理安全&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.）BIOS加密
+2.）磁盘加密
+3.）启动管理器（Grub）加密
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;8-操作安全&#34;&gt;8.操作安全&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.）操作规范（非常重要）
+2.）运维工作站安全
+3.）密码管理器
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;9-安全监控-应急响应-数字取证&#34;&gt;9.安全监控&amp;amp;应急响应&amp;amp;数字取证&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.) 安全监控：网络
+a.) 部署Bro NSM（入侵检测、流量分析等等），在核心交换机使用端口镜像把流量复制到Bro
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;2.) 安全监控：主机
+a.) 把相关日志推送到ELK Stack
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;3.) 应急响应&amp;amp;数字取证
+a.) 网络取证
+工具：Bro NSM
+
+b.) 磁盘取证
+
+c.) 内存取证
+工具：LiME、Volatility 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;10-渗透测试&#34;&gt;10.渗透测试&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;11-0day和apt攻击&#34;&gt;11.0day和APT攻击&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;12-不同维度&#34;&gt;12.不同维度&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;13-参考资料&#34;&gt;13.参考资料&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.https://www.zer0d0y.info/post/DevSecOps/
+2.http://www.ayazero.com/
+3.https://cloud.google.com/security/
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Redis 安全规范</title>
       <link>https://www.zer0d0y.info/post/Securing_Redis/</link>
       <pubDate>Thu, 20 Apr 2017 16:56:10 +0800</pubDate>
       
       <guid>https://www.zer0d0y.info/post/Securing_Redis/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;TL;DR - Redis安全最佳实践
+      <description>
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/Securing_redis.jpg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;table class=&#34;image&#34;&gt;
+&lt;caption align=&#34;bottom&#34;&gt; &lt;/caption&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;TL;DR - Redis安全最佳实践
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;1.信任的内网运行，绑定Redis监听的网络接口。&lt;/p&gt;
