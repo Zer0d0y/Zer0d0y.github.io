@@ -12,40 +12,38 @@
         }
     }
   </script>
-  <title>Zer0d0y(段公子)&#39;s Blog</title>
+  <title>部署绿盟防火墙/WAF - Zer0d0y(段公子)&#39;s Blog</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="keywords" content="独立博客,思考&amp;笔记,安全攻防">
-<meta name="description" content="Zer0d0y(段公子)&#39;s Blog">
+<meta name="keywords" content="xxx,">
+<meta name="description" content="TL;DR - 部署防火墙和WAF吓唬坏人 1.硬件设备 1.1）IDC交换机（华为-CE6800），两台堆叠 1.2）我方交换机（H3C-5120），两台堆">
 <meta name="author" content="Zer0d0y">
 <meta name="publisher" content="Zer0d0y">
 <meta name="generator" content="http://gohugo.io/"/>
 
-<meta itemprop="name" content="Zer0d0y(段公子)&#39;s Blog">
-<meta itemprop="description" content="Zer0d0y(段公子)&#39;s Blog">
+<meta itemprop="name" content="部署绿盟防火墙/WAF - Zer0d0y(段公子)&#39;s Blog">
+<meta itemprop="description" content="TL;DR - 部署防火墙和WAF吓唬坏人 1.硬件设备 1.1）IDC交换机（华为-CE6800），两台堆叠 1.2）我方交换机（H3C-5120），两台堆">
 <meta itemprop="image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
-<meta property="og:title" content="Zer0d0y(段公子)&#39;s Blog" />
+<meta property="og:title" content="部署绿盟防火墙/WAF - Zer0d0y(段公子)&#39;s Blog" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.zer0d0y.info/" />
+<meta property="og:url" content="https://www.zer0d0y.info/post/Deploying_nsfocus_ngfw_and_waf/" />
 <meta property="og:image" content="https://www.zer0d0y.info/public/coderzh.jpg" />
-<meta property="og:description" content="Zer0d0y(段公子)&#39;s Blog">
+<meta property="og:description" content="TL;DR - 部署防火墙和WAF吓唬坏人 1.硬件设备 1.1）IDC交换机（华为-CE6800），两台堆叠 1.2）我方交换机（H3C-5120），两台堆">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@Zer0d0y">
-<meta name="twitter:title" content="Zer0d0y(段公子)&#39;s Blog">
-<meta name="twitter:description" content="Zer0d0y(段公子)&#39;s Blog">
+<meta name="twitter:title" content="部署绿盟防火墙/WAF - Zer0d0y(段公子)&#39;s Blog">
+<meta name="twitter:description" content="TL;DR - 部署防火墙和WAF吓唬坏人 1.硬件设备 1.1）IDC交换机（华为-CE6800），两台堆叠 1.2）我方交换机（H3C-5120），两台堆">
 <meta name="twitter:creator" content="@Zer0d0y">
 <meta name="twitter:image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
   <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
-  <link rel="canonical" href="https://www.zer0d0y.info/">
-  <link rel='shortlink' href="https://www.zer0d0y.info/"/>
+  <link rel="canonical" href="https://www.zer0d0y.info/post/Deploying_nsfocus_ngfw_and_waf/">
+  <link rel='shortlink' href="https://www.zer0d0y.info/post/Deploying_nsfocus_ngfw_and_waf/"/>
   <link rel="shortcut icon" href="https://www.zer0d0y.info/public/favicon.ico"/>
   
- <link href="https://www.zer0d0y.info/feed.xml" rel="alternate" type="application/rss+xml" title="Zer0d0y(段公子)&#39;s Blog" />
-
 <link rel="stylesheet" id="human-style-css" href="https://www.Zer0d0y.info/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
 <link rel="stylesheet" id="human-style-css2" href="https://www.Zer0d0y.info/wp-content/themes/hueman-child/style.css" type="text/css" media="all"/>
 <link rel="stylesheet" id="responsive-css" href="https://www.Zer0d0y.info/wp-content/themes/hueman/responsive.css" type="text/css" media="all"/>
@@ -65,8 +63,7 @@
 
 </head>
 
-<body class="archive category col-3cm full-width topbar-enabled chrome">
-
+<body class="single single-post single-format-standard col-3cm full-width topbar-enabled chrome">
 <div id="wrapper">
   <header id="header">
 
@@ -164,214 +161,184 @@
 </header>
 
 
+
   <div class="container" id="page">
     <div class="container-inner">
       <div class="main">
         <div class="main-inner group">
           <section class="content">
+            <div class="page-title pad group">
+              <ul class="meta-single group">
+                
+                <li class="category">
+                  <a href="https://www.Zer0d0y.info/categories/misc/" rel="category tag">misc</a>
+                </li>
+                
+              </ul>
+            </div>
+
             <div class="pad group">
+
+              <article
+                  class="post type-post status-publish format-standard has-post-thumbnail hentry category-australien tag-bondi-beach tag-city2surf tag-sydney">
+                <div class="post-inner group">
+
+                  <h1 class="post-title">部署绿盟防火墙/WAF</h1>
+
+                  <p class="post-byline">
+                    by  · 2017年03月25日 · 358 Words ·
+                    ~1min reading time |
+                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/Deploying_nsfocus_ngfw_and_waf.md"
+                       target="_blank">Improve on <i class="fa fa-github"></i></a>
+                  </p>
+
+                  <div class="clear"></div>
+
+                  <div class="entry">
+                    <div class="entry-inner">
+                      
+                      
+
+
+<figure >
+    
+        <img src="images/nsfocus_ngfw_waf.png" />
+    
+    
+</figure>
+
+
+<table class="image">
+<caption align="bottom"> </caption>
+</table>
+
+<pre><code>TL;DR - 部署防火墙和WAF吓唬坏人
+</code></pre>
+
+<h5 id="1-硬件设备">1.硬件设备</h5>
+
+<pre><code>1.1）IDC交换机（华为-CE6800），两台堆叠
+1.2）我方交换机（H3C-5120），两台堆叠
+1.3）4台安全设备（绿盟），两台防火墙、两台WAF
+</code></pre>
+
+<h5 id="2-网络架构说明">2.网络架构说明</h5>
+
+<pre><code>2.1）防火墙-防火墙和WAF-WAF之间高可用部署
+2.2）交换机之间使用堆叠
+2.3）通过“浮动路由”方式实现主备
+2.4）目标：8台设备全部高可用
+</code></pre>
+
+<h5 id="3-idc交换机配置">3.IDC交换机配置</h5>
+
+<pre><code>3.1）配置“浮动路由”
+ip route-static 223.x.x.x 255.255.255.224 10.10.118.42 preference 1
+ip route-static 223.x.x.x 255.255.255.224 10.10.118.46 preference 200
+</code></pre>
+
+<h5 id="4-我方交换机配置">4.我方交换机配置</h5>
+
+<pre><code>4.1）
+
+sys
+vlan 10
+vlan 20
+interface Vlan-interface10
+ ip address 10.10.118.42 255.255.255.252
+
+interface Vlan-interface20
+ ip address 10.10.118.46 255.255.255.252
+ 
+interface Vlan-interface1
+ ip address 223.x.x.x 255.255.255.224
+
+ip route-static 0.0.0.0 0.0.0.0 10.10.118.41 preference 1
+ip route-static 0.0.0.0 0.0.0.0 10.10.118.45 preference 200
+
+interface GigabitEthernet1/0/50
+ port link-type access
+ port access vlan 10
+
+interface GigabitEthernet2/0/50
+  port link-type access
+  port access vlan 20
+</code></pre>
+
+<h5 id="5-防火墙接入方式说明">5.防火墙接入方式说明</h5>
+
+<pre><code>5.1）IDC交换机和我方交换机通过3层方式实现高可用
+5.2）防火墙和WAF3层串联接入，防火墙/WAF之间通过心跳线实现高可用
+</code></pre>
+
+
+<figure >
+    
+        <img src="images/nsfocus_waf.jpg" />
+    
+    
+</figure>
+
+
+<table class="image">
+<caption align="bottom"> "NSFOCUS WAF"</caption>
+</table>
+
+                      
+<div id="ckepop">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_weixin">微信</a> 
+<a class="jiathis_button_tsina">新浪微博</a> 
+<a href="http://www.jiathis.com/share"  class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a> 
+<script type="text/javascript" src="https://www.zer0d0y.info/images/jia.js?uid=1" charset="utf-8"></script>
+</div> 
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'zer0d0y';
+    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                    </div>
+                    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+                        <div style="float:left;margin-top:0px;">
+                        <img src="https://www.Zer0d0y.info/public/qrcode.jpg" width="129px" height="129px"/>
+                        <div style="text-align:center;"></div>
+                        </div>
+                        <div>
+                            <p style="margin-top:0px;">作者：<a target="_blank" href="http://www.Zer0d0y.info/">Zer0d0y</a>
+                            <br />微信关注：Zer0d0y
+                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/Deploying_nsfocus_ngfw_and_waf/">https://www.zer0d0y.info/post/Deploying_nsfocus_ngfw_and_waf/</a>
+                            <br />
+                            文章版权归本人所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  
+
+                </div>
+                
+              </article>
               
-              <div class="featured">
-  <article class="post type-post status-publish format-standard has-post-thumbnail hentry group">
-      <div class="post-inner post-hover">
-          <div class="post-meta group">
-              <p class="post-category">
+              <div class="clear"></div>
               
-              <a href="https://www.Zer0d0y.info/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/" title="All posts in 安全研究" rel="category tag">安全研究</a>
               
-              </p>
-              <p class="post-date">2017年04月21日</p>
-          </div>
-          <h2 class="post-title">
-              <a href="https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/" rel="bookmark" title="互联网企业安全指南（二）：系统安全加固指南">互联网企业安全指南（二）：系统安全加固指南</a>
-          </h2>
-          <div class="entry excerpt">
-              <p>TL;DR - 系统安全加固指南，模块独立，可移植到其他平台。 Ubuntu 14.04 LTS Server Security hardening （系统安全加固） Revision History 修正历史 Current version: 0.1.10 draft (as of 2017-03-08) Platforms 适用平台 Ubuntu 14.04 LTS Server 需求级别定义： A.</p>
-          </div>
-      </div>
-  </article>
-</div>
-
               
-              <div class="post-list group">
-                
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月21日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies/" rel="bookmark" title="互联网企业安全指南（一）：基础架构安全">互联网企业安全指南（一）：基础架构安全</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月20日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Securing_Redis/" rel="bookmark" title="Redis 安全规范">Redis 安全规范</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月20日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/" rel="bookmark" title="Using ansible with a jump host">Using ansible with a jump host</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月19日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/" rel="bookmark" title="Ubuntu Server 16.04 LTS Network Bonding">Ubuntu Server 16.04 LTS Network Bonding</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年03月25日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Deploying_nsfocus_ngfw_and_waf/" rel="bookmark" title="部署绿盟防火墙/WAF">部署绿盟防火墙/WAF</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年03月16日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/" rel="bookmark" title="Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH">Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年02月19日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/" rel="bookmark" title="Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite">Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年02月01日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/keywords-of-this-year/" rel="bookmark" title="2017 价值">2017 价值</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年01月06日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/4-marathon-of-30d/" rel="bookmark" title="30天体验4全马">30天体验4全马</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-              </div>
-              <nav class="pagination group">
-                <div class="wp-pagenavi">
-                  <a class="page" href="https://www.Zer0d0y.info/post/">More...</a>
-                </div>
-              </nav>
             </div>
           </section>
           <div class="sidebar s1">
@@ -406,6 +373,26 @@
     <p> Zer0d0y <br/>  Independent Security Researcher & Build Things <br /></p>
 </div>
 
+    <ul class="post-nav group">
+      <li class="next">
+        
+        <a href="https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/" rel="next">
+          <i class="fa fa-chevron-right"></i>
+          <strong>Next post</strong>
+          <span>Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH</span>
+        </a>
+        
+      </li>
+      <li class="previous">
+        
+        <a href="https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/" rel="prev">
+          <i class="fa fa-chevron-left"></i>
+          <strong>Previous Post</strong>
+          <span>Ubuntu Server 16.04 LTS Network Bonding</span>
+        </a>
+        
+      </li>
+    </ul>
     <div id="search-2" class="widget widget_search"><h3>Search</h3>
       <form method="get" class="searchform themeform" action="https://www.google.com/search">
         <div>
@@ -414,6 +401,7 @@
       </form>
     </div>
   </div>
+  
 </div>
 
           <div class="sidebar s2">
