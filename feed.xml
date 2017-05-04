@@ -7,8 +7,56 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2017. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 26 Apr 2017 16:53:17 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 04 May 2017 17:23:10 +0800</lastBuildDate>
     <atom:link href="https://www.zer0d0y.info/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>天御实验室</title>
+      <link>https://www.zer0d0y.info/post/01sec-Tlab/</link>
+      <pubDate>Thu, 04 May 2017 17:23:10 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/01sec-Tlab/</guid>
+      <description>
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/Tlab.jpeg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;table class=&#34;image&#34;&gt;
+&lt;caption align=&#34;bottom&#34;&gt; &lt;/caption&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;实验室方向&#34;&gt;实验室方向：&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;前沿安全攻防技术研究（主流操作系统、互联网和移动互联网应用、云计算技术及物联网设备）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;实验室使命&#34;&gt;实验室使命：&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;***** 用未来技术服务现在 *****
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;实验室成员要求&#34;&gt;实验室成员要求：&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.认同并理解工程师文化，认同并理解OKR（Google），富有激情.
+
+3.有软件工程研发经验，对（信息）安全有自己的理解.
+
+3.精通安全攻防技术.
+
+4.某个领域或几个领域顶级专家.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;天御实验室&#34;&gt;天御实验室&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.01sec.blog/&#34;&gt;https://www.01sec.blog/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Goal Science Thinking（目标科学思维）</title>
@@ -1863,16 +1911,6 @@ He（呵？）。。旁边似乎又有人摔倒，你知道吗，我想拉住他
     
 &lt;/figure&gt;
 &lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>墙外的世界</title>
-      <link>https://www.zer0d0y.info/post/outdoor_of_FW/</link>
-      <pubDate>Wed, 23 Dec 2015 10:48:47 +0800</pubDate>
-      
-      <guid>https://www.zer0d0y.info/post/outdoor_of_FW/</guid>
-      <description>&lt;iframe id=&#34;iframe_container&#34; frameborder=&#34;0&#34; webkitallowfullscreen=&#34;&#34; mozallowfullscreen=&#34;&#34; allowfullscreen=&#34;&#34; width=&#34;550&#34; height=&#34;400&#34; src=&#34;https://prezi.com/embed/reveeovpcfle/?bgcolor=ffffff&amp;amp;lock_to_path=0&amp;amp;autoplay=0&amp;amp;autohide_ctrls=0&amp;amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE1JdGtYV3lxSnR0S0o1NUg1ejBVTmZnbFVQNFpGU081Z25UeWtsU0N3PT0&amp;amp;landing_sign=M3IBudY_GchmrbWyJuPpUk0YE_2xjWKvuU63JKQtOvM&#34;&gt;&lt;/iframe&gt;
 </description>
     </item>
     
