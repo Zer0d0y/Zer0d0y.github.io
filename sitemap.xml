@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.zer0d0y.info/post/Your-packets-are-Your-packets-Fun-with-OpenVPN-and-iptables/</loc>
+    <lastmod>2017-08-01T09:09:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/</loc>
     <lastmod>2017-07-30T21:25:03+08:00</lastmod>
   </url>
@@ -113,19 +118,19 @@
   
   <url>
     <loc>https://www.zer0d0y.info/categories/misc/</loc>
-    <lastmod>2017-04-20T14:19:21+08:00</lastmod>
+    <lastmod>2017-08-01T09:09:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.zer0d0y.info/post/</loc>
-    <lastmod>2017-07-30T21:25:03+08:00</lastmod>
+    <lastmod>2017-08-01T09:09:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.zer0d0y.info/</loc>
-    <lastmod>2017-07-30T21:25:03+08:00</lastmod>
+    <lastmod>2017-08-01T09:09:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

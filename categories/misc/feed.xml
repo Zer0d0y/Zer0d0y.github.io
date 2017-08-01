@@ -10,6 +10,194 @@
     <atom:link href="https://www.zer0d0y.info/categories/misc/feed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Your packets are Your packets:Fun with OpenVPN and iptables</title>
+      <link>https://www.zer0d0y.info/post/Your-packets-are-Your-packets-Fun-with-OpenVPN-and-iptables/</link>
+      <pubDate>Tue, 01 Aug 2017 09:09:00 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/Your-packets-are-Your-packets-Fun-with-OpenVPN-and-iptables/</guid>
+      <description>
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/Your-packets-are-Your-packets-p1.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;table class=&#34;image&#34;&gt;
+&lt;caption align=&#34;bottom&#34;&gt; &#34;Network Diagram&#34; &lt;/caption&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;TL;DR - Connecting 2 Networks(Multiple subnet) with OpenVPN
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;1-setting-up-the-openvpn-server&#34;&gt;1.Setting up the OPENVPN SERVER&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;# Server IP：10.0.70.15
+# OS：CentOS 6.x
+# openvpn version：openvpn-2.4.3-1.el6.x86_64
+
+yum check-update 
+yum install -y epel-release
+yum install openvpn easy-rsa screen -y
+
+cp /usr/share/doc/openvpn-*/sample/sample-config-files/server.conf /etc/openvpn
+
+vi /etc/openvpn/server.conf
+ca ca.crt
+cert server.crt
+cipher AES-256-CBC
+dev tun
+dh dh2048.pem
+explicit-exit-notify 1
+group nobody
+ifconfig-pool-persist ipp.txt
+keepalive 10 120
+key server.key  # This file should be kept secret
+persist-key
+persist-tun
+port 1194
+proto udp
+push &amp;quot;dhcp-option DNS 114.114.114.114&amp;quot;
+push &amp;quot;dhcp-option DNS 223.6.6.6&amp;quot;
+server 10.8.0.0 255.255.255.0
+status openvpn-status.log
+tls-auth ta.key 0 # This file is secret
+user nobody
+verb 3
+# The route entries adjust the local routing table, telling it to route those networks over the vpn. The push routes are added on the clients connecting, telling them to route those networks over the vpn.
+push &amp;quot;route 10.0.70.0 255.255.255.0&amp;quot;
+push &amp;quot;route 10.0.90.0 255.255.255.0&amp;quot;
+comp-lzo
+
+mkdir -p /etc/openvpn/easy-rsa/keys
+cp -rf /usr/share/easy-rsa/2.0/* /etc/openvpn/easy-rsa
+
+vi /etc/openvpn/easy-rsa/vars
+### Add to the end of file
+export KEY_COUNTRY=&amp;quot;CN&amp;quot;
+export KEY_PROVINCE=&amp;quot;GD&amp;quot;
+export KEY_CITY=&amp;quot;sz&amp;quot;
+export KEY_ORG=&amp;quot;baidu&amp;quot;
+export KEY_EMAIL=&amp;quot;admin@baidu.com&amp;quot;
+export KEY_CN=baidu.com
+export KEY_NAME=baidu
+export KEY_OU=baidu
+
+cp /etc/openvpn/easy-rsa/openssl-1.0.0.cnf /etc/openvpn/easy-rsa/openssl.cnf
+cd /etc/openvpn/easy-rsa
+source ./vars
+./clean-all
+./build-ca
+./build-key-server server
+./build-dh
+cd /etc/openvpn/easy-rsa/keys
+cp dh2048.pem ca.crt server.crt server.key /etc/openvpn
+cd /etc/openvpn/easy-rsa
+./build-key client
+cd /etc/openvpn
+openvpn --genkey --secret ta.key
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;2-enable-port-forwarding-setting-up-iptables&#34;&gt;2.Enable Port Forwarding &amp;amp; setting up iptables&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;vi /etc/sysctl.conf
+net.ipv4.ip_forward = 1
+sysctl -p
+
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -A INPUT -i tun0 -j ACCEPT 
+iptables -A INPUT -s 39.xxx.xxx.xxx/32 -j ACCEPT 
+iptables -A INPUT -p udp -m udp --dport 1194 -j ACCEPT 
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT 
+iptables -A INPUT -p icmp -j ACCEPT 
+iptables -A INPUT -i lo -j ACCEPT 
+iptables -A INPUT -j REJECT --reject-with icmp-host-prohibited 
+iptables -A FORWARD -i tun0 -j ACCEPT 
+ 
+iptables -P PREROUTING ACCEPT
+iptables -P POSTROUTING ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -A POSTROUTING -s 10.8.0.0/24 -o eth1 -j MASQUERADE
+
+service iptables save
+
+service openvpn start
+chkconfig openvpn on
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;3-client-configuration&#34;&gt;3.Client configuration&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;yum check-update 
+yum install -y epel-release
+yum install openvpn easy-rsa screen -y
+
+mkdir openvpn_client
+cd openvpn_client/
+vi ta.key # same as openvpn server key(ta.key)
+
+vi client.ovpn
+client
+dev tun
+proto udp
+remote 122.xxx.xxx.xxx 1194
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+comp-lzo
+verb 3
+tls-auth /root/openvpn_client/ta.key 1
+&amp;lt;ca&amp;gt;
+Contents of ca.crt
+&amp;lt;/ca&amp;gt;
+&amp;lt;cert&amp;gt;
+Contents of client.crt
+&amp;lt;/cert&amp;gt;
+&amp;lt;key&amp;gt;
+Contents of client.key
+&amp;lt;/key&amp;gt;
+
+### start client
+screen -S openvpn
+openvpn --config /root/openvpn_client/client.ovpn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;4-target-server-configuration&#34;&gt;4.Target Server configuration&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;#（10.0.70.0/24）
+ip r add 10.8.0.0/24 via 10.0.70.15
+
+#（10.0.90.0/24）
+iptables -t nat -A OUTPUT -d 10.8.0.0/24 -j DNAT --to 10.0.70.15
+ON OPENVPN server:
+iptables -t nat -A PREROUTING -s 10.0.90.0/24 -j DNAT --to 10.8.0.6
+
+### 以上两种情况也可以通过交换机配置路由实现，如下
+ip route-static 10.8.0.0 255.255.255.0 10.0.70.15
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;5-troubleshooting&#34;&gt;5.Troubleshooting&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1.RTNETLINK answers: Network is unreachable
+The issue is that the next hop or gateway in routes need to be on the same network as the one you are connected to.
+
+2.RTNETLINK answers: No such process
+For example, LAN is 192.168.56.100. ip route add 8.8.8.8/32 via 192.168.6.1 results in RTNETLINK answers: No such process because 192.168.6.1 is not known to the host.
+
+3.
+WARNING: cannot stat file &#39;ta.key&#39;: The system cannot find the file specified. (errno=2)
+https://www.reddit.com/r/OpenVPN/comments/5wihmg/warning_cannot_stat_file_takey/
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Using ansible with a jump host</title>
       <link>https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/</link>
       <pubDate>Thu, 20 Apr 2017 14:19:21 +0800</pubDate>
