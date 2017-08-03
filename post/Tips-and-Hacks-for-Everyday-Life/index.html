@@ -12,40 +12,46 @@
         }
     }
   </script>
-  <title>Zer0d0y(段公子)&#39;s Blog</title>
+  <title>Tips and Hacks for Everyday Life - Zer0d0y(段公子)&#39;s Blog</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="keywords" content="独立博客,思考&amp;笔记,安全攻防">
-<meta name="description" content="Zer0d0y(段公子)&#39;s Blog">
+<meta name="keywords" content="xxx,">
+<meta name="description" content="1.Netfilter Debugging iptables -t raw -A OUTPUT -p icmp -j TRACE iptables -t nat -A OUTPUT -d 10.8.0.0/24 -j DNAT --to 192.168.8.1 iptables -t raw -vnL --line iptables -t nat -vnL --line ping -c1 10.8.0.10 tail -F /var/log/kern.log     Reference:
+http://www.strlen.de/talks/nfdebug.pdf
+http://inai.de/images/nf-packet-flow.svg">
 <meta name="author" content="Zer0d0y">
 <meta name="publisher" content="Zer0d0y">
 <meta name="generator" content="http://gohugo.io/"/>
 
-<meta itemprop="name" content="Zer0d0y(段公子)&#39;s Blog">
-<meta itemprop="description" content="Zer0d0y(段公子)&#39;s Blog">
+<meta itemprop="name" content="Tips and Hacks for Everyday Life - Zer0d0y(段公子)&#39;s Blog">
+<meta itemprop="description" content="1.Netfilter Debugging iptables -t raw -A OUTPUT -p icmp -j TRACE iptables -t nat -A OUTPUT -d 10.8.0.0/24 -j DNAT --to 192.168.8.1 iptables -t raw -vnL --line iptables -t nat -vnL --line ping -c1 10.8.0.10 tail -F /var/log/kern.log     Reference:
+http://www.strlen.de/talks/nfdebug.pdf
+http://inai.de/images/nf-packet-flow.svg">
 <meta itemprop="image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
-<meta property="og:title" content="Zer0d0y(段公子)&#39;s Blog" />
+<meta property="og:title" content="Tips and Hacks for Everyday Life - Zer0d0y(段公子)&#39;s Blog" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.zer0d0y.info/" />
+<meta property="og:url" content="https://www.zer0d0y.info/post/Tips-and-Hacks-for-Everyday-Life/" />
 <meta property="og:image" content="https://www.zer0d0y.info/public/coderzh.jpg" />
-<meta property="og:description" content="Zer0d0y(段公子)&#39;s Blog">
+<meta property="og:description" content="1.Netfilter Debugging iptables -t raw -A OUTPUT -p icmp -j TRACE iptables -t nat -A OUTPUT -d 10.8.0.0/24 -j DNAT --to 192.168.8.1 iptables -t raw -vnL --line iptables -t nat -vnL --line ping -c1 10.8.0.10 tail -F /var/log/kern.log     Reference:
+http://www.strlen.de/talks/nfdebug.pdf
+http://inai.de/images/nf-packet-flow.svg">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@Zer0d0y">
-<meta name="twitter:title" content="Zer0d0y(段公子)&#39;s Blog">
-<meta name="twitter:description" content="Zer0d0y(段公子)&#39;s Blog">
+<meta name="twitter:title" content="Tips and Hacks for Everyday Life - Zer0d0y(段公子)&#39;s Blog">
+<meta name="twitter:description" content="1.Netfilter Debugging iptables -t raw -A OUTPUT -p icmp -j TRACE iptables -t nat -A OUTPUT -d 10.8.0.0/24 -j DNAT --to 192.168.8.1 iptables -t raw -vnL --line iptables -t nat -vnL --line ping -c1 10.8.0.10 tail -F /var/log/kern.log     Reference:
+http://www.strlen.de/talks/nfdebug.pdf
+http://inai.de/images/nf-packet-flow.svg">
 <meta name="twitter:creator" content="@Zer0d0y">
 <meta name="twitter:image" content="https://www.zer0d0y.info/public/coderzh.jpg">
 
   <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
-  <link rel="canonical" href="https://www.zer0d0y.info/">
-  <link rel='shortlink' href="https://www.zer0d0y.info/"/>
+  <link rel="canonical" href="https://www.zer0d0y.info/post/Tips-and-Hacks-for-Everyday-Life/">
+  <link rel='shortlink' href="https://www.zer0d0y.info/post/Tips-and-Hacks-for-Everyday-Life/"/>
   <link rel="shortcut icon" href="https://www.zer0d0y.info/public/favicon.ico"/>
   
- <link href="https://www.zer0d0y.info/feed.xml" rel="alternate" type="application/rss+xml" title="Zer0d0y(段公子)&#39;s Blog" />
-
 <link rel="stylesheet" id="human-style-css" href="https://www.Zer0d0y.info/wp-content/themes/hueman/style.css" type="text/css" media="all"/>
 <link rel="stylesheet" id="human-style-css2" href="https://www.Zer0d0y.info/wp-content/themes/hueman-child/style.css" type="text/css" media="all"/>
 <link rel="stylesheet" id="responsive-css" href="https://www.Zer0d0y.info/wp-content/themes/hueman/responsive.css" type="text/css" media="all"/>
@@ -65,8 +71,7 @@
 
 </head>
 
-<body class="archive category col-3cm full-width topbar-enabled chrome">
-
+<body class="single single-post single-format-standard col-3cm full-width topbar-enabled chrome">
 <div id="wrapper">
   <header id="header">
 
@@ -168,301 +173,131 @@
 </header>
 
 
+
   <div class="container" id="page">
     <div class="container-inner">
       <div class="main">
         <div class="main-inner group">
           <section class="content">
+            <div class="page-title pad group">
+              <ul class="meta-single group">
+                
+                <li class="category">
+                  <a href="https://www.Zer0d0y.info/categories/misc/" rel="category tag">misc</a>
+                </li>
+                
+              </ul>
+            </div>
+
             <div class="pad group">
+
+              <article
+                  class="post type-post status-publish format-standard has-post-thumbnail hentry category-australien tag-bondi-beach tag-city2surf tag-sydney">
+                <div class="post-inner group">
+
+                  <h1 class="post-title">Tips and Hacks for Everyday Life</h1>
+
+                  <p class="post-byline">
+                    by  · 2017年08月03日 · 41 Words ·
+                    ~1min reading time |
+                    <a href="https://github.com/Zer0d0y/Zer0d0y.github.io/master/content/post/Tips-and-Hacks-for-Everyday-Life.md"
+                       target="_blank">Improve on <i class="fa fa-github"></i></a>
+                  </p>
+
+                  <div class="clear"></div>
+
+                  <div class="entry">
+                    <div class="entry-inner">
+                      
+                      
+
+<h5 id="mark-1-netfilter-debugging-mark"><mark>1.Netfilter Debugging</mark></h5>
+
+<pre><code>iptables -t raw -A OUTPUT -p icmp -j TRACE
+iptables -t nat -A OUTPUT -d 10.8.0.0/24 -j DNAT --to 192.168.8.1
+
+iptables -t raw -vnL --line
+iptables -t nat -vnL --line
+
+ping -c1 10.8.0.10
+    
+tail -F /var/log/kern.log
+</code></pre>
+
+
+<figure >
+    
+        <img src="images/Tips-and-Hacks-for-Everyday-Life-p1.png" />
+    
+    
+</figure>
+
+
+<table class="image">
+<caption align="bottom"></caption>
+</table>
+
+<p>Reference:<br />
+<a href="http://www.strlen.de/talks/nfdebug.pdf">http://www.strlen.de/talks/nfdebug.pdf</a><br />
+<a href="http://inai.de/images/nf-packet-flow.svg">http://inai.de/images/nf-packet-flow.svg</a></p>
+
+                      
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_more" data-cmd="more"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+<a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+<a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+<a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+</div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","tsina","weixin","douban","sqq","youdao","fbook","twi","linkedin","evernotecn","copy"],"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js'];</script>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'zer0d0y';
+    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                    </div>
+                    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+                        <div style="float:left;margin-top:0px;">
+                        <img src="https://www.Zer0d0y.info/public/qrcode.jpg" width="129px" height="129px"/>
+                        <div style="text-align:center;"></div>
+                        </div>
+                        <div>
+                            <p style="margin-top:0px;">作者：<a target="_blank" href="http://www.Zer0d0y.info/">Zer0d0y</a>
+                            <br />微信关注：Zer0d0y
+                            <br />本文出处：<a target="_blank" href="https://www.zer0d0y.info/post/Tips-and-Hacks-for-Everyday-Life/">https://www.zer0d0y.info/post/Tips-and-Hacks-for-Everyday-Life/</a>
+                            <br />
+                            本站评论使用Disqus，如果长时间无法加载，请切换至“自由”互联网。
+                            <br />文章版权归本人所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  
+
+                </div>
+                
+              </article>
               
-              <div class="featured">
-  <article class="post type-post status-publish format-standard has-post-thumbnail hentry group">
-      <div class="post-inner post-hover">
-          <div class="post-meta group">
-              <p class="post-category">
+              <div class="clear"></div>
               
-              <a href="https://www.Zer0d0y.info/categories/misc/" title="All posts in misc" rel="category tag">misc</a>
               
-              </p>
-              <p class="post-date">2017年08月03日</p>
-          </div>
-          <h2 class="post-title">
-              <a href="https://www.zer0d0y.info/post/Tips-and-Hacks-for-Everyday-Life/" rel="bookmark" title="Tips and Hacks for Everyday Life">Tips and Hacks for Everyday Life</a>
-          </h2>
-          <div class="entry excerpt">
-              <p>1.Netfilter Debugging iptables -t raw -A OUTPUT -p icmp -j TRACE iptables -t nat -A OUTPUT -d 10.8.0.0/24 -j DNAT --to 192.168.8.1 iptables -t raw -vnL --line iptables -t nat -vnL --line ping -c1 10.8.0.10 tail -F /var/log/kern.log     Reference:
-http://www.strlen.de/talks/nfdebug.pdf
-http://inai.de/images/nf-packet-flow.svg</p>
-          </div>
-      </div>
-  </article>
-</div>
-
               
-              <div class="post-list group">
-                
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年08月01日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Your-packets-are-Your-packets-Fun-with-OpenVPN-and-iptables/" rel="bookmark" title="Your packets are Your packets:Fun with OpenVPN and iptables">Your packets are Your packets:Fun with OpenVPN and iptables</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年07月30日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/notes-on-bug-hunting-labs/" rel="bookmark" title="搭建漏洞利用测试环境">搭建漏洞利用测试环境</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年05月04日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/01sec-Tlab/" rel="bookmark" title="天御实验室">天御实验室</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月26日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Goal-Science-Thinking/" rel="bookmark" title="Goal Science Thinking（目标科学思维）">Goal Science Thinking（目标科学思维）</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月21日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies-part2/" rel="bookmark" title="互联网企业安全指南（二）：系统安全加固指南">互联网企业安全指南（二）：系统安全加固指南</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月21日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/advanced-enterprise-security-guidelines-for-internet-companies/" rel="bookmark" title="互联网企业安全指南（一）：基础架构安全">互联网企业安全指南（一）：基础架构安全</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月20日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Securing_Redis/" rel="bookmark" title="Redis 安全规范">Redis 安全规范</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月20日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/using-ansible-with-a-jump-host/" rel="bookmark" title="Using ansible with a jump host">Using ansible with a jump host</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年04月19日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Ubuntu-Server-16.04-LTS-Network-Bonding/" rel="bookmark" title="Ubuntu Server 16.04 LTS Network Bonding">Ubuntu Server 16.04 LTS Network Bonding</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年03月25日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Deploying_nsfocus_ngfw_and_waf/" rel="bookmark" title="部署绿盟防火墙/WAF">部署绿盟防火墙/WAF</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年03月16日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Ubuntu-Server-14.04-LTS-Network-Bonding-and-Restarting-Network-through-SSH/" rel="bookmark" title="Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH">Ubuntu Server 14.04 LTS  Network Bonding and Restarting Network through SSH</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年02月19日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/Pentesting-iOS-Applications-Part-1/" rel="bookmark" title="Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite">Pentesting iOS Applications Part 1 - Intercepting HTTP(S) Traffic with Burp Suite</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年02月01日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/keywords-of-this-year/" rel="bookmark" title="2017 价值">2017 价值</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                <div class="post-row">
-                <article class="post-row type-post status-publish format-standard has-post-thumbnail hentry group">
-  <div class="post-inner post-hover">
-    <div class="post-meta group">
-  <p class="post-date">2017年01月06日</p>
-  <p class="post-title-small"><a href="https://www.zer0d0y.info/post/4-marathon-of-30d/" rel="bookmark" title="30天体验4全马">30天体验4全马</a></p>
-</div>
-
-  </div>
-  
-</article>
-
-
-                </div>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-              </div>
-              <nav class="pagination group">
-                <div class="wp-pagenavi">
-                  <a class="page" href="https://www.Zer0d0y.info/post/">More...</a>
-                </div>
-              </nav>
             </div>
           </section>
           <div class="sidebar s1">
@@ -497,6 +332,20 @@ http://inai.de/images/nf-packet-flow.svg</p>
     <p> Zer0d0y <br/>  Independent Security Researcher & Build Things <br /></p>
 </div>
 
+    <ul class="post-nav group">
+      <li class="next">
+        
+        <a href="https://www.zer0d0y.info/post/Your-packets-are-Your-packets-Fun-with-OpenVPN-and-iptables/" rel="next">
+          <i class="fa fa-chevron-right"></i>
+          <strong>Next post</strong>
+          <span>Your packets are Your packets:Fun with OpenVPN and iptables</span>
+        </a>
+        
+      </li>
+      <li class="previous">
+        
+      </li>
+    </ul>
     <div id="search-2" class="widget widget_search"><h3>Search</h3>
       <form method="get" class="searchform themeform" action="https://www.google.com/search">
         <div>
@@ -505,6 +354,7 @@ http://inai.de/images/nf-packet-flow.svg</p>
       </form>
     </div>
   </div>
+  
 </div>
 
           <div class="sidebar s2">

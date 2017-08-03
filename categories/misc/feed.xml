@@ -10,6 +10,46 @@
     <atom:link href="https://www.zer0d0y.info/categories/misc/feed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Tips and Hacks for Everyday Life</title>
+      <link>https://www.zer0d0y.info/post/Tips-and-Hacks-for-Everyday-Life/</link>
+      <pubDate>Thu, 03 Aug 2017 15:45:41 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/Tips-and-Hacks-for-Everyday-Life/</guid>
+      <description>
+
+&lt;h5 id=&#34;mark-1-netfilter-debugging-mark&#34;&gt;&lt;mark&gt;1.Netfilter Debugging&lt;/mark&gt;&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;iptables -t raw -A OUTPUT -p icmp -j TRACE
+iptables -t nat -A OUTPUT -d 10.8.0.0/24 -j DNAT --to 192.168.8.1
+
+iptables -t raw -vnL --line
+iptables -t nat -vnL --line
+
+ping -c1 10.8.0.10
+    
+tail -F /var/log/kern.log
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/Tips-and-Hacks-for-Everyday-Life-p1.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;table class=&#34;image&#34;&gt;
+&lt;caption align=&#34;bottom&#34;&gt;&lt;/caption&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Reference:&lt;br /&gt;
+&lt;a href=&#34;http://www.strlen.de/talks/nfdebug.pdf&#34;&gt;http://www.strlen.de/talks/nfdebug.pdf&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://inai.de/images/nf-packet-flow.svg&#34;&gt;http://inai.de/images/nf-packet-flow.svg&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Your packets are Your packets:Fun with OpenVPN and iptables</title>
       <link>https://www.zer0d0y.info/post/Your-packets-are-Your-packets-Fun-with-OpenVPN-and-iptables/</link>
       <pubDate>Tue, 01 Aug 2017 09:09:00 +0800</pubDate>
