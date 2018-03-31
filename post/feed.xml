@@ -7,8 +7,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2017. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 03 Aug 2017 15:45:41 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 31 Mar 2018 14:33:58 +0800</lastBuildDate>
     <atom:link href="https://www.zer0d0y.info/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>红蓝对抗 - 蓝队手册（BTFM）</title>
+      <link>https://www.zer0d0y.info/post/btfm/</link>
+      <pubDate>Sat, 31 Mar 2018 14:33:58 +0800</pubDate>
+      
+      <guid>https://www.zer0d0y.info/post/btfm/</guid>
+      <description>
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;images/BTFM.jpeg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;table class=&#34;image&#34;&gt;
+&lt;caption align=&#34;bottom&#34;&gt; &lt;/caption&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;红蓝对抗的思想最早可追溯到我国现存最早的一部兵书《孙子兵法》，孙子·谋攻篇：“知彼知己，百战不殆；”，意为如果对敌我双方的情况都能了解透彻，打多少次仗都不会失败。在信息安全领域目前大家都有一个共识：“未知攻，焉知防”，攻防对抗本身是一个持续的过程，在具体的对抗中，对对手了解越多就会占据主导地位。&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;&lt;strong&gt;红蓝对抗的主要目的在于，提高公司安全成熟度及其检测和响应攻击的能力。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;&lt;strong&gt;Red Teams attack, and Blue Teams defend, but the primary goal is shared between them: improve the security posture of the organization.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;本文已发表在嘶吼RoarTalk，未经授权，请勿转载！ &lt;a href=&#34;http://www.4hou.com/technology/10173.html&#34;&gt;http://www.4hou.com/technology/10173.html&lt;/a&gt;
+最佳阅读体验版：&lt;a href=&#34;https://stackedit.io/viewer#!url=https://raw.github.com/Zer0d0y/BTFM/master/README.md&#34;&gt;https://stackedit.io/viewer#!url=https://raw.github.com/Zer0d0y/BTFM/master/README.md&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Tips and Hacks for Everyday Life</title>
@@ -1999,34 +2033,6 @@ iOS设备配置：
       
       <guid>https://www.zer0d0y.info/post/keywords-of-this-year/</guid>
       <description>&lt;p&gt;&lt;embed src=&#39;https://player.youku.com/player.php/sid/XMjQ4ODE2MjIxMg==/v.swf&#39; allowFullScreen=&#39;true&#39; quality=&#39;high&#39; width=&#39;480&#39; height=&#39;400&#39; align=&#39;middle&#39; allowScriptAccess=&#39;always&#39; type=&#39;application/x-shockwave-flash&#39;&gt;&lt;/embed&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>30天体验4全马</title>
-      <link>https://www.zer0d0y.info/post/4-marathon-of-30d/</link>
-      <pubDate>Fri, 06 Jan 2017 14:09:48 +0800</pubDate>
-      
-      <guid>https://www.zer0d0y.info/post/4-marathon-of-30d/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;尽情呼吸,&lt;/strong&gt;
-&lt;strong&gt;放肆奔跑,&lt;/strong&gt;
-&lt;strong&gt;强健体魄,&lt;/strong&gt;
-&lt;strong&gt;KEEP PASSION!!!&lt;/strong&gt;&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;images/IMG_9637.jpg&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-&lt;table class=&#34;image&#34;&gt;
-&lt;caption align=&#34;bottom&#34;&gt; &#34;生命不能总是记忆,需要记录&#34; &lt;/caption&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;全文:&lt;/strong&gt; &lt;a href=&#34;http://weibo.com/ttarticle/p/show?id=2309404060672932622444&#34;&gt;30天体验4全马&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
